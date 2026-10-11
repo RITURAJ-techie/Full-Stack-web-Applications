@@ -1,6 +1,6 @@
-const Category = require("../models/category.model");
-const { initializeDB } = require("../db/db.connect");
-initializeDB();
+
+import Category from "../models/category.model.js";
+import { initializeDB } from "../db/db.connect.js";
 
 const categoryUpdates = [
   {
@@ -31,11 +31,11 @@ const categoryUpdates = [
 
 async function seedCategories() {
   try {
-    // 🔥 Delete all existing categories
+    await initializeDB();
+
     await Category.deleteMany({});
     console.log("Old categories deleted");
 
-    // 🌱 Insert fresh categories
     await Category.insertMany(categoryUpdates);
     console.log("Categories seeded successfully");
 

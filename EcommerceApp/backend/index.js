@@ -1,19 +1,23 @@
-require("dotenv").config();
-const Products = require("./models/product.model");
-const Category = require("./models/category.model");
-const Address = require("./models/address.model");
-const Orders = require("./models/orders.model");
-const { initializeDB } = require("./db/db.connect");
-const express = require("express");
-const cors = require("cors");
+import dotenv from "dotenv";
+import Products from "./models/product.model.js";
+import Category from "./models/category.model.js";
+import Address from "./models/address.model.js";
+import Orders from "./models/orders.model.js";
+import { initializeDB } from "./db/db.connect.js";
+import express from "express";
+import cors from "cors";
+
+dotenv.config();
 
 const app = express();
+
 app.use(
   cors({
     origin: "*",
     credentials: true,
   }),
 );
+
 app.use(express.json());
 
 initializeDB();
@@ -49,6 +53,7 @@ async function productById(productId) {
     throw error;
   }
 }
+
 app.get("/api/products/:productId", async (req, res) => {
   try {
     const getId = req.params.productId;
@@ -94,6 +99,7 @@ async function CategoryById(categoryId) {
     console.log("unable to fetch data from db", error);
   }
 }
+
 app.get("/api/categories/:categoryId", async (req, res) => {
   try {
     const getId = req.params.categoryId;
@@ -114,7 +120,7 @@ app.get("/api/products/categories/:categoryId", async (req, res) => {
   try {
     const products = await Products.find({ category: categoryId });
     if (products.length === 0) {
-      res.status(404).json({ message: "No products found" });
+      return res.status(404).json({ message: "No products found" });
     }
     res.status(200).json(products);
   } catch (error) {
@@ -131,11 +137,12 @@ async function alladdress() {
     throw error;
   }
 }
+
 app.get("/api/address", async (req, res) => {
   try {
     const showAddress = await alladdress();
     if (!showAddress) {
-      res.status(400).json({ error: "address not found in DB" });
+      return res.status(400).json({ error: "address not found in DB" });
     }
     res.json(showAddress);
   } catch (error) {
@@ -152,6 +159,7 @@ async function showAddressById(itemId) {
     throw error;
   }
 }
+
 app.get("/api/address/:addressId", async (req, res) => {
   try {
     const addressId = req.params.addressId;
@@ -214,12 +222,14 @@ async function removeMovies(itemId) {
     console.log("unable to delete address", error);
   }
 }
+
 app.delete("/api/address/:addressId", async (req, res) => {
   try {
     const todelete = await removeMovies(req.params.addressId);
     if (todelete) {
-      res.status(200).json({ message: "address deleted successfully" });
+      return res.status(200).json({ message: "address deleted successfully" });
     }
+    res.status(404).json({ error: "Address not found" });
   } catch (error) {
     res.status(500).json({ error: "unale to fetch data to delete" });
   }
@@ -257,9 +267,10 @@ app.post("/api/orders", async (req, res) => {
 
 //app running port
 if (process.env.NODE_ENV !== "production") {
-  const PORT = process.env.PORT;
+  const PORT = process.env.PORT || 9000;
   app.listen(PORT, () => {
     console.log("app is running on port", PORT);
   });
 }
-module.exports = app;
+
+export default app;

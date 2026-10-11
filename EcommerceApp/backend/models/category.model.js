@@ -1,4 +1,5 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
+
 const categorySchema = new mongoose.Schema(
   {
     name: { type: String, unique: true, required: true },
@@ -9,4 +10,5 @@ const categorySchema = new mongoose.Schema(
 );
 
 const Category = new mongoose.model("Category", categorySchema);
-module.exports = Category;
+
+export default Category;
