@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useEffect, useState } from "react";
 
 const cartContext = createContext();
@@ -6,65 +7,101 @@ export default useCartContext;
 
 export function CartProvider({ children }) {
   const [allCartItems, setCartItems] = useState(() => {
-    const storeItem = localStorage.getItem("cartItem");
-    return storeItem ? JSON.parse(storeItem) : [];
+    try {
+      const storedItems = localStorage.getItem("cartItem");
+      const parsedItems = storedItems ? JSON.parse(storedItems) : [];
+
+      if (!Array.isArray(parsedItems)) return [];
+
+      return parsedItems.filter(
+        (item) =>
+          item &&
+          typeof item._id === "string" &&
+          item.productName &&
+          Number.isSafeInteger(Number(item.quantity)) &&
+          Number(item.quantity) > 0
+      );
+    } catch (error) {
+      console.error("Unable to restore cart:", error);
+      return [];
+    }
   });
 
   useEffect(() => {
     localStorage.setItem("cartItem", JSON.stringify(allCartItems));
   }, [allCartItems]);
 
-  console.log(allCartItems);
+  function updateCartItem(selectedItem, initialQty = 1, selectedSize = "One Size") {
+    const productId = selectedItem?._id ?? selectedItem?.id;
 
-  function updateCartItem(selectedItem, initalQty, selectedSize) {
-    setCartItems((prevItem) => {
-      const existing = prevItem.find((item) => item._id === selectedItem._id);
+    if (!productId || !selectedItem) {
+      console.error("Cannot add product without a valid ID:", selectedItem);
+      return;
+    }
 
-      if (existing) {
-        return prevItem.map((item) =>
-          item._id === selectedItem._id
+    setCartItems((previousItems) => {
+      const existingItem = previousItems.find(
+        (item) =>
+          String(item._id) === String(productId) &&
+          (item.selectedSize || "One Size") === selectedSize
+      );
+
+      if (existingItem) {
+        return previousItems.map((item) =>
+          String(item._id) === String(productId) &&
+          (item.selectedSize || "One Size") === selectedSize
             ? {
                 ...item,
-                quantity: item.quantity + 1,
-                selectedSize: (item.selectedSize = selectedSize),
+                quantity: Number(item.quantity || 0) + Number(initialQty || 1),
+                selectedSize,
               }
-            : item,
+            : item
         );
       }
+
       return [
-        ...prevItem,
-        { ...selectedItem, quantity: initalQty, selectedSize: selectedSize },
+        ...previousItems,
+        {
+          ...selectedItem,
+          _id: String(productId),
+          quantity: Math.max(1, Number(initialQty) || 1),
+          selectedSize,
+        },
       ];
     });
   }
 
   function DecreaseQty(id) {
-    setCartItems((prevItem) =>
-      prevItem.map((item) =>
-        item._id === id && item.quantity > 1
-          ? { ...item, quantity: item.quantity - 1 }
-          : item,
-      ),
+    setCartItems((previousItems) =>
+      previousItems.map((item) =>
+        String(item._id) === String(id) && Number(item.quantity) > 1
+          ? { ...item, quantity: Number(item.quantity) - 1 }
+          : item
+      )
     );
   }
 
   function IncreaseQty(id) {
-    setCartItems((prevItem) =>
-      prevItem.map((item) =>
-        item._id === id ? { ...item, quantity: item.quantity + 1 } : item,
-      ),
+    setCartItems((previousItems) =>
+      previousItems.map((item) =>
+        String(item._id) === String(id)
+          ? { ...item, quantity: Number(item.quantity) + 1 }
+          : item
+      )
     );
   }
 
   function deleteCartItem(deletedItemId) {
-    setCartItems((prevItems) =>
-      prevItems.filter((item) => item._id !== deletedItemId),
+    setCartItems((previousItems) =>
+      previousItems.filter(
+        (item) => String(item._id) !== String(deletedItemId)
+      )
     );
   }
 
-  // this will clear cart when order
   function clearCart() {
     setCartItems([]);
+    localStorage.removeItem("cartItem");
   }
 
   return (

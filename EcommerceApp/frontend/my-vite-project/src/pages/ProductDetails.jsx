@@ -1,339 +1,312 @@
-import { useParams } from "react-router-dom";
-import useFetch from "../useFetch";
+
 import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import {
+  FaArrowLeft,
+  FaCheckCircle,
+  FaHeart,
+  FaRegHeart,
+  FaShieldAlt,
+  FaShoppingBag,
+  FaStar,
+  FaTruck,
+  FaUndo,
+  FaMinus,
+  FaPlus,
+} from "react-icons/fa";
+import toast from "react-hot-toast";
+import useFetch from "../useFetch";
 import useCartContext from "../contexts/cartContext";
 import useWishListContext from "../contexts/wishlistContext";
-import toast from "react-hot-toast";
-
-function ProductDetailsSkeleton() {
-  return (
-    <div className="container py-5">
-      <div className="row">
-        {/* LEFT IMAGE SKELETON */}
-        <div className="col-md-5">
-          <div className="card border-0 shadow-sm p-3">
-            <div
-              className="bg-light rounded placeholder-glow"
-              style={{ height: "450px" }}
-            ></div>
-          </div>
-
-          <div className="d-grid gap-2 mt-3">
-            <div className="btn btn-warning disabled placeholder col-12"></div>
-            <div className="btn btn-dark disabled placeholder col-12"></div>
-          </div>
-        </div>
-
-        {/* RIGHT CONTENT SKELETON */}
-        <div className="col-md-7 ps-md-5">
-          <h3 className="placeholder-glow">
-            <span className="placeholder col-6"></span>
-          </h3>
-
-          <div className="placeholder-glow mb-3">
-            <span className="placeholder col-2"></span>
-          </div>
-
-          <div className="placeholder-glow mb-3">
-            <span className="placeholder col-3 me-2"></span>
-            <span className="placeholder col-2 me-2"></span>
-            <span className="placeholder col-2"></span>
-          </div>
-
-          <div className="placeholder-glow mb-3">
-            <span className="placeholder col-4"></span>
-          </div>
-
-          <div className="placeholder-glow mb-3">
-            <span className="placeholder col-8"></span>
-          </div>
-
-          <hr />
-
-          <div className="row mb-4">
-            {[1, 2, 3, 4].map((item) => (
-              <div className="col-6 col-md-3 mb-3" key={item}>
-                <div
-                  className="bg-light rounded"
-                  style={{ height: "100px" }}
-                ></div>
-              </div>
-            ))}
-          </div>
-
-          <hr />
-
-          <div className="placeholder-glow">
-            <span className="placeholder col-4 d-block mb-2"></span>
-            <span className="placeholder col-10 d-block mb-2"></span>
-            <span className="placeholder col-8 d-block mb-2"></span>
-            <span className="placeholder col-6 d-block"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 export default function ProductDetails() {
-  const [wishlistedItems, setWishlistedItems] = useState({});
-  const { updateCartItem } = useCartContext();
-  const { allWishListItem, updateWishList, deleteWishListItem } =
-    useWishListContext();
-  const [initalQuantity, setInitalQty] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("Not Selected");
   const { productId } = useParams();
   const { data, loading } = useFetch(
     `${import.meta.env.VITE_API_URL}/api/products/${productId}`,
-    null,
+    null
   );
 
-  if (loading || !data) {
-    return <ProductDetailsSkeleton />;
+  const { updateCartItem } = useCartContext();
+  const { allWishListItem, updateWishList, deleteWishListItem } =
+    useWishListContext();
+
+  const [quantity, setQuantity] = useState(1);
+  const [selectedSize, setSelectedSize] = useState("Not Selected");
+
+  if (loading) {
+    return (
+      <main className="shopnest-details-page">
+        <div className="shopnest-details-loading">
+          <div className="shopnest-details-loading-image" />
+          <div className="shopnest-details-loading-copy">
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+        </div>
+      </main>
+    );
+  }
+
+  if (!data || !data._id) {
+    return (
+      <main className="shopnest-details-page">
+        <div className="shopnest-details-message">
+          <span>Product unavailable</span>
+          <p>We couldn't find this product. It may have been removed.</p>
+          <Link to="/productlistings" className="shopnest-details-back">
+            <FaArrowLeft /> Browse products
+          </Link>
+        </div>
+      </main>
+    );
+  }
+
+  const sizes = Array.isArray(data.size) ? data.size : [];
+  const discountPercent = Math.min(
+    50,
+    Math.max(0, Number(data.discountedPrice) || 0)
+  );
+  const finalPrice = Math.round(data.price * (1 - discountPercent / 100));
+  const isWishlisted = allWishListItem.some(
+    (item) => item._id === data._id
+  );
+
+  function handleWishlist() {
+    if (isWishlisted) {
+      deleteWishListItem(data._id);
+      toast("Removed from wishlist", { icon: "♡" });
+    } else {
+      updateWishList(data);
+      toast.success("Added to wishlist");
+    }
   }
 
   function handleAddToCart() {
-    if (selectedSize === "Not Selected") {
+    if (sizes.length > 0 && selectedSize === "Not Selected") {
       toast.error("Please select a size");
       return;
     }
 
-    updateCartItem(data, initalQuantity, selectedSize);
-
-    toast.success("Added to cart 🛒");
+    updateCartItem(
+      data,
+      quantity,
+      sizes.length > 0 ? selectedSize : "One Size"
+    );
+    toast.success("Added to cart");
   }
-
-  function IncreaseQuantity() {
-    setInitalQty(() => initalQuantity + 1);
-  }
-
-  function DecreaseQuantity() {
-    if (initalQuantity > 1) {
-      setInitalQty(initalQuantity - 1);
-    }
-  }
-
-  //discounted price calculation
-  const discountAmount = data.price - data.price * (data.discountedPrice / 100);
-
-  console.log("PRODUCT DATA 👉", data);
 
   return (
-    <div className="container py-5">
-      <div className="row">
-        {/* LEFT: Product Image */}
-        <div className="col-md-5">
-          <div className="card shadow-sm border-0">
-            <div className="position-relative p-3">
+    <main className="shopnest-details-page">
+      <div className="shopnest-details-container">
+        <nav className="shopnest-details-breadcrumb" aria-label="Breadcrumb">
+          <Link to="/">Home</Link>
+          <span>/</span>
+          <Link to="/productlistings">Products</Link>
+          <span>/</span>
+          <span className="shopnest-details-current">
+            {data.productName}
+          </span>
+        </nav>
+
+        <section className="shopnest-details-layout">
+          <div className="shopnest-details-gallery">
+            <div className="shopnest-details-image-wrap">
+              {discountPercent > 0 && (
+                <span className="shopnest-details-discount">
+                  {discountPercent}% OFF
+                </span>
+              )}
+
+              <button
+                type="button"
+                className={`shopnest-details-wishlist ${
+                  isWishlisted ? "is-active" : ""
+                }`}
+                onClick={handleWishlist}
+                aria-label={
+                  isWishlisted
+                    ? "Remove from wishlist"
+                    : "Add to wishlist"
+                }
+              >
+                {isWishlisted ? <FaHeart /> : <FaRegHeart />}
+              </button>
+
               <img
+                className="shopnest-details-image"
                 src={data.productImage}
                 alt={data.productName}
-                className="img-fluid"
-                style={{
-                  maxHeight: "500px",
-                  objectFit: "contain",
-                  width: "100%",
+                onError={(event) => {
+                  event.currentTarget.style.visibility = "hidden";
                 }}
               />
+            </div>
 
-              <span
-                role="button"
-                className="position-absolute top-0 end-0 m-3 fs-4"
-                style={{
-                  top: "18px",
-                  right: "18px",
-                  width: "40px",
-                  height: "40px",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "50%",
-                  backdropFilter: "blur(8px)",
-                  background: "rgba(255,255,255,0.6)",
-                  border: "1px solid rgba(255,255,255,0.4)",
-                  cursor: "pointer",
-                  transition: "all 0.3s ease",
-                  color: wishlistedItems[data._id] ? "#e63946" : "#222",
-                }}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  const isWishlisted = wishlistedItems[data._id];
+            <div className="shopnest-details-image-caption">
+              <FaCheckCircle />
+              <span>Thoughtfully selected for your everyday needs</span>
+            </div>
+          </div>
 
-                  if (!isWishlisted) {
-                    updateWishList(data);
-                    toast.success("Added to wishlist ❤️");
-                  } else {
-                    deleteWishListItem(data._id);
-                    toast("Removed from wishlist 💔", { icon: "🗑️" });
-                  }
+          <div className="shopnest-details-info">
+            <p className="shopnest-details-eyebrow">SHOPNEST COLLECTION</p>
 
-                  setWishlistedItems((prev) => ({
-                    ...prev,
-                    [data._id]: !isWishlisted,
-                  }));
-                }}
-              >
-                ♥
+            <h1 className="shopnest-details-title">{data.productName}</h1>
+
+            <div className="shopnest-details-rating">
+              <span className="shopnest-details-rating-value">
+                <FaStar />{" "}
+                {Number(data.rating) > 0
+                  ? Number(data.rating).toFixed(1)
+                  : "New"}
+              </span>
+              <span className="shopnest-details-rating-copy">
+                {Number(data.rating) > 0
+                  ? "Product rating"
+                  : "Be the first to discover it"}
               </span>
             </div>
-          </div>
 
-          <div className="d-grid gap-2 mt-4">
-            <button
-              className="btn btn-dark fw-semibold"
-              onClick={handleAddToCart}
-            >
-              Add to Cart
-            </button>
-          </div>
-        </div>
+            <div className="shopnest-details-price-block">
+              <span className="shopnest-details-price">
+                ₹{finalPrice.toLocaleString("en-IN")}
+              </span>
 
-        {/* <!-- Product Details --> */}
-        <div className="col-md-7 ps-md-5">
-          <h3 className="fw-semibold">{data.productName}</h3>
-
-          {/* Rating */}
-          <div className="mb-2">
-            <span className="fw-semibold">{data.rating}</span> ⭐
-          </div>
-
-          {/* Price */}
-          <div className="mb-3">
-            <h4 className="fw-bold text-dark d-inline me-2">
-              ₹{Math.round(discountAmount)}
-            </h4>
-            <span className="text-muted text-decoration-line-through me-2">
-              ₹{data.price}
-            </span>
-            <span className="badge bg-danger px-2 py-1">
-              {data.discountedPrice}% OFF
-            </span>
-          </div>
-
-          {/* Quantity */}
-          <div className="mb-3 d-flex align-items-center gap-2">
-            <button
-              onClick={() => DecreaseQuantity()}
-              className="btn btn-outline-secondary btn-sm"
-            >
-              −
-            </button>
-            <span className="fw-semibold">Quantity: {initalQuantity}</span>
-            <button
-              onClick={() => IncreaseQuantity()}
-              className="btn btn-outline-secondary btn-sm"
-            >
-              +
-            </button>
-          </div>
-          {/* size */}
-          <div className="mb-3">
-            <p className="fw-semibold mb-2">Select Size</p>
-
-            <div className="d-flex gap-2 flex-wrap">
-              {data.size.map((sizes) => (
-                <button
-                  key={sizes}
-                  onClick={() => setSelectedSize(sizes)}
-                  className={`btn btn-sm fw-semibold ${
-                    selectedSize === sizes ? "btn-dark" : "btn-outline-dark"
-                  }`}
-                  style={{ minWidth: "50px" }}
-                >
-                  {sizes}
-                </button>
-              ))}
+              {discountPercent > 0 && (
+                <>
+                  <span className="shopnest-details-original-price">
+                    ₹{Number(data.price).toLocaleString("en-IN")}
+                  </span>
+                  <span className="shopnest-details-savings">
+                    Save ₹{(Number(data.price) - finalPrice).toLocaleString("en-IN")}
+                  </span>
+                </>
+              )}
             </div>
 
-            {!selectedSize && (
-              <small className="text-danger d-block mt-1">
-                Please select a size
-              </small>
+            <p className="shopnest-details-tax-note">
+              Inclusive of listed price
+            </p>
+
+            <div className="shopnest-details-divider" />
+
+            <div className="shopnest-details-description">
+              <h2>Product details</h2>
+              <p>{data.description}</p>
+            </div>
+
+            {sizes.length > 0 && (
+              <div className="shopnest-details-size-section">
+                <div className="shopnest-details-section-heading">
+                  <h2>Select size</h2>
+                  <span>
+                    {selectedSize !== "Not Selected"
+                      ? `Selected: ${selectedSize}`
+                      : "Choose an option"}
+                  </span>
+                </div>
+
+                <div className="shopnest-details-sizes">
+                  {sizes.map((size) => (
+                    <button
+                      type="button"
+                      key={size}
+                      className={`shopnest-size-button ${
+                        selectedSize === size ? "is-selected" : ""
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                      aria-pressed={selectedSize === size}
+                    >
+                      {size}
+                    </button>
+                  ))}
+                </div>
+              </div>
             )}
+
+            <div className="shopnest-details-quantity-section">
+              <h2>Quantity</h2>
+              <div className="shopnest-quantity-control">
+                <button
+                  type="button"
+                  onClick={() => setQuantity((current) => Math.max(1, current - 1))}
+                  disabled={quantity <= 1}
+                  aria-label="Decrease quantity"
+                >
+                  <FaMinus />
+                </button>
+                <span>{quantity}</span>
+                <button
+                  type="button"
+                  onClick={() => setQuantity((current) => current + 1)}
+                  aria-label="Increase quantity"
+                >
+                  <FaPlus />
+                </button>
+              </div>
+            </div>
+
+            <div className="shopnest-details-actions">
+              <button
+                type="button"
+                className="shopnest-details-add-cart"
+                onClick={handleAddToCart}
+              >
+                <FaShoppingBag />
+                Add to Cart
+              </button>
+
+              <button
+                type="button"
+                className={`shopnest-details-wishlist-action ${
+                  isWishlisted ? "is-active" : ""
+                }`}
+                onClick={handleWishlist}
+                aria-label={
+                  isWishlisted
+                    ? "Remove from wishlist"
+                    : "Add to wishlist"
+                }
+              >
+                {isWishlisted ? <FaHeart /> : <FaRegHeart />}
+              </button>
+            </div>
+
+            <div className="shopnest-details-benefits">
+              <div>
+                <FaTruck />
+                <span>
+                  <strong>Convenient delivery</strong>
+                  <small>Delivery options at checkout</small>
+                </span>
+              </div>
+              <div>
+                <FaUndo />
+                <span>
+                  <strong>Return information</strong>
+                  <small>Check eligibility before ordering</small>
+                </span>
+              </div>
+              <div>
+                <FaShieldAlt />
+                <span>
+                  <strong>Secure checkout</strong>
+                  <small>Your order details stay protected</small>
+                </span>
+              </div>
+            </div>
+
+            <Link
+              to="/productlistings"
+              className="shopnest-details-continue"
+            >
+              <FaArrowLeft /> Continue shopping
+            </Link>
           </div>
-          {/* Divider */}
-          <hr className="my-4" />
-
-          {/* Delivery & Payment Info */}
-          <div className="row text-center mb-4">
-            <div className="col-6 col-md-3 mb-3">
-              <div className="border rounded p-3 h-100 shadow-sm">
-                <i className="bi bi-arrow-counterclockwise fs-4 d-block mb-2 text-dark"></i>
-                <small className="fw-semibold d-block">
-                  10 Days
-                  <br />
-                  Return
-                </small>
-              </div>
-            </div>
-
-            <div className="col-6 col-md-3 mb-3">
-              <div className="border rounded p-3 h-100 shadow-sm">
-                <i className="bi bi-cash-coin fs-4 d-block mb-2 text-dark"></i>
-                <small className="fw-semibold d-block">
-                  Pay on
-                  <br />
-                  Delivery
-                </small>
-              </div>
-            </div>
-
-            <div className="col-6 col-md-3 mb-3">
-              <div className="border rounded p-3 h-100 shadow-sm">
-                <i className="bi bi-truck fs-4 d-block mb-2 text-dark"></i>
-                <small className="fw-semibold d-block">
-                  Free
-                  <br />
-                  Delivery
-                </small>
-              </div>
-            </div>
-
-            <div className="col-6 col-md-3 mb-3">
-              <div className="border rounded p-3 h-100 shadow-sm">
-                <i className="bi bi-shield-check fs-4 d-block mb-2 text-dark"></i>
-                <small className="fw-semibold d-block">
-                  Secure
-                  <br />
-                  Payment
-                </small>
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <hr className="my-4" />
-
-          {/* Description */}
-          <div>
-            <h6 className="fw-bold mb-2">Description</h6>
-            <p className="text-muted">{data.description}</p>
-            <ul className="text-muted small">
-              <li>
-                <strong>Stylish Design:</strong> Premium quality material with a
-                modern fit for everyday wear.
-              </li>
-              <li>
-                <strong>Comfort First:</strong> Soft, breathable fabric for
-                all-day comfort.
-              </li>
-              <li>
-                <strong>Durable:</strong> Designed to withstand regular use and
-                washing.
-              </li>
-              <li>
-                <strong>Versatile:</strong> Perfect for casual outings and daily
-                wear.
-              </li>
-              <li>
-                <strong>Easy Care:</strong> Machine washable, retains shape and
-                color.
-              </li>
-            </ul>
-          </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

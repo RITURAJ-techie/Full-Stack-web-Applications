@@ -1,0 +1,365 @@
+
+.shopnest-header {
+  position: relative;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.shopnest-topbar {
+  border-bottom: 1px solid #eee;
+}
+
+.shopnest-topbar-inner {
+  max-width: 1400px;
+  min-height: 78px;
+  margin: auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.shopnest-logo {
+  color: #172554;
+  font-size: 29px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.shopnest-logo span {
+  color: #f97316;
+}
+
+.shopnest-search {
+  flex: 1;
+  max-width: 520px;
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.shopnest-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 12px 15px;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.shopnest-search button {
+  width: 50px;
+  border: 0;
+  color: white;
+  background: #172554;
+}
+
+.shopnest-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.shopnest-icon-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #334155;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.shopnest-icon-link svg {
+  font-size: 20px;
+}
+
+.shopnest-account {
+  position: relative;
+}
+
+.shopnest-account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.shopnest-account-trigger:hover,
+.shopnest-account-trigger.active {
+  background: #f1f5f9;
+}
+
+.shopnest-avatar,
+.shopnest-account-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: white;
+  background: #172554;
+}
+
+.shopnest-account-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.shopnest-account-label small {
+  color: #64748b;
+}
+
+.shopnest-account-label strong {
+  max-width: 130px;
+  overflow: hidden;
+  color: #172554;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shopnest-chevron {
+  font-size: 11px;
+}
+
+.shopnest-account-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 290px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.16);
+}
+
+.shopnest-account-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  background: #f8fafc;
+}
+
+.shopnest-account-details {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 4px;
+}
+
+.shopnest-account-details strong,
+.shopnest-account-details span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.shopnest-account-details strong {
+  color: #172554;
+}
+
+.shopnest-account-details span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.shopnest-auth-actions {
+  padding: 18px;
+  text-align: center;
+}
+
+.shopnest-signin-button {
+  display: block;
+  padding: 11px;
+  border-radius: 7px;
+  color: white;
+  background: #172554;
+  text-decoration: none;
+}
+
+.shopnest-auth-actions p {
+  margin: 12px 0 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.shopnest-auth-actions p a {
+  color: #ea580c;
+  font-weight: 600;
+}
+
+.shopnest-menu-section {
+  padding: 10px;
+}
+
+.shopnest-menu-heading {
+  margin: 8px 10px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.shopnest-dropdown-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  padding: 11px 10px;
+  border: 0;
+  border-radius: 7px;
+  color: #334155;
+  background: transparent;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shopnest-dropdown-link svg {
+  width: 17px;
+  color: #64748b;
+}
+
+.shopnest-dropdown-link:hover {
+  color: #172554;
+  background: #f1f5f9;
+}
+
+.shopnest-dropdown-divider {
+  height: 1px;
+  margin: 8px 0;
+  background: #e2e8f0;
+}
+
+.shopnest-dropdown-link.shopnest-logout,
+.shopnest-dropdown-link.shopnest-logout svg {
+  color: #dc2626;
+}
+
+.shopnest-category-nav {
+  background: #172554;
+}
+
+.shopnest-category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.shopnest-category-link {
+  display: inline-block;
+  padding: 13px 16px;
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shopnest-category-link:hover {
+  color: #fed7aa;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.shopnest-mobile-toggle {
+  display: none;
+  padding: 9px;
+  border: 0;
+  color: #172554;
+  background: transparent;
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .shopnest-topbar-inner {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .shopnest-logo {
+    font-size: 25px;
+  }
+
+  .shopnest-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .shopnest-header-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .shopnest-account-label,
+  .shopnest-chevron {
+    display: none;
+  }
+
+  .shopnest-mobile-toggle {
+    display: block;
+  }
+
+  .shopnest-category-nav {
+    display: none;
+  }
+
+  .shopnest-category-nav.shopnest-category-nav-open {
+    display: block;
+  }
+
+  .shopnest-category-inner {
+    align-items: stretch;
+    flex-direction: column;
+    padding: 8px 16px;
+  }
+
+  .shopnest-category-link {
+    width: 100%;
+    text-align: left;
+  }
+
+  .shopnest-account-dropdown {
+    right: -45px;
+    width: min(290px, calc(100vw - 24px));
+  }
+}
+
+@media (max-width: 480px) {
+  .shopnest-topbar-inner {
+    padding: 10px 12px;
+  }
+
+  .shopnest-header-actions {
+    gap: 10px;
+  }
+
+  .shopnest-icon-link span {
+    font-size: 10px;
+  }
+
+  .shopnest-icon-link svg {
+    font-size: 18px;
+  }
+}

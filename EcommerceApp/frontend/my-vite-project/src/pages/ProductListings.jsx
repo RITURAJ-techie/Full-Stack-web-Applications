@@ -1,322 +1,405 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { FaHeart, FaRegHeart, FaShoppingBag, FaStar } from "react-icons/fa";
 import useFetch from "../useFetch";
-import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import useCartContext from "../contexts/cartContext";
 import useWishListContext from "../contexts/wishlistContext";
 import toast from "react-hot-toast";
-import { useLocation } from "react-router-dom";
 
-export default function Productlistings() {
-  const [wishlistedItems, setWishlistedItems] = useState({});
-  const { updateCartItem } = useCartContext();
-  const { updateWishList, deleteWishListItem } = useWishListContext();
-  const [selectedRating, setselectedRating] = useState(null);
-  const [selectSortBy, setSelectSortBy] = useState(null);
-  const [givenPrice, setPrice] = useState(100);
+function ProductSkeleton() {
+  return (
+    <div className="shopnest-product-grid">
+      {Array.from({ length: 8 }, (_, index) => (
+        <div className="shopnest-product-skeleton" key={index}>
+          <div className="shopnest-skeleton-image" />
+          <div className="shopnest-skeleton-line" />
+          <div className="shopnest-skeleton-line short" />
+          <div className="shopnest-skeleton-button" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function ProductListings() {
   const { categoryId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { data: categories } = useFetch(
-    `${import.meta.env.VITE_API_URL}/api/categories`,
-  );
-  const { data: products, loading } = useFetch(
+  const { updateCartItem } = useCartContext();
+  const { allWishListItem, updateWishList, deleteWishListItem } =
+    useWishListContext();
+
+  const [selectedRating, setSelectedRating] = useState(null);
+  const [selectSortBy, setSelectSortBy] = useState("");
+  const [givenPrice, setGivenPrice] = useState(5000);
+
+  const searchText =
+    new URLSearchParams(location.search).get("search")?.trim() || "";
+
+  const {
+    data: categories,
+    loading: categoriesLoading,
+  } = useFetch(`${import.meta.env.VITE_API_URL}/api/categories`);
+
+  const {
+    data: products,
+    loading,
+    error,
+  } = useFetch(
     categoryId
       ? `${import.meta.env.VITE_API_URL}/api/products/categories/${categoryId}`
       : `${import.meta.env.VITE_API_URL}/api/products`,
   );
 
-  const handleRating = (event) => {
-    setselectedRating(Number(event.target.value));
-  };
+  const wishlistIds = useMemo(
+    () => new Set((allWishListItem || []).map((item) => item._id)),
+    [allWishListItem],
+  );
 
-  const handleSortBy = (event) => {
-    setSelectSortBy(Number(event.target.value));
-  };
+  const result = useMemo(() => {
+    let filtered = Array.isArray(products) ? [...products] : [];
 
-  const handlePrice = (event) => {
-    setPrice(Number(event.target.value));
-  };
+    if (searchText) {
+      const query = searchText.toLowerCase();
+      filtered = filtered.filter((product) =>
+        product.productName?.toLowerCase().includes(query),
+      );
+    }
+
+    if (selectedRating !== null) {
+      filtered = filtered.filter(
+        (product) => Number(product.rating || 0) >= selectedRating,
+      );
+    }
+
+    filtered = filtered.filter(
+      (product) => Number(product.price || 0) <= givenPrice,
+    );
+
+    if (selectSortBy === "low") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else if (selectSortBy === "high") {
+      filtered.sort((a, b) => b.price - a.price);
+    } else if (selectSortBy === "rating") {
+      filtered.sort(
+        (a, b) => Number(b.rating || 0) - Number(a.rating || 0),
+      );
+    }
+
+    return filtered;
+  }, [products, searchText, selectedRating, givenPrice, selectSortBy]);
 
   function handleAddToCart(item) {
     updateCartItem(item, 1, "Not Selected");
-
-    toast.success("Added to cart 🛒");
+    toast.success("Added to cart");
   }
 
-  let result = products;
-
-  //get search value from nav
-  const queryParams = new URLSearchParams(location.search);
-  const searchText = queryParams.get("search") || "";
-
-  // Now filter products
-  result = products.filter((product) =>
-    product.productName.toLowerCase().includes(searchText.toLowerCase()),
-  );
-
-  if (selectedRating !== null) {
-    result = result.filter((item) => item.rating > selectedRating);
-  }
-
-  if (selectSortBy !== null) {
-    if (selectSortBy === 1) {
-      result = result.toSorted((a, b) => a.price - b.price);
+  function handleWishlist(item) {
+    if (wishlistIds.has(item._id)) {
+      deleteWishListItem(item._id);
+      toast("Removed from wishlist", { icon: "♡" });
     } else {
-      result = result.toSorted((a, b) => b.price - a.price);
+      updateWishList(item);
+      toast.success("Added to wishlist");
     }
   }
 
-  if (givenPrice > 100) {
-    result = result.filter((item) => item.price <= givenPrice);
+  function handleCategoryChange(nextCategoryId) {
+    const query = new URLSearchParams(location.search).toString();
+    const path = nextCategoryId
+      ? `/productlistings/${nextCategoryId}`
+      : "/productlistings";
+
+    navigate(query ? `${path}?${query}` : path);
   }
 
-  function clearFilter() {
-    setselectedRating(null);
-    setSelectSortBy(null);
-    setPrice(100);
-    navigate("/productlistings");
+  function clearFilters() {
+    setSelectedRating(null);
+    setSelectSortBy("");
+    setGivenPrice(5000);
   }
+
+  function getFinalPrice(product) {
+    const discount = Math.min(
+      50,
+      Math.max(0, Number(product.discountedPrice) || 0),
+    );
+
+    return Math.round(Number(product.price) * (1 - discount / 100));
+  }
+
+  const selectedCategory = Array.isArray(categories)
+    ? categories.find((category) => category._id === categoryId)
+    : null;
 
   return (
-    <div className="container-fluid my-4">
-      <div className="row">
-        {/* LEFT: Filters */}
-        <div className="col-md-2 border-end">
-          <h6 className="fw-bold mb-3">Filters</h6>
+    <main className="shopnest-marketplace">
+      <section className="shopnest-marketplace-heading">
+        <div>
+          <p className="shopnest-eyebrow">THE SHOPNEST EDIT</p>
+          <h1>{searchText ? "Search results" : selectedCategory?.name || "All products"}</h1>
+          <p className="shopnest-heading-description">
+            {searchText
+              ? `Discover products matching “${searchText}”.`
+              : "Thoughtful picks for your everyday style."}
+          </p>
+        </div>
 
-          <div className="mb-4">
-            <h6 className="fw-semibold mt-3">Price</h6>
+        <div className="shopnest-results-count">
+          {!loading && `${result.length} products`}
+        </div>
+      </section>
 
-            <div className="px-2">
-              <input
-                type="range"
-                className="form-range"
-                min="100"
-                max="1000"
-                step="50"
-                value={givenPrice}
-                onChange={handlePrice}
-              />
+      <div className="shopnest-marketplace-layout">
+        <aside className="shopnest-filter-panel">
+          <div className="shopnest-filter-heading">
+            <h2>Filters</h2>
+            <button type="button" onClick={clearFilters}>
+              Reset
+            </button>
+          </div>
 
-              <div className="d-flex justify-content-between mt-1">
-                <span className="text-muted">100</span>
-                <span className="text-muted">400</span>
-                <span className="text-muted">700</span>
-                <span className="text-muted">1000</span>
-              </div>
+          <div className="shopnest-filter-section">
+            <h3>Category</h3>
+            <button
+              type="button"
+              className={`shopnest-category-filter ${
+                !categoryId ? "active" : ""
+              }`}
+              onClick={() => handleCategoryChange("")}
+            >
+              All products
+            </button>
+
+            {categoriesLoading ? (
+              <p className="shopnest-filter-muted">Loading categories…</p>
+            ) : (
+              (Array.isArray(categories) ? categories : []).map((category) => (
+                <button
+                  type="button"
+                  key={category._id}
+                  className={`shopnest-category-filter ${
+                    categoryId === category._id ? "active" : ""
+                  }`}
+                  onClick={() => handleCategoryChange(category._id)}
+                >
+                  {category.name}
+                  {categoryId === category._id && (
+                    <span aria-hidden="true">✓</span>
+                  )}
+                </button>
+              ))
+            )}
+          </div>
+
+          <div className="shopnest-filter-section">
+            <div className="shopnest-filter-label-row">
+              <h3>Maximum price</h3>
+              <span>₹{givenPrice.toLocaleString("en-IN")}</span>
             </div>
 
-            {/* Category */}
-            <h6 className="fw-semibold mt-3">Category</h6>
-            {categories?.map((item) => (
-              <div className="form-check" key={item._id}>
+            <input
+              className="shopnest-price-range"
+              type="range"
+              min="100"
+              max="5000"
+              step="100"
+              value={givenPrice}
+              onChange={(event) => setGivenPrice(Number(event.target.value))}
+              aria-label="Maximum price"
+            />
+
+            <div className="shopnest-range-labels">
+              <span>₹100</span>
+              <span>₹5,000</span>
+            </div>
+          </div>
+
+          <div className="shopnest-filter-section">
+            <h3>Customer rating</h3>
+
+            {[4, 3, 2, 1].map((rating) => (
+              <label className="shopnest-rating-option" key={rating}>
                 <input
-                  className="form-check-input"
                   type="radio"
-                  name="category"
-                  checked={categoryId === item._id}
-                  onChange={() => navigate(`/productlistings/${item._id}`)}
+                  name="rating"
+                  checked={selectedRating === rating}
+                  onChange={() => setSelectedRating(rating)}
                 />
-                <label className="form-check-label">{item.name}</label>
-              </div>
+                <span>{rating}+ stars</span>
+              </label>
             ))}
 
-            {/* Rating */}
-            <h6 className="fw-semibold mt-3">Rating</h6>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="rating"
-                value={4}
-                checked={selectedRating === 4}
-                onChange={handleRating}
-              />
-              4 star & Above
-              <br />
-              <input
-                className="form-check-input"
-                type="radio"
-                name="rating"
-                value={3}
-                checked={selectedRating === 3}
-                onChange={handleRating}
-              />
-              3 star & Above
-              <br />
-              <input
-                className="form-check-input"
-                type="radio"
-                name="rating"
-                value={2}
-                checked={selectedRating === 2}
-                onChange={handleRating}
-              />
-              2 star & Above
-              <br />
-              <input
-                className="form-check-input"
-                type="radio"
-                name="rating"
-                value={1}
-                checked={selectedRating === 1}
-                onChange={handleRating}
-              />
-              1 star & Above
-            </div>
+            {selectedRating !== null && (
+              <button
+                type="button"
+                className="shopnest-clear-rating"
+                onClick={() => setSelectedRating(null)}
+              >
+                Clear rating
+              </button>
+            )}
+          </div>
 
-            {/* sort by */}
-            <h6 className="fw-semibold mt-3">Sort by</h6>
-            <div className="form-check">
-              <input
-                className="form-check-input"
-                type="radio"
-                name="sortBy"
-                value={1}
-                checked={selectSortBy === 1}
-                onChange={handleSortBy}
-              />
-              Price- low to high
-              <br />
-              <input
-                className="form-check-input"
-                type="radio"
-                name="sortBy"
-                value={2}
-                checked={selectSortBy === 2}
-                onChange={handleSortBy}
-              />
-              Price- high to low
+          <div className="shopnest-filter-section">
+            <h3>Sort products</h3>
+            <select
+              className="shopnest-sort-select"
+              value={selectSortBy}
+              onChange={(event) => setSelectSortBy(event.target.value)}
+              aria-label="Sort products"
+            >
+              <option value="">Recommended</option>
+              <option value="low">Price: low to high</option>
+              <option value="high">Price: high to low</option>
+              <option value="rating">Top rated</option>
+            </select>
+          </div>
+        </aside>
+
+        <section className="shopnest-products-section">
+          <div className="shopnest-products-toolbar">
+            <div>
+              <span className="shopnest-toolbar-label">SHOP THE COLLECTION</span>
+              <p>
+                {loading
+                  ? "Finding your products…"
+                  : `${result.length} items to explore`}
+              </p>
             </div>
 
             <button
-              className="btn btn-outline-secondary btn-sm mt-3"
-              onClick={clearFilter}
+              type="button"
+              className="shopnest-mobile-reset"
+              onClick={clearFilters}
             >
-              Clear Filters
+              Reset filters
             </button>
           </div>
-        </div>
 
-        {/* RIGHT: Products */}
-        <div className="col-md-10">
           {loading ? (
-            <div className="row row-cols-1 row-cols-md-4 g-4">
-              {[...Array(8)].map((_, index) => (
-                <div key={index} className="col">
-                  <div className="card h-100 p-3 placeholder-glow">
-                    {/* Image skeleton */}
-                    <div
-                      className="placeholder w-100 mb-3"
-                      style={{ height: "200px", borderRadius: "8px" }}
-                    ></div>
-
-                    {/* Title skeleton */}
-                    <span className="placeholder col-8 mb-2"></span>
-
-                    {/* Price skeleton */}
-                    <span className="placeholder col-6 mb-3"></span>
-
-                    {/* Button skeleton */}
-                    <span
-                      className="placeholder col-12"
-                      style={{ height: "35px", borderRadius: "6px" }}
-                    ></span>
-                  </div>
-                </div>
-              ))}
+            <ProductSkeleton />
+          ) : error ? (
+            <div className="shopnest-empty-state">
+              <h2>We couldn't load the products</h2>
+              <p>Please check your connection and try again.</p>
+              <button type="button" onClick={() => window.location.reload()}>
+                Try again
+              </button>
+            </div>
+          ) : result.length === 0 ? (
+            <div className="shopnest-empty-state">
+              <div className="shopnest-empty-icon">
+                <FaShoppingBag />
+              </div>
+              <h2>No products found</h2>
+              <p>
+                Try changing your search or adjusting your filters to see more
+                products.
+              </p>
+              <button type="button" onClick={clearFilters}>
+                Clear filters
+              </button>
             </div>
           ) : (
-            <div className="row row-cols-1 row-cols-md-4 g-4">
-              {result.map((item) => (
-                <div className="col" key={item._id}>
-                  <div className="card h-100 border-0 shadow-sm">
-                    {/* Clickable product area */}
-                    <Link
-                      to={`/productDetails/${item._id}`}
-                      className="text-decoration-none text-dark"
-                    >
-                      <div className="position-relative">
+            <div className="shopnest-product-grid">
+              {result.map((item) => {
+                const discount = Math.min(
+                  50,
+                  Math.max(0, Number(item.discountedPrice) || 0),
+                );
+                const finalPrice = getFinalPrice(item);
+                const isWishlisted = wishlistIds.has(item._id);
+
+                return (
+                  <article className="shopnest-product-card" key={item._id}>
+                    <div className="shopnest-product-image-wrap">
+                      <Link
+                        to={`/productDetails/${item._id}`}
+                        className="shopnest-product-image-link"
+                        aria-label={`View ${item.productName}`}
+                      >
                         <img
                           src={item.productImage}
-                          className="card-img-top"
-                          style={{ height: "300px", objectFit: "cover" }}
                           alt={item.productName}
+                          className="shopnest-product-image"
+                          loading="lazy"
                         />
-                        {/* rating */}
-                        <span
-                          className="position-absolute top-0 start-0 m-2 px-2 py-1 rounded"
-                          style={{
-                            backgroundColor: "rgba(0,0,0,0.7)",
-                            color: "white",
-                            fontSize: "12px",
-                          }}
-                        >
-                          ⭐ {item.rating}
+                      </Link>
+
+                      {discount > 0 && (
+                        <span className="shopnest-discount-badge">
+                          {discount}% OFF
                         </span>
+                      )}
 
-                        {/* wishlist */}
-                        <span
-                          role="button"
-                          className="position-absolute top-0 end-0 m-2"
-                          onClick={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-
-                            setWishlistedItems((prev) => {
-                              const isWishlisted = prev[item._id];
-
-                              if (!isWishlisted) {
-                                updateWishList(item);
-                                toast.success("Added to wishlist ❤️");
-                              } else {
-                                deleteWishListItem(item._id);
-                                toast("Removed from wishlist 💔", {
-                                  icon: "🗑️",
-                                });
-                              }
-
-                              return {
-                                ...prev,
-                                [item._id]: !isWishlisted,
-                              };
-                            });
-                          }}
-                          style={{
-                            cursor: "pointer",
-                            fontSize: "22px",
-                            color: wishlistedItems[item._id] ? "red" : "#333",
-                            userSelect: "none",
-                          }}
-                        >
-                          ♥
-                        </span>
-                      </div>
-
-                      <div className="card-body text-center">
-                        <h6 className="fw-semibold">{item.productName}</h6>
-                        <p className="text-muted mb-2">₹{item.price}</p>
-                      </div>
-                    </Link>
-
-                    {/* Add to Cart button */}
-                    <div className="px-3 pb-3">
                       <button
-                        className="btn btn-outline-dark fw-semibold w-100"
-                        onClick={() => handleAddToCart(item)}
+                        type="button"
+                        className={`shopnest-wishlist-button ${
+                          isWishlisted ? "is-wishlisted" : ""
+                        }`}
+                        onClick={() => handleWishlist(item)}
+                        aria-label={
+                          isWishlisted
+                            ? `Remove ${item.productName} from wishlist`
+                            : `Add ${item.productName} to wishlist`
+                        }
                       >
-                        Add to Cart
+                        {isWishlisted ? <FaHeart /> : <FaRegHeart />}
                       </button>
                     </div>
-                  </div>
-                </div>
-              ))}
+
+                    <div className="shopnest-product-info">
+                      <div className="shopnest-product-rating">
+                        <FaStar />
+                        <span>{Number(item.rating || 0).toFixed(1)}</span>
+                      </div>
+
+                      <Link
+                        to={`/productDetails/${item._id}`}
+                        className="shopnest-product-name"
+                      >
+                        {item.productName}
+                      </Link>
+
+                      <div className="shopnest-product-pricing">
+                        <span className="shopnest-current-price">
+                          ₹{finalPrice.toLocaleString("en-IN")}
+                        </span>
+
+                        {discount > 0 && (
+                          <span className="shopnest-original-price">
+                            ₹{Number(item.price).toLocaleString("en-IN")}
+                          </span>
+                        )}
+                      </div>
+
+                      {discount > 0 && (
+                        <p className="shopnest-savings">
+                          You save ₹
+                          {(Number(item.price) - finalPrice).toLocaleString(
+                            "en-IN",
+                          )}
+                        </p>
+                      )}
+
+                      <button
+                        type="button"
+                        className="shopnest-add-cart-button"
+                        onClick={() => handleAddToCart(item)}
+                      >
+                        <FaShoppingBag />
+                        Add to cart
+                      </button>
+                    </div>
+                  </article>
+                );
+              })}
             </div>
           )}
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }
