@@ -1,7 +1,7 @@
 # Environment variables
-Meetup_App/BE/.env
-Meetup_App/FE/my-vite-project/.env
+
 EcommerceApp/backend/.env
+EcommerceApp/frontend/.env
 crm-app/backend/.env
 
 # Node modules
