@@ -1,5 +1,5 @@
 # Environment variables
-
+.env
 EcommerceApp/backend/.env
 EcommerceApp/frontend/.env
 crm-app/backend/.env
