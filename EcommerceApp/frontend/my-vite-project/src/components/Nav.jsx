@@ -12,12 +12,12 @@ import {
   FaMapMarkerAlt,
   FaCommentDots,
   FaHeadset,
-  FaCog,
   FaSignOutAlt,
   FaChevronDown,
   FaTimes,
 } from "react-icons/fa";
 import { useAuth } from "../contexts/authContext";
+import "./Nav.css";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -26,10 +26,12 @@ export default function Nav({ setSearchText }) {
   const [search, setSearch] = useState("");
   const [accountOpen, setAccountOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openCategoryId, setOpenCategoryId] = useState(null);
 
   const { user, logout, loading } = useAuth();
   const navigate = useNavigate();
   const accountRef = useRef(null);
+  const categoryNavRef = useRef(null);
 
   useEffect(() => {
     let active = true;
@@ -37,6 +39,7 @@ export default function Nav({ setSearchText }) {
     async function fetchCategories() {
       try {
         const response = await fetch(`${API_URL}/api/categories`);
+
         if (!response.ok) return;
 
         const data = await response.json();
@@ -64,12 +67,20 @@ export default function Nav({ setSearchText }) {
       ) {
         setAccountOpen(false);
       }
+
+      if (
+        categoryNavRef.current &&
+        !categoryNavRef.current.contains(event.target)
+      ) {
+        setOpenCategoryId(null);
+      }
     }
 
     function handleEscape(event) {
       if (event.key === "Escape") {
         setAccountOpen(false);
         setMobileOpen(false);
+        setOpenCategoryId(null);
       }
     }
 
@@ -82,27 +93,27 @@ export default function Nav({ setSearchText }) {
     };
   }, []);
 
+  function closeMenus() {
+    setAccountOpen(false);
+    setMobileOpen(false);
+    setOpenCategoryId(null);
+  }
+
   function handleSearch(event) {
     event.preventDefault();
-
     setSearchText?.(search.trim());
     navigate("/productlistings");
-    setMobileOpen(false);
+    closeMenus();
   }
 
   function handleLogout() {
     logout();
-    setAccountOpen(false);
-    setMobileOpen(false);
+    closeMenus();
     navigate("/", { replace: true });
   }
 
-  function closeMenus() {
-    setAccountOpen(false);
-    setMobileOpen(false);
-  }
-
   const firstName = user?.name?.trim().split(/\s+/)[0] || "Account";
+
   const initials =
     user?.name
       ?.trim()
@@ -112,27 +123,61 @@ export default function Nav({ setSearchText }) {
       .join("")
       .toUpperCase() || "U";
 
+  const parentCategories = categories.filter(
+    (category) => !category.parentCategory
+  );
+
+  function getSubcategories(parentId) {
+    return categories.filter((category) => {
+      const parentIdValue =
+        category.parentCategory?._id || category.parentCategory;
+
+      return (
+        parentIdValue &&
+        String(parentIdValue) === String(parentId)
+      );
+    });
+  }
+
+  function handleCategoryToggle(categoryId) {
+    setOpenCategoryId((currentId) =>
+      currentId === categoryId ? null : categoryId
+    );
+  }
+
+  function handleCategoryMouseEnter(categoryId) {
+    if (window.matchMedia("(min-width: 901px)").matches) {
+      setOpenCategoryId(categoryId);
+    }
+  }
+
+  function handleCategoryMouseLeave() {
+    if (window.matchMedia("(min-width: 901px)").matches) {
+      setOpenCategoryId(null);
+    }
+  }
+
   return (
-    <header className="shopnest-navbar">
-      <div className="shopnest-navbar-main">
+    <header className="WearVeird-navbar">
+      <div className="WearVeird-navbar-main">
         <Link
           to="/"
-          className="shopnest-brand"
+          className="WearVeird-brand"
           onClick={closeMenus}
-          aria-label="ShopNest home"
+          aria-label="WearVeird home"
         >
-          <span className="shopnest-brand-icon">
+          <span className="WearVeird-brand-icon">
             <FaShoppingBag />
           </span>
-          <span>ShopNest</span>
+          <span>WearVeird</span>
         </Link>
 
         <form
-          className="shopnest-search"
+          className="WearVeird-search"
           onSubmit={handleSearch}
           role="search"
         >
-          <FaSearch className="shopnest-search-icon" />
+          <FaSearch className="WearVeird-search-icon" />
 
           <input
             type="search"
@@ -145,7 +190,7 @@ export default function Nav({ setSearchText }) {
           {search && (
             <button
               type="button"
-              className="shopnest-search-clear"
+              className="WearVeird-search-clear"
               aria-label="Clear search"
               onClick={() => {
                 setSearch("");
@@ -156,19 +201,22 @@ export default function Nav({ setSearchText }) {
             </button>
           )}
 
-          <button type="submit" className="shopnest-search-submit">
+          <button
+            type="submit"
+            className="WearVeird-search-submit"
+          >
             Search
           </button>
         </form>
 
-        <div className="shopnest-navbar-actions">
+        <div className="WearVeird-navbar-actions">
           <Link
             to="/wishlist"
-            className="shopnest-header-action"
+            className="WearVeird-header-action"
             aria-label="Wishlist"
             onClick={closeMenus}
           >
-            <span className="shopnest-header-action-icon">
+            <span className="WearVeird-header-action-icon">
               <FaHeart />
             </span>
             <span>Wishlist</span>
@@ -176,20 +224,23 @@ export default function Nav({ setSearchText }) {
 
           <Link
             to="/cart"
-            className="shopnest-header-action"
+            className="WearVeird-header-action"
             aria-label="Shopping cart"
             onClick={closeMenus}
           >
-            <span className="shopnest-header-action-icon">
+            <span className="WearVeird-header-action-icon">
               <FaShoppingCart />
             </span>
             <span>Cart</span>
           </Link>
 
-          <div className="shopnest-account-wrapper" ref={accountRef}>
+          <div
+            className="WearVeird-account-wrapper"
+            ref={accountRef}
+          >
             <button
               type="button"
-              className={`shopnest-account-trigger ${
+              className={`WearVeird-account-trigger ${
                 accountOpen ? "is-open" : ""
               }`}
               onClick={() => setAccountOpen((open) => !open)}
@@ -197,11 +248,11 @@ export default function Nav({ setSearchText }) {
               aria-haspopup="true"
               aria-label="Open account menu"
             >
-              <span className="shopnest-user-avatar">
+              <span className="WearVeird-user-avatar">
                 {user ? initials : <FaUser />}
               </span>
 
-              <span className="shopnest-account-trigger-text">
+              <span className="WearVeird-account-trigger-text">
                 <strong>
                   {loading
                     ? "Loading..."
@@ -209,6 +260,7 @@ export default function Nav({ setSearchText }) {
                       ? firstName
                       : "My Account"}
                 </strong>
+
                 <small>
                   {loading
                     ? "Please wait"
@@ -218,22 +270,23 @@ export default function Nav({ setSearchText }) {
                 </small>
               </span>
 
-              <FaChevronDown className="shopnest-account-chevron" />
+              <FaChevronDown className="WearVeird-account-chevron" />
             </button>
 
             {accountOpen && (
-              <div className="shopnest-account-dropdown">
-                <div className="shopnest-dropdown-header">
-                  <span className="shopnest-dropdown-avatar">
+              <div className="WearVeird-account-dropdown">
+                <div className="WearVeird-dropdown-header">
+                  <span className="WearVeird-dropdown-avatar">
                     {user ? initials : <FaUser />}
                   </span>
 
-                  <div className="shopnest-dropdown-identity">
+                  <div className="WearVeird-dropdown-identity">
                     <strong>
-                      {user?.name || "Welcome to ShopNest"}
+                      {user?.name || "Welcome to WearVeird"}
                     </strong>
                     <span>
-                      {user?.email || "Sign in to manage your account"}
+                      {user?.email ||
+                        "Sign in to manage your account"}
                     </span>
                   </div>
                 </div>
@@ -242,13 +295,13 @@ export default function Nav({ setSearchText }) {
                   <>
                     {user ? (
                       <>
-                        <div className="shopnest-dropdown-section-label">
+                        <div className="WearVeird-dropdown-section-label">
                           MY ACCOUNT
                         </div>
 
                         <Link
                           to="/profile"
-                          className="shopnest-dropdown-item"
+                          className="WearVeird-dropdown-item"
                           onClick={closeMenus}
                         >
                           <FaUser />
@@ -257,31 +310,31 @@ export default function Nav({ setSearchText }) {
 
                         <Link
                           to="/orderSummary"
-                          className="shopnest-dropdown-item"
+                          className="WearVeird-dropdown-item"
                           onClick={closeMenus}
                         >
                           <FaBoxOpen />
-                          <span>Orders & Purchases</span>
+                          <span>Orders &amp; Purchases</span>
                         </Link>
 
                         <Link
                           to="/addressDetails"
-                          className="shopnest-dropdown-item"
+                          className="WearVeird-dropdown-item"
                           onClick={closeMenus}
                         >
                           <FaMapMarkerAlt />
                           <span>My Addresses</span>
                         </Link>
 
-                        <div className="shopnest-dropdown-divider" />
+                        <div className="WearVeird-dropdown-divider" />
 
-                        <div className="shopnest-dropdown-section-label">
+                        <div className="WearVeird-dropdown-section-label">
                           GENERAL
                         </div>
 
                         <a
-                          href="mailto:support@shopnest.com?subject=ShopNest%20Feedback"
-                          className="shopnest-dropdown-item"
+                          href="mailto:support@WearVeird.com?subject=WearVeird%20Feedback"
+                          className="WearVeird-dropdown-item"
                           onClick={closeMenus}
                         >
                           <FaCommentDots />
@@ -289,19 +342,19 @@ export default function Nav({ setSearchText }) {
                         </a>
 
                         <a
-                          href="mailto:support@shopnest.com"
-                          className="shopnest-dropdown-item"
+                          href="mailto:support@WearVeird.com"
+                          className="WearVeird-dropdown-item"
                           onClick={closeMenus}
                         >
                           <FaHeadset />
-                          <span>Contact Us & Support</span>
+                          <span>Contact Us &amp; Support</span>
                         </a>
 
-                        <div className="shopnest-dropdown-divider" />
+                        <div className="WearVeird-dropdown-divider" />
 
                         <button
                           type="button"
-                          className="shopnest-dropdown-item shopnest-dropdown-logout"
+                          className="WearVeird-dropdown-item WearVeird-dropdown-logout"
                           onClick={handleLogout}
                         >
                           <FaSignOutAlt />
@@ -309,10 +362,10 @@ export default function Nav({ setSearchText }) {
                         </button>
                       </>
                     ) : (
-                      <div className="shopnest-dropdown-auth">
+                      <div className="WearVeird-dropdown-auth">
                         <Link
                           to="/login"
-                          className="shopnest-dropdown-login"
+                          className="WearVeird-dropdown-login"
                           onClick={closeMenus}
                         >
                           Login
@@ -320,7 +373,7 @@ export default function Nav({ setSearchText }) {
 
                         <Link
                           to="/register"
-                          className="shopnest-dropdown-register"
+                          className="WearVeird-dropdown-register"
                           onClick={closeMenus}
                         >
                           Create an Account
@@ -330,8 +383,8 @@ export default function Nav({ setSearchText }) {
                   </>
                 )}
 
-                <div className="shopnest-dropdown-footer">
-                  ShopNest · Your everyday marketplace
+                <div className="WearVeird-dropdown-footer">
+                  WearVeird · Your everyday marketplace
                 </div>
               </div>
             )}
@@ -339,10 +392,15 @@ export default function Nav({ setSearchText }) {
 
           <button
             type="button"
-            className="shopnest-mobile-toggle"
-            aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+            className="WearVeird-mobile-toggle"
+            aria-label={
+              mobileOpen ? "Close navigation" : "Open navigation"
+            }
             aria-expanded={mobileOpen}
-            onClick={() => setMobileOpen((open) => !open)}
+            onClick={() => {
+              setMobileOpen((open) => !open);
+              setOpenCategoryId(null);
+            }}
           >
             {mobileOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -350,27 +408,80 @@ export default function Nav({ setSearchText }) {
       </div>
 
       <nav
-        className={`shopnest-category-nav ${
-          mobileOpen ? "shopnest-category-nav-open" : ""
+        ref={categoryNavRef}
+        className={`WearVeird-category-nav ${
+          mobileOpen ? "WearVeird-category-nav-open" : ""
         }`}
         aria-label="Product categories"
       >
-        <Link to="/productlistings" onClick={closeMenus}>
-          All Products
-        </Link>
-
-        {categories.map((category) => (
+        <div className="WearVeird-category-inner">
           <Link
-            key={category._id}
-            to={`/productlistings/${category._id}`}
+            to="/productlistings"
+            className="WearVeird-category-link"
             onClick={closeMenus}
           >
-            {category.categoryName ||
-              category.name ||
-              category.title ||
-              "Category"}
+            All Products
           </Link>
-        ))}
+
+          {parentCategories.map((category) => {
+            const subcategories = getSubcategories(category._id);
+            const isOpen = openCategoryId === category._id;
+
+            return (
+              <div
+                key={category._id}
+                className={`WearVeird-category-group ${
+                  isOpen ? "WearVeird-category-group-open" : ""
+                }`}
+                onMouseEnter={() =>
+                  handleCategoryMouseEnter(category._id)
+                }
+                onMouseLeave={handleCategoryMouseLeave}
+              >
+                <div className="WearVeird-category-heading">
+                  <Link
+                    to={`/productlistings/${category._id}`}
+                    className="WearVeird-category-link"
+                    onClick={closeMenus}
+                  >
+                    {category.name}
+                  </Link>
+
+                  {subcategories.length > 0 && (
+                    <button
+                      type="button"
+                      className="WearVeird-category-toggle"
+                      aria-label={`Toggle ${category.name} subcategories`}
+                      aria-expanded={isOpen}
+                      onClick={() =>
+                        handleCategoryToggle(category._id)
+                      }
+                    >
+                      <FaChevronDown />
+                    </button>
+                  )}
+                </div>
+
+                {subcategories.length > 0 && (
+                  <div
+                    className="WearVeird-subcategory-dropdown"
+                    hidden={!isOpen}
+                  >
+                    {subcategories.map((subcategory) => (
+                      <Link
+                        key={subcategory._id}
+                        to={`/productlistings/${subcategory._id}`}
+                        onClick={closeMenus}
+                      >
+                        {subcategory.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </nav>
     </header>
   );
