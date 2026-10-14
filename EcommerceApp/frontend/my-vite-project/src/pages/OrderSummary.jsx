@@ -27,7 +27,7 @@ export default function OrderSummary() {
     let isMounted = true;
 
     async function fetchOrder() {
-      const token = localStorage.getItem("shopnestToken");
+      const token = localStorage.getItem("WearVeirdToken");
 
       if (!token) {
         navigate("/login", {
@@ -61,7 +61,7 @@ export default function OrderSummary() {
 
         if (!response.ok) {
           if (response.status === 401 || response.status === 403) {
-            localStorage.removeItem("shopnestToken");
+            localStorage.removeItem("WearVeirdToken");
 
             navigate("/login", {
               replace: true,
@@ -110,11 +110,11 @@ export default function OrderSummary() {
 
   if (loading) {
     return (
-      <main className="shopnest-order-page">
-        <div className="shopnest-order-loading">
-          <div className="shopnest-order-loading-icon" />
-          <div className="shopnest-order-loading-line" />
-          <div className="shopnest-order-loading-line short" />
+      <main className="WearVeird-order-page">
+        <div className="WearVeird-order-loading">
+          <div className="WearVeird-order-loading-icon" />
+          <div className="WearVeird-order-loading-line" />
+          <div className="WearVeird-order-loading-line short" />
           <p>Getting your order details ready...</p>
         </div>
       </main>
@@ -123,9 +123,9 @@ export default function OrderSummary() {
 
   if (fetchError) {
     return (
-      <main className="shopnest-order-page">
-        <section className="shopnest-order-empty">
-          <div className="shopnest-order-empty-icon">
+      <main className="WearVeird-order-page">
+        <section className="WearVeird-order-empty">
+          <div className="WearVeird-order-empty-icon">
             <FaClipboardList />
           </div>
 
@@ -134,7 +134,7 @@ export default function OrderSummary() {
 
           <button
             type="button"
-            className="shopnest-order-primary-button"
+            className="WearVeird-order-primary-button"
             onClick={() => window.location.reload()}
           >
             Try again
@@ -150,9 +150,9 @@ export default function OrderSummary() {
 
   if (!latestOrder) {
     return (
-      <main className="shopnest-order-page">
-        <section className="shopnest-order-empty">
-          <div className="shopnest-order-empty-icon">
+      <main className="WearVeird-order-page">
+        <section className="WearVeird-order-empty">
+          <div className="WearVeird-order-empty-icon">
             <FaShoppingBag />
           </div>
 
@@ -164,7 +164,7 @@ export default function OrderSummary() {
 
           <Link
             to="/productlistings"
-            className="shopnest-order-primary-button"
+            className="WearVeird-order-primary-button"
           >
             Explore products <FaArrowRight />
           </Link>
@@ -196,14 +196,14 @@ export default function OrderSummary() {
   const totalAmount = Number(latestOrder.totalAmount) || 0;
 
   return (
-    <main className="shopnest-order-page">
-      <div className="shopnest-order-container">
-        <section className="shopnest-order-success">
-          <div className="shopnest-order-success-icon">
+    <main className="WearVeird-order-page">
+      <div className="WearVeird-order-container">
+        <section className="WearVeird-order-success">
+          <div className="WearVeird-order-success-icon">
             <FaCheck />
           </div>
 
-          <p className="shopnest-order-eyebrow">
+          <p className="WearVeird-order-eyebrow">
             THANK YOU FOR SHOPPING WITH US
           </p>
 
@@ -213,12 +213,12 @@ export default function OrderSummary() {
               : "Your order is confirmed!"}
           </h1>
 
-          <p className="shopnest-order-success-copy">
-            Thanks for choosing ShopNest. Your order details are ready
+          <p className="WearVeird-order-success-copy">
+            Thanks for choosing WearVeird. Your order details are ready
             below.
           </p>
 
-          <div className="shopnest-order-status">
+          <div className="WearVeird-order-status">
             <FaCheckCircle />
             <span>
               Status:{" "}
@@ -233,8 +233,8 @@ export default function OrderSummary() {
           </p>
         </section>
 
-        <section className="shopnest-order-progress">
-          <div className="shopnest-order-progress-step is-complete">
+        <section className="WearVeird-order-progress">
+          <div className="WearVeird-order-progress-step is-complete">
             <span>
               <FaCheck />
             </span>
@@ -244,10 +244,10 @@ export default function OrderSummary() {
             </div>
           </div>
 
-          <div className="shopnest-order-progress-line" />
+          <div className="WearVeird-order-progress-line" />
 
           <div
-            className={`shopnest-order-progress-step ${
+            className={`WearVeird-order-progress-step ${
               ["Processing", "Shipped", "Delivered"].includes(
                 latestOrder.orderStatus
               )
@@ -264,10 +264,10 @@ export default function OrderSummary() {
             </div>
           </div>
 
-          <div className="shopnest-order-progress-line" />
+          <div className="WearVeird-order-progress-line" />
 
           <div
-            className={`shopnest-order-progress-step ${
+            className={`WearVeird-order-progress-step ${
               ["Shipped", "Delivered"].includes(
                 latestOrder.orderStatus
               )
@@ -285,23 +285,23 @@ export default function OrderSummary() {
           </div>
         </section>
 
-        <div className="shopnest-order-layout">
-          <section className="shopnest-order-card">
-            <div className="shopnest-order-card-heading">
+        <div className="WearVeird-order-layout">
+          <section className="WearVeird-order-card">
+            <div className="WearVeird-order-card-heading">
               <div>
-                <p className="shopnest-order-card-eyebrow">
+                <p className="WearVeird-order-card-eyebrow">
                   ORDER DETAILS
                 </p>
                 <h2>Your items</h2>
               </div>
 
-              <span className="shopnest-order-item-count">
+              <span className="WearVeird-order-item-count">
                 {itemCount} {itemCount === 1 ? "item" : "items"}
               </span>
             </div>
 
             {validOrderDate && (
-              <p className="shopnest-order-date">
+              <p className="WearVeird-order-date">
                 Placed on{" "}
                 {orderDate.toLocaleDateString("en-IN", {
                   day: "numeric",
@@ -311,7 +311,7 @@ export default function OrderSummary() {
               </p>
             )}
 
-            <div className="shopnest-order-items">
+            <div className="WearVeird-order-items">
               {items.map((item, index) => {
                 const quantity = Number(item.quantity) || 1;
                 const price = Number(item.price) || 0;
@@ -326,15 +326,15 @@ export default function OrderSummary() {
 
                 return (
                   <div
-                    className="shopnest-order-item"
+                    className="WearVeird-order-item"
                     key={`${item.productId || item._id || item.productName}-${item.selectedSize || "One Size"}-${index}`}
                   >
-                    <div className="shopnest-order-item-image-wrap">
+                    <div className="WearVeird-order-item-image-wrap">
                       {item.productImage ? (
                         <img
                           src={item.productImage}
                           alt={item.productName || "Ordered product"}
-                          className="shopnest-order-item-image"
+                          className="WearVeird-order-item-image"
                           onError={(event) => {
                             event.currentTarget.style.visibility = "hidden";
                           }}
@@ -344,7 +344,7 @@ export default function OrderSummary() {
                       )}
                     </div>
 
-                    <div className="shopnest-order-item-info">
+                    <div className="WearVeird-order-item-info">
                       <strong>{item.productName || "Product"}</strong>
 
                       <p>
@@ -362,7 +362,7 @@ export default function OrderSummary() {
                       )}
                     </div>
 
-                    <strong className="shopnest-order-item-total">
+                    <strong className="WearVeird-order-item-total">
                       {formatPrice(unitPrice * quantity)}
                     </strong>
                   </div>
@@ -370,26 +370,26 @@ export default function OrderSummary() {
               })}
             </div>
 
-            <div className="shopnest-order-card-footer">
+            <div className="WearVeird-order-card-footer">
               <FaShieldAlt />
               <span>Keep this page for your order reference.</span>
             </div>
           </section>
 
-          <aside className="shopnest-order-sidebar">
-            <section className="shopnest-order-card shopnest-order-address-card">
-              <div className="shopnest-order-card-heading">
+          <aside className="WearVeird-order-sidebar">
+            <section className="WearVeird-order-card WearVeird-order-address-card">
+              <div className="WearVeird-order-card-heading">
                 <div>
-                  <p className="shopnest-order-card-eyebrow">
+                  <p className="WearVeird-order-card-eyebrow">
                     DELIVERY
                   </p>
                   <h2>Shipping address</h2>
                 </div>
 
-                <FaMapMarkerAlt className="shopnest-order-heading-icon" />
+                <FaMapMarkerAlt className="WearVeird-order-heading-icon" />
               </div>
 
-              <div className="shopnest-order-address">
+              <div className="WearVeird-order-address">
                 <strong>{address.name || "Recipient"}</strong>
                 <p>{address.address || "Address not available"}</p>
 
@@ -398,7 +398,7 @@ export default function OrderSummary() {
                 {address.pincode && <p>PIN: {address.pincode}</p>}
               </div>
 
-              <div className="shopnest-order-address-note">
+              <div className="WearVeird-order-address-note">
                 <FaTruck />
                 <span>
                   Delivery details are associated with this order.
@@ -406,53 +406,53 @@ export default function OrderSummary() {
               </div>
             </section>
 
-            <section className="shopnest-order-card shopnest-order-payment-card">
-              <p className="shopnest-order-card-eyebrow">
+            <section className="WearVeird-order-card WearVeird-order-payment-card">
+              <p className="WearVeird-order-card-eyebrow">
                 ORDER SUMMARY
               </p>
 
               <h2>Payment summary</h2>
 
-              <div className="shopnest-order-payment-line">
+              <div className="WearVeird-order-payment-line">
                 <span>Subtotal</span>
                 <strong>{formatPrice(subtotal)}</strong>
               </div>
 
-              <div className="shopnest-order-payment-line">
+              <div className="WearVeird-order-payment-line">
                 <span>Discount</span>
                 <strong>− {formatPrice(discountAmount)}</strong>
               </div>
 
-              <div className="shopnest-order-payment-line">
+              <div className="WearVeird-order-payment-line">
                 <span>Delivery</span>
                 <strong>{formatPrice(deliveryCharge)}</strong>
               </div>
 
-              <div className="shopnest-order-payment-line">
+              <div className="WearVeird-order-payment-line">
                 <span>Total amount</span>
                 <strong>{formatPrice(totalAmount)}</strong>
               </div>
 
-              <div className="shopnest-order-payment-note">
+              <div className="WearVeird-order-payment-note">
                 This total was recorded by the order API.
               </div>
             </section>
           </aside>
         </div>
 
-        <section className="shopnest-order-next-actions">
+        <section className="WearVeird-order-next-actions">
           <div>
             <h2>What's next?</h2>
             <p>
-              You can continue exploring ShopNest or return to your
+              You can continue exploring WearVeird or return to your
               account.
             </p>
           </div>
 
-          <div className="shopnest-order-action-buttons">
+          <div className="WearVeird-order-action-buttons">
             <button
               type="button"
-              className="shopnest-order-secondary-button"
+              className="WearVeird-order-secondary-button"
               onClick={() => navigate("/")}
             >
               <FaHome /> Home
@@ -460,7 +460,7 @@ export default function OrderSummary() {
 
             <Link
               to="/productlistings"
-              className="shopnest-order-primary-button"
+              className="WearVeird-order-primary-button"
             >
               Continue shopping <FaArrowRight />
             </Link>

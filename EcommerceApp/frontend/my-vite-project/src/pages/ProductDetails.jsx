@@ -35,10 +35,10 @@ export default function ProductDetails() {
 
   if (loading) {
     return (
-      <main className="shopnest-details-page">
-        <div className="shopnest-details-loading">
-          <div className="shopnest-details-loading-image" />
-          <div className="shopnest-details-loading-copy">
+      <main className="WearVeird-details-page">
+        <div className="WearVeird-details-loading">
+          <div className="WearVeird-details-loading-image" />
+          <div className="WearVeird-details-loading-copy">
             <div />
             <div />
             <div />
@@ -51,11 +51,11 @@ export default function ProductDetails() {
 
   if (!data || !data._id) {
     return (
-      <main className="shopnest-details-page">
-        <div className="shopnest-details-message">
+      <main className="WearVeird-details-page">
+        <div className="WearVeird-details-message">
           <span>Product unavailable</span>
           <p>We couldn't find this product. It may have been removed.</p>
-          <Link to="/productlistings" className="shopnest-details-back">
+          <Link to="/productlistings" className="WearVeird-details-back">
             <FaArrowLeft /> Browse products
           </Link>
         </div>
@@ -98,30 +98,30 @@ export default function ProductDetails() {
   }
 
   return (
-    <main className="shopnest-details-page">
-      <div className="shopnest-details-container">
-        <nav className="shopnest-details-breadcrumb" aria-label="Breadcrumb">
+    <main className="WearVeird-details-page">
+      <div className="WearVeird-details-container">
+        <nav className="WearVeird-details-breadcrumb" aria-label="Breadcrumb">
           <Link to="/">Home</Link>
           <span>/</span>
           <Link to="/productlistings">Products</Link>
           <span>/</span>
-          <span className="shopnest-details-current">
+          <span className="WearVeird-details-current">
             {data.productName}
           </span>
         </nav>
 
-        <section className="shopnest-details-layout">
-          <div className="shopnest-details-gallery">
-            <div className="shopnest-details-image-wrap">
+        <section className="WearVeird-details-layout">
+          <div className="WearVeird-details-gallery">
+            <div className="WearVeird-details-image-wrap">
               {discountPercent > 0 && (
-                <span className="shopnest-details-discount">
+                <span className="WearVeird-details-discount">
                   {discountPercent}% OFF
                 </span>
               )}
 
               <button
                 type="button"
-                className={`shopnest-details-wishlist ${
+                className={`WearVeird-details-wishlist ${
                   isWishlisted ? "is-active" : ""
                 }`}
                 onClick={handleWishlist}
@@ -135,7 +135,7 @@ export default function ProductDetails() {
               </button>
 
               <img
-                className="shopnest-details-image"
+                className="WearVeird-details-image"
                 src={data.productImage}
                 alt={data.productName}
                 onError={(event) => {
@@ -144,62 +144,62 @@ export default function ProductDetails() {
               />
             </div>
 
-            <div className="shopnest-details-image-caption">
+            <div className="WearVeird-details-image-caption">
               <FaCheckCircle />
               <span>Thoughtfully selected for your everyday needs</span>
             </div>
           </div>
 
-          <div className="shopnest-details-info">
-            <p className="shopnest-details-eyebrow">SHOPNEST COLLECTION</p>
+          <div className="WearVeird-details-info">
+            <p className="WearVeird-details-eyebrow">WearVeird COLLECTION</p>
 
-            <h1 className="shopnest-details-title">{data.productName}</h1>
+            <h1 className="WearVeird-details-title">{data.productName}</h1>
 
-            <div className="shopnest-details-rating">
-              <span className="shopnest-details-rating-value">
+            <div className="WearVeird-details-rating">
+              <span className="WearVeird-details-rating-value">
                 <FaStar />{" "}
                 {Number(data.rating) > 0
                   ? Number(data.rating).toFixed(1)
                   : "New"}
               </span>
-              <span className="shopnest-details-rating-copy">
+              <span className="WearVeird-details-rating-copy">
                 {Number(data.rating) > 0
                   ? "Product rating"
                   : "Be the first to discover it"}
               </span>
             </div>
 
-            <div className="shopnest-details-price-block">
-              <span className="shopnest-details-price">
+            <div className="WearVeird-details-price-block">
+              <span className="WearVeird-details-price">
                 ₹{finalPrice.toLocaleString("en-IN")}
               </span>
 
               {discountPercent > 0 && (
                 <>
-                  <span className="shopnest-details-original-price">
+                  <span className="WearVeird-details-original-price">
                     ₹{Number(data.price).toLocaleString("en-IN")}
                   </span>
-                  <span className="shopnest-details-savings">
+                  <span className="WearVeird-details-savings">
                     Save ₹{(Number(data.price) - finalPrice).toLocaleString("en-IN")}
                   </span>
                 </>
               )}
             </div>
 
-            <p className="shopnest-details-tax-note">
+            <p className="WearVeird-details-tax-note">
               Inclusive of listed price
             </p>
 
-            <div className="shopnest-details-divider" />
+            <div className="WearVeird-details-divider" />
 
-            <div className="shopnest-details-description">
+            <div className="WearVeird-details-description">
               <h2>Product details</h2>
               <p>{data.description}</p>
             </div>
 
             {sizes.length > 0 && (
-              <div className="shopnest-details-size-section">
-                <div className="shopnest-details-section-heading">
+              <div className="WearVeird-details-size-section">
+                <div className="WearVeird-details-section-heading">
                   <h2>Select size</h2>
                   <span>
                     {selectedSize !== "Not Selected"
@@ -208,12 +208,12 @@ export default function ProductDetails() {
                   </span>
                 </div>
 
-                <div className="shopnest-details-sizes">
+                <div className="WearVeird-details-sizes">
                   {sizes.map((size) => (
                     <button
                       type="button"
                       key={size}
-                      className={`shopnest-size-button ${
+                      className={`WearVeird-size-button ${
                         selectedSize === size ? "is-selected" : ""
                       }`}
                       onClick={() => setSelectedSize(size)}
@@ -226,9 +226,9 @@ export default function ProductDetails() {
               </div>
             )}
 
-            <div className="shopnest-details-quantity-section">
+            <div className="WearVeird-details-quantity-section">
               <h2>Quantity</h2>
-              <div className="shopnest-quantity-control">
+              <div className="WearVeird-quantity-control">
                 <button
                   type="button"
                   onClick={() => setQuantity((current) => Math.max(1, current - 1))}
@@ -248,10 +248,10 @@ export default function ProductDetails() {
               </div>
             </div>
 
-            <div className="shopnest-details-actions">
+            <div className="WearVeird-details-actions">
               <button
                 type="button"
-                className="shopnest-details-add-cart"
+                className="WearVeird-details-add-cart"
                 onClick={handleAddToCart}
               >
                 <FaShoppingBag />
@@ -260,7 +260,7 @@ export default function ProductDetails() {
 
               <button
                 type="button"
-                className={`shopnest-details-wishlist-action ${
+                className={`WearVeird-details-wishlist-action ${
                   isWishlisted ? "is-active" : ""
                 }`}
                 onClick={handleWishlist}
@@ -274,7 +274,7 @@ export default function ProductDetails() {
               </button>
             </div>
 
-            <div className="shopnest-details-benefits">
+            <div className="WearVeird-details-benefits">
               <div>
                 <FaTruck />
                 <span>
@@ -300,7 +300,7 @@ export default function ProductDetails() {
 
             <Link
               to="/productlistings"
-              className="shopnest-details-continue"
+              className="WearVeird-details-continue"
             >
               <FaArrowLeft /> Continue shopping
             </Link>

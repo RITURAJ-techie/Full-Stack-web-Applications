@@ -45,7 +45,7 @@ export default function Checkout() {
     let isMounted = true;
 
     async function fetchAddresses() {
-      const token = localStorage.getItem("shopnestToken");
+      const token = localStorage.getItem("WearVeirdToken");
 
       if (!token) {
         navigate("/login", {
@@ -73,7 +73,7 @@ export default function Checkout() {
 
         if (!response.ok) {
           if (response.status === 401 || response.status === 403) {
-            localStorage.removeItem("shopnestToken");
+            localStorage.removeItem("WearVeirdToken");
             navigate("/login", {
               replace: true,
               state: { from: "/checkout" },
@@ -151,7 +151,7 @@ export default function Checkout() {
       return;
     }
 
-    const token = localStorage.getItem("shopnestToken");
+    const token = localStorage.getItem("WearVeirdToken");
 
     if (!token) {
       toast.error("Please log in to place your order.");
@@ -198,7 +198,7 @@ export default function Checkout() {
 
       if (!response.ok) {
         if (response.status === 401 || response.status === 403) {
-          localStorage.removeItem("shopnestToken");
+          localStorage.removeItem("WearVeirdToken");
           toast.error("Your session has expired. Please log in again.");
           navigate("/login", {
             state: { from: "/checkout" },
@@ -238,23 +238,23 @@ export default function Checkout() {
   }
 
   return (
-    <main className="shopnest-checkout-page">
-      <div className="shopnest-checkout-container">
-        <Link to="/cart" className="shopnest-checkout-back">
+    <main className="WearVeird-checkout-page">
+      <div className="WearVeird-checkout-container">
+        <Link to="/cart" className="WearVeird-checkout-back">
           <FaArrowLeft /> Back to cart
         </Link>
 
-        <header className="shopnest-checkout-heading">
-          <p className="shopnest-checkout-eyebrow">ALMOST YOURS</p>
+        <header className="WearVeird-checkout-heading">
+          <p className="WearVeird-checkout-eyebrow">ALMOST YOURS</p>
           <h1>Checkout</h1>
           <p>Confirm your delivery details and review your order.</p>
         </header>
 
-        <div className="shopnest-checkout-layout">
-          <div className="shopnest-checkout-main">
-            <section className="shopnest-checkout-card">
-              <div className="shopnest-checkout-section-heading">
-                <span className="shopnest-checkout-step">01</span>
+        <div className="WearVeird-checkout-layout">
+          <div className="WearVeird-checkout-main">
+            <section className="WearVeird-checkout-card">
+              <div className="WearVeird-checkout-section-heading">
+                <span className="WearVeird-checkout-step">01</span>
 
                 <div>
                   <h2>Delivery address</h2>
@@ -263,11 +263,11 @@ export default function Checkout() {
               </div>
 
               {loading ? (
-                <div className="shopnest-checkout-status">
+                <div className="WearVeird-checkout-status">
                   Loading your saved addresses...
                 </div>
               ) : addressError ? (
-                <div className="shopnest-checkout-status">
+                <div className="WearVeird-checkout-status">
                   <p>{addressError}</p>
                   <button
                     type="button"
@@ -277,7 +277,7 @@ export default function Checkout() {
                   </button>
                 </div>
               ) : addresses.length === 0 ? (
-                <div className="shopnest-checkout-no-address">
+                <div className="WearVeird-checkout-no-address">
                   <FaMapMarkerAlt />
 
                   <div>
@@ -292,7 +292,7 @@ export default function Checkout() {
               ) : (
                 <>
                   <label
-                    className="shopnest-checkout-label"
+                    className="WearVeird-checkout-label"
                     htmlFor="checkout-address"
                   >
                     Choose a saved address
@@ -300,7 +300,7 @@ export default function Checkout() {
 
                   <select
                     id="checkout-address"
-                    className="shopnest-checkout-select"
+                    className="WearVeird-checkout-select"
                     value={selectedAddressId}
                     onChange={(event) =>
                       setSelectedAddressId(event.target.value)
@@ -316,13 +316,13 @@ export default function Checkout() {
                   </select>
 
                   {selectedAddress && (
-                    <div className="shopnest-checkout-selected-address">
-                      <div className="shopnest-checkout-address-icon">
+                    <div className="WearVeird-checkout-selected-address">
+                      <div className="WearVeird-checkout-address-icon">
                         <FaMapMarkerAlt />
                       </div>
 
-                      <div className="shopnest-checkout-address-info">
-                        <div className="shopnest-checkout-address-name">
+                      <div className="WearVeird-checkout-address-info">
+                        <div className="WearVeird-checkout-address-name">
                           <strong>{selectedAddress.name}</strong>
                           <FaCheckCircle />
                         </div>
@@ -342,7 +342,7 @@ export default function Checkout() {
 
                   <Link
                     to="/addressDetails"
-                    className="shopnest-checkout-add-address"
+                    className="WearVeird-checkout-add-address"
                   >
                     + Manage saved addresses
                   </Link>
@@ -350,9 +350,9 @@ export default function Checkout() {
               )}
             </section>
 
-            <section className="shopnest-checkout-card">
-              <div className="shopnest-checkout-section-heading">
-                <span className="shopnest-checkout-step">02</span>
+            <section className="WearVeird-checkout-card">
+              <div className="WearVeird-checkout-section-heading">
+                <span className="WearVeird-checkout-step">02</span>
 
                 <div>
                   <h2>Review your items</h2>
@@ -363,12 +363,12 @@ export default function Checkout() {
               </div>
 
               {allCartItems.length === 0 ? (
-                <div className="shopnest-checkout-status">
+                <div className="WearVeird-checkout-status">
                   Your cart is empty.{" "}
                   <Link to="/productlistings">Browse products</Link>
                 </div>
               ) : (
-                <div className="shopnest-checkout-items">
+                <div className="WearVeird-checkout-items">
                   {allCartItems.map((item) => {
                     const quantity = Number(item.quantity) || 0;
 
@@ -381,27 +381,27 @@ export default function Checkout() {
 
                     return (
                       <div
-                        className="shopnest-checkout-item"
+                        className="WearVeird-checkout-item"
                         key={`${item._id}-${item.selectedSize || "One Size"}`}
                       >
                         <Link
                           to={`/productDetails/${item._id}`}
-                          className="shopnest-checkout-item-image-wrap"
+                          className="WearVeird-checkout-item-image-wrap"
                         >
                           <img
                             src={item.productImage}
                             alt={item.productName}
-                            className="shopnest-checkout-item-image"
+                            className="WearVeird-checkout-item-image"
                             onError={(event) => {
                               event.currentTarget.style.visibility = "hidden";
                             }}
                           />
                         </Link>
 
-                        <div className="shopnest-checkout-item-info">
+                        <div className="WearVeird-checkout-item-info">
                           <Link
                             to={`/productDetails/${item._id}`}
-                            className="shopnest-checkout-item-name"
+                            className="WearVeird-checkout-item-name"
                           >
                             {item.productName}
                           </Link>
@@ -417,13 +417,13 @@ export default function Checkout() {
                           <p>Quantity: {quantity}</p>
 
                           {discount > 0 && (
-                            <span className="shopnest-checkout-item-discount">
+                            <span className="WearVeird-checkout-item-discount">
                               {discount}% off
                             </span>
                           )}
                         </div>
 
-                        <strong className="shopnest-checkout-item-price">
+                        <strong className="WearVeird-checkout-item-price">
                           {formatPrice(unitPrice * quantity)}
                         </strong>
                       </div>
@@ -434,42 +434,42 @@ export default function Checkout() {
             </section>
           </div>
 
-          <aside className="shopnest-checkout-summary">
+          <aside className="WearVeird-checkout-summary">
             <h2>Order summary</h2>
 
-            <p className="shopnest-checkout-summary-subtitle">
+            <p className="WearVeird-checkout-summary-subtitle">
               Here's what you'll pay today.
             </p>
 
-            <div className="shopnest-checkout-summary-line">
+            <div className="WearVeird-checkout-summary-line">
               <span>Subtotal ({itemCount} items)</span>
               <span>{formatPrice(subtotal)}</span>
             </div>
 
-            <div className="shopnest-checkout-summary-line shopnest-checkout-savings">
+            <div className="WearVeird-checkout-summary-line WearVeird-checkout-savings">
               <span>Product discounts</span>
               <span>− {formatPrice(savings)}</span>
             </div>
 
-            <div className="shopnest-checkout-summary-line">
+            <div className="WearVeird-checkout-summary-line">
               <span>Delivery charges</span>
               <span>{formatPrice(deliveryCharge)}</span>
             </div>
 
-            <div className="shopnest-checkout-total">
+            <div className="WearVeird-checkout-total">
               <span>Total payable</span>
               <strong>{formatPrice(finalAmount)}</strong>
             </div>
 
             {savings > 0 && (
-              <div className="shopnest-checkout-saving-note">
+              <div className="WearVeird-checkout-saving-note">
                 You're saving {formatPrice(savings)} on your products.
               </div>
             )}
 
             <button
               type="button"
-              className="shopnest-checkout-place-order"
+              className="WearVeird-checkout-place-order"
               onClick={handleOrderPlaced}
               disabled={
                 isPlacingOrder ||
@@ -488,19 +488,19 @@ export default function Checkout() {
               )}
             </button>
 
-            <div className="shopnest-checkout-secure">
+            <div className="WearVeird-checkout-secure">
               <FaShieldAlt />
               <span>Review your details before confirming your order.</span>
             </div>
 
-            <div className="shopnest-checkout-delivery">
+            <div className="WearVeird-checkout-delivery">
               <FaTruck />
               <span>
                 Delivery arrangements will be confirmed with your order.
               </span>
             </div>
 
-            <Link to="/cart" className="shopnest-checkout-edit-cart">
+            <Link to="/cart" className="WearVeird-checkout-edit-cart">
               <FaShoppingBag /> Edit cart
             </Link>
           </aside>

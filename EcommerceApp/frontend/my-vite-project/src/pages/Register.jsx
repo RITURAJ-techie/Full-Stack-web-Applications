@@ -19,7 +19,7 @@ export default function Register() {
 
     try {
       await register(name, email, password);
-      toast.success("Your ShopNest account is ready!");
+      toast.success("Your WearVeird account is ready!");
       navigate("/", { replace: true });
     } catch (error) {
       toast.error(error.message);
@@ -29,11 +29,11 @@ export default function Register() {
   }
 
   return (
-    <main className="shopnest-auth-page">
-      <form className="shopnest-auth-card" onSubmit={handleSubmit}>
-        <p className="shopnest-auth-eyebrow">JOIN SHOPNEST</p>
+    <main className="WearVeird-auth-page">
+      <form className="WearVeird-auth-card" onSubmit={handleSubmit}>
+        <p className="WearVeird-auth-eyebrow">JOIN WearVeird</p>
         <h1>Create your account</h1>
-        <p className="shopnest-auth-description">
+        <p className="WearVeird-auth-description">
           Create an account for a better shopping experience.
         </p>
 
@@ -74,7 +74,7 @@ export default function Register() {
           {submitting ? "Creating account..." : "Create account"}
         </button>
 
-        <p className="shopnest-auth-footer">
+        <p className="WearVeird-auth-footer">
           Already registered? <Link to="/login">Login</Link>
         </p>
       </form>

@@ -30,9 +30,9 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <main className="shopnest-home">
-      <section className="shopnest-hero">
-        <div className="shopnest-hero-copy">
+    <main className="WearVeird-home">
+      <section className="WearVeird-hero">
+        <div className="WearVeird-hero-copy">
           <span className="eyebrow">
             A LITTLE SOMETHING FOR EVERY DAY
           </span>
@@ -45,114 +45,114 @@ export default function Home() {
             of thing.
           </h1>
 
-          <p className="shopnest-hero-description">
+          <p className="WearVeird-hero-description">
             Thoughtful finds, everyday essentials, and pieces that just feel
             right. Your next favourite thing starts here.
           </p>
 
-          <div className="shopnest-hero-actions">
+          <div className="WearVeird-hero-actions">
             <button
-              className="shopnest-button"
+              className="WearVeird-button"
               onClick={() => navigate("/productlistings")}
             >
               Explore the collection <FaArrowRight size={14} />
             </button>
 
-            <a href="#shop-by-category" className="shopnest-text-link">
+            <a href="#shop-by-category" className="WearVeird-text-link">
               Find your style <FaLongArrowAltRight size={15} />
             </a>
           </div>
 
-          <div className="shopnest-hero-footnote">
-            <span className="shopnest-footnote-dot" />
+          <div className="WearVeird-hero-footnote">
+            <span className="WearVeird-footnote-dot" />
             GOOD FINDS. GOOD FEELINGS.
           </div>
         </div>
 
-        <div className="shopnest-hero-visual">
+        <div className="WearVeird-hero-visual">
           <img
             src="https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg?auto=compress&cs=tinysrgb&w=1400"
             alt="Fashion inspiration from the latest collection"
-            className="shopnest-hero-image"
+            className="WearVeird-hero-image"
           />
 
-          <div className="shopnest-hero-image-overlay" />
+          <div className="WearVeird-hero-image-overlay" />
 
-          <div className="shopnest-hero-sticker">
+          <div className="WearVeird-hero-sticker">
             <span>THE</span>
             <strong>GOOD</strong>
             <strong>STUFF</strong>
             <span>STARTS HERE.</span>
           </div>
 
-          <div className="shopnest-image-caption">
+          <div className="WearVeird-image-caption">
             <span>01 / THE EVERYDAY EDIT</span>
             <span>DISCOVER MORE ↗</span>
           </div>
         </div>
 
-        <div className="shopnest-hero-index">S / N — 001</div>
+        <div className="WearVeird-hero-index">S / N — 001</div>
       </section>
 
-      <section id="shop-by-category" className="shopnest-category-section">
-        <div className="shopnest-section-top">
+      <section id="shop-by-category" className="WearVeird-category-section">
+        <div className="WearVeird-section-top">
           <div>
             <span className="eyebrow">A GOOD PLACE TO START</span>
             <h2 className="section-heading">What are we feeling?</h2>
           </div>
 
-          <Link to="/productlistings" className="shopnest-text-link">
+          <Link to="/productlistings" className="WearVeird-text-link">
             Shop everything <FaArrowRight size={13} />
           </Link>
         </div>
 
         {loading ? (
-          <div className="shopnest-state">
+          <div className="WearVeird-state">
             <div className="spinner-border" role="status">
               <span className="visually-hidden">Loading categories...</span>
             </div>
             <p>Finding the good stuff...</p>
           </div>
         ) : error ? (
-          <div className="shopnest-state shopnest-error">
+          <div className="WearVeird-state WearVeird-error">
             <p>We couldn't load the collections right now.</p>
             <button
-              className="shopnest-button"
+              className="WearVeird-button"
               onClick={() => window.location.reload()}
             >
               Try again
             </button>
           </div>
         ) : Array.isArray(data) && data.length > 0 ? (
-          <div className="shopnest-category-grid">
+          <div className="WearVeird-category-grid">
             {data.map((item, index) => (
               <Link
                 key={item._id}
                 to={`/productlistings/${item._id}`}
-                className={`shopnest-category-card category-tone-${index % 4}`}
+                className={`WearVeird-category-card category-tone-${index % 4}`}
               >
-                <div className="shopnest-category-image-wrap">
+                <div className="WearVeird-category-image-wrap">
                   {item.categoryURL ? (
                     <img
                       src={item.categoryURL}
                       alt={item.name}
-                      className="shopnest-category-image"
+                      className="WearVeird-category-image"
                       loading="lazy"
                     />
                   ) : (
-                    <div className="shopnest-category-placeholder">
+                    <div className="WearVeird-category-placeholder">
                       {item.name}
                     </div>
                   )}
 
-                  <span className="shopnest-category-arrow">
+                  <span className="WearVeird-category-arrow">
                     <FaArrowRight size={15} />
                   </span>
                 </div>
 
-                <div className="shopnest-category-info">
+                <div className="WearVeird-category-info">
                   <div>
-                    <span className="shopnest-category-index">
+                    <span className="WearVeird-category-index">
                       COLLECTION 0{index + 1}
                     </span>
                     <h3>{item.name}</h3>
@@ -163,13 +163,13 @@ export default function Home() {
             ))}
           </div>
         ) : (
-          <div className="shopnest-state">
+          <div className="WearVeird-state">
             <p>Our collections are getting ready. Check back soon.</p>
           </div>
         )}
       </section>
 
-      <section className="shopnest-statement">
+      <section className="WearVeird-statement">
         <span className="eyebrow">LESS SCROLLING. BETTER FINDING.</span>
         <h2 className="display-heading">
           Not more stuff.
@@ -181,30 +181,30 @@ export default function Home() {
           they were picked just for you.
         </p>
         <button
-          className="shopnest-button shopnest-button-light"
+          className="WearVeird-button WearVeird-button-light"
           onClick={() => navigate("/productlistings")}
         >
           Find your next favourite <FaArrowRight size={14} />
         </button>
-        <span className="shopnest-statement-decoration" aria-hidden="true">
+        <span className="WearVeird-statement-decoration" aria-hidden="true">
           S/N
         </span>
       </section>
 
-      <section className="shopnest-collections">
-        <div className="shopnest-section-top">
+      <section className="WearVeird-collections">
+        <div className="WearVeird-section-top">
           <div>
             <span className="eyebrow">A FEW THINGS WE LOVE</span>
             <h2 className="section-heading">Your next chapter.</h2>
           </div>
-          <span className="shopnest-muted">GOOD FINDS, ALWAYS.</span>
+          <span className="WearVeird-muted">GOOD FINDS, ALWAYS.</span>
         </div>
 
-        <div className="shopnest-collection-grid">
+        <div className="WearVeird-collection-grid">
           {collections.map((collection, index) => (
             <article
               key={collection.title}
-              className={`shopnest-collection-card ${collection.className}`}
+              className={`WearVeird-collection-card ${collection.className}`}
             >
               <img
                 src={collection.image}
@@ -212,9 +212,9 @@ export default function Home() {
                 loading="lazy"
               />
 
-              <div className="shopnest-collection-overlay" />
+              <div className="WearVeird-collection-overlay" />
 
-              <div className="shopnest-collection-copy">
+              <div className="WearVeird-collection-copy">
                 <span>{collection.eyebrow}</span>
                 <h3 className="display-heading">
                   {collection.title.split("\n").map((line, i) => (
@@ -226,14 +226,14 @@ export default function Home() {
                 </h3>
                 <p>{collection.description}</p>
                 <button
-                  className="shopnest-collection-link"
+                  className="WearVeird-collection-link"
                   onClick={() => navigate("/productlistings")}
                 >
                   Explore now <FaArrowRight size={13} />
                 </button>
               </div>
 
-              <span className="shopnest-collection-number">
+              <span className="WearVeird-collection-number">
                 0{index + 1}
               </span>
             </article>
@@ -241,12 +241,12 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="shopnest-home-footer">
-        <Link to="/" className="shopnest-brand">
-          SHOPNEST<span>.</span>
+      <footer className="WearVeird-home-footer">
+        <Link to="/" className="WearVeird-brand">
+          WearVeird<span>.</span>
         </Link>
         <p>Find the things that feel like you.</p>
-        <Link to="/productlistings" className="shopnest-text-link">
+        <Link to="/productlistings" className="WearVeird-text-link">
           Keep exploring <FaArrowRight size={13} />
         </Link>
       </footer>

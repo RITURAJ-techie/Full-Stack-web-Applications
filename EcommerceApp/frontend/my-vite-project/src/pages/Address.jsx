@@ -17,7 +17,7 @@ export default function AddressPage() {
   });
 
   const getHeaders = () => {
-    const token = localStorage.getItem("shopnestToken");
+    const token = localStorage.getItem("WearVeirdToken");
 
     return {
       "Content-Type": "application/json",

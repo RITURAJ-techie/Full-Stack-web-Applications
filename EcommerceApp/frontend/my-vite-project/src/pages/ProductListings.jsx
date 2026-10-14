@@ -8,13 +8,13 @@ import toast from "react-hot-toast";
 
 function ProductSkeleton() {
   return (
-    <div className="shopnest-product-grid">
+    <div className="WearVeird-product-grid">
       {Array.from({ length: 8 }, (_, index) => (
-        <div className="shopnest-product-skeleton" key={index}>
-          <div className="shopnest-skeleton-image" />
-          <div className="shopnest-skeleton-line" />
-          <div className="shopnest-skeleton-line short" />
-          <div className="shopnest-skeleton-button" />
+        <div className="WearVeird-product-skeleton" key={index}>
+          <div className="WearVeird-skeleton-image" />
+          <div className="WearVeird-skeleton-line" />
+          <div className="WearVeird-skeleton-line short" />
+          <div className="WearVeird-skeleton-button" />
         </div>
       ))}
     </div>
@@ -134,37 +134,37 @@ export default function ProductListings() {
     : null;
 
   return (
-    <main className="shopnest-marketplace">
-      <section className="shopnest-marketplace-heading">
+    <main className="WearVeird-marketplace">
+      <section className="WearVeird-marketplace-heading">
         <div>
-          <p className="shopnest-eyebrow">THE SHOPNEST EDIT</p>
+          <p className="WearVeird-eyebrow">THE WearVeird EDIT</p>
           <h1>{searchText ? "Search results" : selectedCategory?.name || "All products"}</h1>
-          <p className="shopnest-heading-description">
+          <p className="WearVeird-heading-description">
             {searchText
               ? `Discover products matching “${searchText}”.`
               : "Thoughtful picks for your everyday style."}
           </p>
         </div>
 
-        <div className="shopnest-results-count">
+        <div className="WearVeird-results-count">
           {!loading && `${result.length} products`}
         </div>
       </section>
 
-      <div className="shopnest-marketplace-layout">
-        <aside className="shopnest-filter-panel">
-          <div className="shopnest-filter-heading">
+      <div className="WearVeird-marketplace-layout">
+        <aside className="WearVeird-filter-panel">
+          <div className="WearVeird-filter-heading">
             <h2>Filters</h2>
             <button type="button" onClick={clearFilters}>
               Reset
             </button>
           </div>
 
-          <div className="shopnest-filter-section">
+          <div className="WearVeird-filter-section">
             <h3>Category</h3>
             <button
               type="button"
-              className={`shopnest-category-filter ${
+              className={`WearVeird-category-filter ${
                 !categoryId ? "active" : ""
               }`}
               onClick={() => handleCategoryChange("")}
@@ -173,13 +173,13 @@ export default function ProductListings() {
             </button>
 
             {categoriesLoading ? (
-              <p className="shopnest-filter-muted">Loading categories…</p>
+              <p className="WearVeird-filter-muted">Loading categories…</p>
             ) : (
               (Array.isArray(categories) ? categories : []).map((category) => (
                 <button
                   type="button"
                   key={category._id}
-                  className={`shopnest-category-filter ${
+                  className={`WearVeird-category-filter ${
                     categoryId === category._id ? "active" : ""
                   }`}
                   onClick={() => handleCategoryChange(category._id)}
@@ -193,14 +193,14 @@ export default function ProductListings() {
             )}
           </div>
 
-          <div className="shopnest-filter-section">
-            <div className="shopnest-filter-label-row">
+          <div className="WearVeird-filter-section">
+            <div className="WearVeird-filter-label-row">
               <h3>Maximum price</h3>
               <span>₹{givenPrice.toLocaleString("en-IN")}</span>
             </div>
 
             <input
-              className="shopnest-price-range"
+              className="WearVeird-price-range"
               type="range"
               min="100"
               max="5000"
@@ -210,17 +210,17 @@ export default function ProductListings() {
               aria-label="Maximum price"
             />
 
-            <div className="shopnest-range-labels">
+            <div className="WearVeird-range-labels">
               <span>₹100</span>
               <span>₹5,000</span>
             </div>
           </div>
 
-          <div className="shopnest-filter-section">
+          <div className="WearVeird-filter-section">
             <h3>Customer rating</h3>
 
             {[4, 3, 2, 1].map((rating) => (
-              <label className="shopnest-rating-option" key={rating}>
+              <label className="WearVeird-rating-option" key={rating}>
                 <input
                   type="radio"
                   name="rating"
@@ -234,7 +234,7 @@ export default function ProductListings() {
             {selectedRating !== null && (
               <button
                 type="button"
-                className="shopnest-clear-rating"
+                className="WearVeird-clear-rating"
                 onClick={() => setSelectedRating(null)}
               >
                 Clear rating
@@ -242,10 +242,10 @@ export default function ProductListings() {
             )}
           </div>
 
-          <div className="shopnest-filter-section">
+          <div className="WearVeird-filter-section">
             <h3>Sort products</h3>
             <select
-              className="shopnest-sort-select"
+              className="WearVeird-sort-select"
               value={selectSortBy}
               onChange={(event) => setSelectSortBy(event.target.value)}
               aria-label="Sort products"
@@ -258,10 +258,10 @@ export default function ProductListings() {
           </div>
         </aside>
 
-        <section className="shopnest-products-section">
-          <div className="shopnest-products-toolbar">
+        <section className="WearVeird-products-section">
+          <div className="WearVeird-products-toolbar">
             <div>
-              <span className="shopnest-toolbar-label">SHOP THE COLLECTION</span>
+              <span className="WearVeird-toolbar-label">SHOP THE COLLECTION</span>
               <p>
                 {loading
                   ? "Finding your products…"
@@ -271,7 +271,7 @@ export default function ProductListings() {
 
             <button
               type="button"
-              className="shopnest-mobile-reset"
+              className="WearVeird-mobile-reset"
               onClick={clearFilters}
             >
               Reset filters
@@ -281,7 +281,7 @@ export default function ProductListings() {
           {loading ? (
             <ProductSkeleton />
           ) : error ? (
-            <div className="shopnest-empty-state">
+            <div className="WearVeird-empty-state">
               <h2>We couldn't load the products</h2>
               <p>Please check your connection and try again.</p>
               <button type="button" onClick={() => window.location.reload()}>
@@ -289,8 +289,8 @@ export default function ProductListings() {
               </button>
             </div>
           ) : result.length === 0 ? (
-            <div className="shopnest-empty-state">
-              <div className="shopnest-empty-icon">
+            <div className="WearVeird-empty-state">
+              <div className="WearVeird-empty-icon">
                 <FaShoppingBag />
               </div>
               <h2>No products found</h2>
@@ -303,7 +303,7 @@ export default function ProductListings() {
               </button>
             </div>
           ) : (
-            <div className="shopnest-product-grid">
+            <div className="WearVeird-product-grid">
               {result.map((item) => {
                 const discount = Math.min(
                   50,
@@ -313,30 +313,30 @@ export default function ProductListings() {
                 const isWishlisted = wishlistIds.has(item._id);
 
                 return (
-                  <article className="shopnest-product-card" key={item._id}>
-                    <div className="shopnest-product-image-wrap">
+                  <article className="WearVeird-product-card" key={item._id}>
+                    <div className="WearVeird-product-image-wrap">
                       <Link
                         to={`/productDetails/${item._id}`}
-                        className="shopnest-product-image-link"
+                        className="WearVeird-product-image-link"
                         aria-label={`View ${item.productName}`}
                       >
                         <img
                           src={item.productImage}
                           alt={item.productName}
-                          className="shopnest-product-image"
+                          className="WearVeird-product-image"
                           loading="lazy"
                         />
                       </Link>
 
                       {discount > 0 && (
-                        <span className="shopnest-discount-badge">
+                        <span className="WearVeird-discount-badge">
                           {discount}% OFF
                         </span>
                       )}
 
                       <button
                         type="button"
-                        className={`shopnest-wishlist-button ${
+                        className={`WearVeird-wishlist-button ${
                           isWishlisted ? "is-wishlisted" : ""
                         }`}
                         onClick={() => handleWishlist(item)}
@@ -350,33 +350,33 @@ export default function ProductListings() {
                       </button>
                     </div>
 
-                    <div className="shopnest-product-info">
-                      <div className="shopnest-product-rating">
+                    <div className="WearVeird-product-info">
+                      <div className="WearVeird-product-rating">
                         <FaStar />
                         <span>{Number(item.rating || 0).toFixed(1)}</span>
                       </div>
 
                       <Link
                         to={`/productDetails/${item._id}`}
-                        className="shopnest-product-name"
+                        className="WearVeird-product-name"
                       >
                         {item.productName}
                       </Link>
 
-                      <div className="shopnest-product-pricing">
-                        <span className="shopnest-current-price">
+                      <div className="WearVeird-product-pricing">
+                        <span className="WearVeird-current-price">
                           ₹{finalPrice.toLocaleString("en-IN")}
                         </span>
 
                         {discount > 0 && (
-                          <span className="shopnest-original-price">
+                          <span className="WearVeird-original-price">
                             ₹{Number(item.price).toLocaleString("en-IN")}
                           </span>
                         )}
                       </div>
 
                       {discount > 0 && (
-                        <p className="shopnest-savings">
+                        <p className="WearVeird-savings">
                           You save ₹
                           {(Number(item.price) - finalPrice).toLocaleString(
                             "en-IN",
@@ -386,7 +386,7 @@ export default function ProductListings() {
 
                       <button
                         type="button"
-                        className="shopnest-add-cart-button"
+                        className="WearVeird-add-cart-button"
                         onClick={() => handleAddToCart(item)}
                       >
                         <FaShoppingBag />

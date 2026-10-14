@@ -31,7 +31,7 @@ export default function OrdersPage() {
     setError("");
 
     try {
-      const token = localStorage.getItem("shopnestToken");
+      const token = localStorage.getItem("WearVeirdToken");
 
       if (!token) {
         throw new Error("Please log in to view your orders.");

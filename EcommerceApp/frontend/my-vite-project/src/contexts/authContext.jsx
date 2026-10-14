@@ -16,12 +16,12 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   const logout = useCallback(() => {
-    localStorage.removeItem("shopnestToken");
+    localStorage.removeItem("WearVeirdToken");
     setUser(null);
   }, []);
 
   const request = useCallback(async (path, options = {}) => {
-    const token = localStorage.getItem("shopnestToken");
+    const token = localStorage.getItem("WearVeirdToken");
 
     const response = await fetch(`${API_URL}/api/auth${path}`, {
       ...options,
@@ -47,7 +47,7 @@ export function AuthProvider({ children }) {
       body: JSON.stringify({ email, password }),
     });
 
-    localStorage.setItem("shopnestToken", data.token);
+    localStorage.setItem("WearVeirdToken", data.token);
     setUser(data.user);
 
     return data.user;
@@ -59,7 +59,7 @@ export function AuthProvider({ children }) {
       body: JSON.stringify({ name, email, password }),
     });
 
-    localStorage.setItem("shopnestToken", data.token);
+    localStorage.setItem("WearVeirdToken", data.token);
     setUser(data.user);
 
     return data.user;
@@ -69,7 +69,7 @@ export function AuthProvider({ children }) {
     let active = true;
 
     async function loadUser() {
-      const token = localStorage.getItem("shopnestToken");
+      const token = localStorage.getItem("WearVeirdToken");
 
       if (!token) {
         setLoading(false);
@@ -82,7 +82,7 @@ export function AuthProvider({ children }) {
         if (active) setUser(data.user);
       } catch {
         if (active) {
-          localStorage.removeItem("shopnestToken");
+          localStorage.removeItem("WearVeirdToken");
           setUser(null);
         }
       } finally {

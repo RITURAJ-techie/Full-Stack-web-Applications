@@ -1,16 +1,16 @@
 
 :root {
-  --shopnest-accent: #334b35;
-  --shopnest-accent-hover: #263b29;
-  --shopnest-bg: #f5f5ea;
-  --shopnest-surface: #ffffff;
-  --shopnest-ink: #252b24;
-  --shopnest-muted: #73786d;
-  --shopnest-border: #e4e6dc;
-  --shopnest-soft: #e3e8d6;
-  --shopnest-sage: #cbd5bd;
-  --shopnest-radius: 12px;
-  --shopnest-shadow: 0 8px 24px rgb(38 59 41 / 7%);
+  --WearVeird-accent: #334b35;
+  --WearVeird-accent-hover: #263b29;
+  --WearVeird-bg: #f5f5ea;
+  --WearVeird-surface: #ffffff;
+  --WearVeird-ink: #252b24;
+  --WearVeird-muted: #73786d;
+  --WearVeird-border: #e4e6dc;
+  --WearVeird-soft: #e3e8d6;
+  --WearVeird-sage: #cbd5bd;
+  --WearVeird-radius: 12px;
+  --WearVeird-shadow: 0 8px 24px rgb(38 59 41 / 7%);
 }
 
 #root {
@@ -23,8 +23,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--shopnest-bg);
-  color: var(--shopnest-ink);
+  background: var(--WearVeird-bg);
+  color: var(--WearVeird-ink);
   font-family: Inter, "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -56,62 +56,62 @@ button {
 }
 
 .btn-primary {
-  --bs-btn-bg: var(--shopnest-accent);
-  --bs-btn-border-color: var(--shopnest-accent);
-  --bs-btn-hover-bg: var(--shopnest-accent-hover);
-  --bs-btn-hover-border-color: var(--shopnest-accent-hover);
-  --bs-btn-active-bg: var(--shopnest-accent-hover);
-  --bs-btn-active-border-color: var(--shopnest-accent-hover);
+  --bs-btn-bg: var(--WearVeird-accent);
+  --bs-btn-border-color: var(--WearVeird-accent);
+  --bs-btn-hover-bg: var(--WearVeird-accent-hover);
+  --bs-btn-hover-border-color: var(--WearVeird-accent-hover);
+  --bs-btn-active-bg: var(--WearVeird-accent-hover);
+  --bs-btn-active-border-color: var(--WearVeird-accent-hover);
 }
 
 .btn-dark {
-  --bs-btn-bg: var(--shopnest-accent);
-  --bs-btn-border-color: var(--shopnest-accent);
-  --bs-btn-hover-bg: var(--shopnest-accent-hover);
-  --bs-btn-hover-border-color: var(--shopnest-accent-hover);
-  --bs-btn-active-bg: var(--shopnest-accent-hover);
-  --bs-btn-active-border-color: var(--shopnest-accent-hover);
+  --bs-btn-bg: var(--WearVeird-accent);
+  --bs-btn-border-color: var(--WearVeird-accent);
+  --bs-btn-hover-bg: var(--WearVeird-accent-hover);
+  --bs-btn-hover-border-color: var(--WearVeird-accent-hover);
+  --bs-btn-active-bg: var(--WearVeird-accent-hover);
+  --bs-btn-active-border-color: var(--WearVeird-accent-hover);
 }
 
 .btn-outline-dark {
-  --bs-btn-color: var(--shopnest-accent);
-  --bs-btn-border-color: var(--shopnest-accent);
-  --bs-btn-hover-bg: var(--shopnest-accent);
-  --bs-btn-hover-border-color: var(--shopnest-accent);
+  --bs-btn-color: var(--WearVeird-accent);
+  --bs-btn-border-color: var(--WearVeird-accent);
+  --bs-btn-hover-bg: var(--WearVeird-accent);
+  --bs-btn-hover-border-color: var(--WearVeird-accent);
   --bs-btn-hover-color: #fff;
-  --bs-btn-active-bg: var(--shopnest-accent-hover);
+  --bs-btn-active-bg: var(--WearVeird-accent-hover);
 }
 
 .form-control,
 .form-select {
   min-height: 44px;
-  border-color: var(--shopnest-border);
+  border-color: var(--WearVeird-border);
   border-radius: 8px;
-  background-color: var(--shopnest-surface);
-  color: var(--shopnest-ink);
+  background-color: var(--WearVeird-surface);
+  color: var(--WearVeird-ink);
 }
 
 .form-control:focus,
 .form-select:focus {
-  border-color: var(--shopnest-accent);
+  border-color: var(--WearVeird-accent);
   box-shadow: 0 0 0 3px rgb(51 75 53 / 12%);
 }
 
 .card {
-  border-color: var(--shopnest-border);
-  border-radius: var(--shopnest-radius);
+  border-color: var(--WearVeird-border);
+  border-radius: var(--WearVeird-radius);
 }
 
 /* Announcement bar */
 
-.shopnest-announcement {
+.WearVeird-announcement {
   min-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 7px 16px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #f7f7f0;
   font-size: 10px;
   font-weight: 700;
@@ -125,14 +125,14 @@ button {
 
 /* Navigation */
 
-.shopnest-header {
+.WearVeird-header {
   position: relative;
   z-index: 20;
-  border-bottom: 1px solid var(--shopnest-border);
+  border-bottom: 1px solid var(--WearVeird-border);
   background: #fff;
 }
 
-.shopnest-nav-main {
+.WearVeird-nav-main {
   width: min(1440px, 100%);
   min-height: 78px;
   margin: 0 auto;
@@ -143,26 +143,26 @@ button {
   gap: 26px;
 }
 
-.shopnest-brand {
+.WearVeird-brand {
   flex-shrink: 0;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   font-size: 26px;
   font-weight: 800;
   letter-spacing: -0.07em;
   text-decoration: none;
 }
 
-.shopnest-brand span {
-  color: var(--shopnest-accent);
+.WearVeird-brand span {
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-nav-links {
+.WearVeird-nav-links {
   display: flex;
   align-items: center;
   gap: clamp(15px, 2.3vw, 32px);
 }
 
-.shopnest-nav-links a {
+.WearVeird-nav-links a {
   color: #555e51;
   font-size: 13px;
   font-weight: 600;
@@ -170,80 +170,80 @@ button {
   transition: color 160ms ease;
 }
 
-.shopnest-nav-links a:hover,
-.shopnest-text-link:hover {
-  color: var(--shopnest-accent);
+.WearVeird-nav-links a:hover,
+.WearVeird-text-link:hover {
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-nav-actions {
+.WearVeird-nav-actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.shopnest-search {
+.WearVeird-search {
   width: clamp(160px, 20vw, 260px);
   height: 42px;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 0 13px;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 8px;
   background: #f8f8f2;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
 }
 
-.shopnest-search input {
+.WearVeird-search input {
   width: 100%;
   min-width: 0;
   border: 0;
   outline: 0;
   background: transparent;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   font-size: 12px;
 }
 
-.shopnest-search:focus-within {
-  border-color: var(--shopnest-accent);
+.WearVeird-search:focus-within {
+  border-color: var(--WearVeird-accent);
   box-shadow: 0 0 0 3px rgb(51 75 53 / 8%);
 }
 
-.shopnest-icon-link {
+.WearVeird-icon-link {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 5px;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   text-decoration: none;
 }
 
-.shopnest-icon-link:hover {
-  color: var(--shopnest-accent);
+.WearVeird-icon-link:hover {
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-count {
+.WearVeird-count {
   min-width: 18px;
   height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--shopnest-soft);
-  color: var(--shopnest-accent);
+  background: var(--WearVeird-soft);
+  color: var(--WearVeird-accent);
   font-size: 10px;
   font-weight: 800;
 }
 
 /* Homepage */
 
-.shopnest-home {
+.WearVeird-home {
   overflow: clip;
-  background: var(--shopnest-bg);
+  background: var(--WearVeird-bg);
 }
 
-.shopnest-hero {
+.WearVeird-hero {
   position: relative;
   width: min(1440px, 100%);
   min-height: 570px;
@@ -255,7 +255,7 @@ button {
   gap: 4%;
 }
 
-.shopnest-hero-copy {
+.WearVeird-hero-copy {
   position: relative;
   z-index: 2;
   padding: 25px 0 15px;
@@ -263,35 +263,35 @@ button {
 
 .eyebrow {
   display: inline-block;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 0.17em;
   line-height: 1.7;
 }
 
-.shopnest-hero h1 {
+.WearVeird-hero h1 {
   margin: 25px 0;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   font-size: clamp(3.4rem, 6vw, 6.2rem);
   font-weight: 750;
   letter-spacing: -0.065em;
   line-height: 0.99;
 }
 
-.shopnest-hero h1 span {
-  color: var(--shopnest-accent);
+.WearVeird-hero h1 span {
+  color: var(--WearVeird-accent);
   font-style: italic;
 }
 
-.shopnest-hero-description {
+.WearVeird-hero-description {
   max-width: 400px;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 15px;
   line-height: 1.9;
 }
 
-.shopnest-hero-actions {
+.WearVeird-hero-actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -299,16 +299,16 @@ button {
   margin-top: 29px;
 }
 
-.shopnest-button {
+.WearVeird-button {
   min-height: 46px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   padding: 12px 20px;
-  border: 1px solid var(--shopnest-accent);
+  border: 1px solid var(--WearVeird-accent);
   border-radius: 7px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -317,67 +317,67 @@ button {
   transition: background 180ms ease, transform 180ms ease;
 }
 
-.shopnest-button:hover {
+.WearVeird-button:hover {
   transform: translateY(-1px);
-  background: var(--shopnest-accent-hover);
+  background: var(--WearVeird-accent-hover);
   color: #fff;
 }
 
-.shopnest-text-link {
+.WearVeird-text-link {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
   transition: color 160ms ease;
 }
 
-.shopnest-hero-footnote {
+.WearVeird-hero-footnote {
   display: flex;
   align-items: center;
   gap: 9px;
   margin-top: 55px;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.15em;
 }
 
-.shopnest-footnote-dot {
+.WearVeird-footnote-dot {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
 }
 
-.shopnest-hero-visual {
+.WearVeird-hero-visual {
   position: relative;
   min-height: 450px;
   height: 100%;
   max-height: 570px;
   overflow: hidden;
-  background: var(--shopnest-sage);
+  background: var(--WearVeird-sage);
   border-radius: 12px;
 }
 
-.shopnest-hero-image,
-.shopnest-category-image,
-.shopnest-collection-card > img {
+.WearVeird-hero-image,
+.WearVeird-category-image,
+.WearVeird-collection-card > img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.shopnest-hero-image {
+.WearVeird-hero-image {
   position: absolute;
   inset: 0;
   object-position: center;
 }
 
-.shopnest-hero-image-overlay {
+.WearVeird-hero-image-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -387,7 +387,7 @@ button {
   );
 }
 
-.shopnest-hero-sticker {
+.WearVeird-hero-sticker {
   position: absolute;
   top: 12%;
   right: 7%;
@@ -398,23 +398,23 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   line-height: 1.2;
   transform: rotate(7deg);
 }
 
-.shopnest-hero-sticker span {
+.WearVeird-hero-sticker span {
   font-size: 9px;
   letter-spacing: 0.16em;
 }
 
-.shopnest-hero-sticker strong {
+.WearVeird-hero-sticker strong {
   font-size: 19px;
   letter-spacing: -0.04em;
 }
 
-.shopnest-image-caption {
+.WearVeird-image-caption {
   position: absolute;
   right: 22px;
   bottom: 20px;
@@ -428,7 +428,7 @@ button {
   letter-spacing: 0.1em;
 }
 
-.shopnest-hero-index {
+.WearVeird-hero-index {
   position: absolute;
   bottom: 26px;
   left: 5%;
@@ -440,14 +440,14 @@ button {
 
 /* Homepage categories and collections */
 
-.shopnest-category-section,
-.shopnest-collections {
+.WearVeird-category-section,
+.WearVeird-collections {
   width: min(1440px, 100%);
   margin: 0 auto;
   padding: 62px 5%;
 }
 
-.shopnest-section-top {
+.WearVeird-section-top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -455,53 +455,53 @@ button {
   margin-bottom: 30px;
 }
 
-.shopnest-section-top .section-heading {
+.WearVeird-section-top .section-heading {
   margin-top: 8px;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
 }
 
-.shopnest-category-grid {
+.WearVeird-category-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
 
-.shopnest-category-card {
+.WearVeird-category-card {
   display: block;
   min-width: 0;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   text-decoration: none;
 }
 
-.shopnest-category-image-wrap {
+.WearVeird-category-image-wrap {
   position: relative;
   height: clamp(210px, 27vw, 365px);
   overflow: hidden;
   border-radius: 9px;
-  background: var(--shopnest-soft);
+  background: var(--WearVeird-soft);
 }
 
-.category-tone-1 .shopnest-category-image-wrap {
+.category-tone-1 .WearVeird-category-image-wrap {
   background: #e4e8dc;
 }
 
-.category-tone-2 .shopnest-category-image-wrap {
+.category-tone-2 .WearVeird-category-image-wrap {
   background: #e8e8dc;
 }
 
-.category-tone-3 .shopnest-category-image-wrap {
+.category-tone-3 .WearVeird-category-image-wrap {
   background: #d8e0d0;
 }
 
-.shopnest-category-image {
+.WearVeird-category-image {
   transition: transform 450ms cubic-bezier(0.2, 0.7, 0.3, 1);
 }
 
-.shopnest-category-card:hover .shopnest-category-image {
+.WearVeird-category-card:hover .WearVeird-category-image {
   transform: scale(1.045);
 }
 
-.shopnest-category-arrow {
+.WearVeird-category-arrow {
   position: absolute;
   right: 12px;
   bottom: 12px;
@@ -512,84 +512,84 @@ button {
   justify-content: center;
   border-radius: 50%;
   background: #fff;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   transition: background 180ms ease, color 180ms ease;
 }
 
-.shopnest-category-card:hover .shopnest-category-arrow {
-  background: var(--shopnest-accent);
+.WearVeird-category-card:hover .WearVeird-category-arrow {
+  background: var(--WearVeird-accent);
   color: #fff;
 }
 
-.shopnest-category-info {
+.WearVeird-category-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
   padding: 16px 0;
-  border-bottom: 1px solid var(--shopnest-border);
+  border-bottom: 1px solid var(--WearVeird-border);
 }
 
-.shopnest-category-info h3 {
+.WearVeird-category-info h3 {
   margin: 5px 0 0;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
-.shopnest-category-index {
-  color: var(--shopnest-muted);
+.WearVeird-category-index {
+  color: var(--WearVeird-muted);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: 0.13em;
 }
 
-.shopnest-category-placeholder {
+.WearVeird-category-placeholder {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 20px;
   font-weight: 800;
   text-align: center;
 }
 
-.shopnest-state {
+.WearVeird-state {
   min-height: 180px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   text-align: center;
 }
 
-.shopnest-state .spinner-border {
-  color: var(--shopnest-accent);
+.WearVeird-state .spinner-border {
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-error {
+.WearVeird-error {
   color: #a3372b;
 }
 
-.shopnest-statement {
+.WearVeird-statement {
   position: relative;
   overflow: hidden;
   padding: 85px 20px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   text-align: center;
 }
 
-.shopnest-statement .eyebrow {
+.WearVeird-statement .eyebrow {
   color: #dce6d5;
 }
 
-.shopnest-statement h2 {
+.WearVeird-statement h2 {
   position: relative;
   z-index: 1;
   margin: 25px 0;
@@ -598,12 +598,12 @@ button {
   letter-spacing: -0.06em;
 }
 
-.shopnest-statement h2 span {
+.WearVeird-statement h2 span {
   color: #dce6d5;
   font-style: italic;
 }
 
-.shopnest-statement > p {
+.WearVeird-statement > p {
   position: relative;
   z-index: 1;
   max-width: 460px;
@@ -613,22 +613,22 @@ button {
   line-height: 1.9;
 }
 
-.shopnest-button-light {
+.WearVeird-button-light {
   position: relative;
   z-index: 1;
   margin-top: 28px;
   border-color: #fff;
   background: #fff;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-button-light:hover {
-  border-color: var(--shopnest-soft);
-  background: var(--shopnest-soft);
-  color: var(--shopnest-accent-hover);
+.WearVeird-button-light:hover {
+  border-color: var(--WearVeird-soft);
+  background: var(--WearVeird-soft);
+  color: var(--WearVeird-accent-hover);
 }
 
-.shopnest-statement-decoration {
+.WearVeird-statement-decoration {
   position: absolute;
   right: -25px;
   bottom: -95px;
@@ -639,32 +639,32 @@ button {
   line-height: 1;
 }
 
-.shopnest-collection-grid {
+.WearVeird-collection-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
 }
 
-.shopnest-collection-card {
+.WearVeird-collection-card {
   position: relative;
   min-height: 420px;
   overflow: hidden;
   border-radius: 10px;
-  background: var(--shopnest-sage);
+  background: var(--WearVeird-sage);
   color: #fff;
 }
 
-.shopnest-collection-card > img {
+.WearVeird-collection-card > img {
   position: absolute;
   inset: 0;
   transition: transform 500ms ease;
 }
 
-.shopnest-collection-card:hover > img {
+.WearVeird-collection-card:hover > img {
   transform: scale(1.04);
 }
 
-.shopnest-collection-overlay {
+.WearVeird-collection-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -675,33 +675,33 @@ button {
   );
 }
 
-.shopnest-collection-copy {
+.WearVeird-collection-copy {
   position: relative;
   z-index: 1;
   max-width: 440px;
   padding: clamp(25px, 4vw, 48px);
 }
 
-.shopnest-collection-copy > span {
+.WearVeird-collection-copy > span {
   font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
 
-.shopnest-collection-copy h3 {
+.WearVeird-collection-copy h3 {
   margin: 23px 0 16px;
   font-size: clamp(2.4rem, 4vw, 4rem);
   line-height: 1.05;
 }
 
-.shopnest-collection-copy p {
+.WearVeird-collection-copy p {
   max-width: 290px;
   color: #f0f2eb;
   font-size: 13px;
   line-height: 1.8;
 }
 
-.shopnest-collection-link {
+.WearVeird-collection-link {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -716,11 +716,11 @@ button {
   cursor: pointer;
 }
 
-.shopnest-collection-link:hover {
+.WearVeird-collection-link:hover {
   color: #dce6d5;
 }
 
-.shopnest-collection-number {
+.WearVeird-collection-number {
   position: absolute;
   right: 22px;
   bottom: 18px;
@@ -730,25 +730,25 @@ button {
   font-weight: 700;
 }
 
-.shopnest-home-footer {
+.WearVeird-home-footer {
   min-height: 120px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   padding: 28px 5%;
-  border-top: 1px solid var(--shopnest-border);
+  border-top: 1px solid var(--WearVeird-border);
   background: #fff;
 }
 
-.shopnest-home-footer p {
+.WearVeird-home-footer p {
   margin: 0;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 12px;
 }
 
-.shopnest-muted {
-  color: var(--shopnest-muted);
+.WearVeird-muted {
+  color: var(--WearVeird-muted);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -756,104 +756,104 @@ button {
 
 /* Product marketplace */
 
-.shopnest-marketplace {
+.WearVeird-marketplace {
   min-height: 100vh;
   padding: 38px clamp(16px, 4vw, 64px) 64px;
-  background: var(--shopnest-bg);
-  color: var(--shopnest-ink);
+  background: var(--WearVeird-bg);
+  color: var(--WearVeird-ink);
 }
 
-.shopnest-marketplace-heading {
+.WearVeird-marketplace-heading {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
   margin-bottom: 32px;
   padding-bottom: 25px;
-  border-bottom: 1px solid var(--shopnest-border);
+  border-bottom: 1px solid var(--WearVeird-border);
 }
 
-.shopnest-eyebrow {
+.WearVeird-eyebrow {
   margin-bottom: 10px;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2px;
 }
 
-.shopnest-marketplace-heading h1 {
+.WearVeird-marketplace-heading h1 {
   margin: 0;
   font-size: clamp(28px, 3vw, 42px);
   font-weight: 750;
   letter-spacing: -1.3px;
 }
 
-.shopnest-heading-description {
+.WearVeird-heading-description {
   margin: 10px 0 0;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 14px;
 }
 
-.shopnest-results-count {
+.WearVeird-results-count {
   flex-shrink: 0;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 13px;
 }
 
-.shopnest-marketplace-layout {
+.WearVeird-marketplace-layout {
   display: grid;
   grid-template-columns: 235px minmax(0, 1fr);
   gap: 30px;
   align-items: start;
 }
 
-.shopnest-filter-panel {
+.WearVeird-filter-panel {
   position: sticky;
   top: 20px;
   padding: 22px 18px;
-  border: 1px solid var(--shopnest-border);
-  border-radius: var(--shopnest-radius);
+  border: 1px solid var(--WearVeird-border);
+  border-radius: var(--WearVeird-radius);
   background: #fff;
 }
 
-.shopnest-filter-heading,
-.shopnest-filter-label-row {
+.WearVeird-filter-heading,
+.WearVeird-filter-label-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
 }
 
-.shopnest-filter-heading h2 {
+.WearVeird-filter-heading h2 {
   margin: 0;
   font-size: 18px;
   font-weight: 750;
 }
 
-.shopnest-filter-heading > button,
-.shopnest-clear-rating {
+.WearVeird-filter-heading > button,
+.WearVeird-clear-rating {
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.shopnest-filter-section {
+.WearVeird-filter-section {
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid #edf0e8;
 }
 
-.shopnest-filter-section h3 {
+.WearVeird-filter-section h3 {
   margin: 0 0 14px;
   font-size: 13px;
   font-weight: 750;
 }
 
-.shopnest-category-filter {
+.WearVeird-category-filter {
   display: flex;
   width: 100%;
   align-items: center;
@@ -871,47 +871,47 @@ button {
   transition: background 160ms ease, color 160ms ease;
 }
 
-.shopnest-category-filter:hover,
-.shopnest-category-filter.active {
-  background: var(--shopnest-soft);
-  color: var(--shopnest-accent);
+.WearVeird-category-filter:hover,
+.WearVeird-category-filter.active {
+  background: var(--WearVeird-soft);
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-category-filter.active {
+.WearVeird-category-filter.active {
   font-weight: 750;
 }
 
-.shopnest-filter-muted {
-  color: var(--shopnest-muted);
+.WearVeird-filter-muted {
+  color: var(--WearVeird-muted);
   font-size: 12px;
 }
 
-.shopnest-filter-label-row h3 {
+.WearVeird-filter-label-row h3 {
   margin-bottom: 0;
 }
 
-.shopnest-filter-label-row > span {
-  color: var(--shopnest-accent);
+.WearVeird-filter-label-row > span {
+  color: var(--WearVeird-accent);
   font-size: 12px;
   font-weight: 750;
 }
 
-.shopnest-price-range {
+.WearVeird-price-range {
   display: block;
   width: 100%;
   margin: 18px 0 8px;
-  accent-color: var(--shopnest-accent);
+  accent-color: var(--WearVeird-accent);
   cursor: pointer;
 }
 
-.shopnest-range-labels {
+.WearVeird-range-labels {
   display: flex;
   justify-content: space-between;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 11px;
 }
 
-.shopnest-rating-option {
+.WearVeird-rating-option {
   display: flex;
   align-items: center;
   gap: 9px;
@@ -921,32 +921,32 @@ button {
   cursor: pointer;
 }
 
-.shopnest-rating-option input {
+.WearVeird-rating-option input {
   width: 15px;
   height: 15px;
-  accent-color: var(--shopnest-accent);
+  accent-color: var(--WearVeird-accent);
 }
 
-.shopnest-clear-rating {
+.WearVeird-clear-rating {
   margin-top: 5px;
 }
 
-.shopnest-sort-select {
+.WearVeird-sort-select {
   width: 100%;
   padding: 11px 10px;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 8px;
   background: #fff;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   font-size: 12px;
-  outline-color: var(--shopnest-accent);
+  outline-color: var(--WearVeird-accent);
 }
 
-.shopnest-products-section {
+.WearVeird-products-section {
   min-width: 0;
 }
 
-.shopnest-products-toolbar {
+.WearVeird-products-toolbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -954,61 +954,61 @@ button {
   margin-bottom: 20px;
 }
 
-.shopnest-products-toolbar p {
+.WearVeird-products-toolbar p {
   margin: 4px 0 0;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 12px;
 }
 
-.shopnest-toolbar-label {
+.WearVeird-toolbar-label {
   display: block;
   margin-bottom: 0;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.4px;
 }
 
-.shopnest-mobile-reset {
+.WearVeird-mobile-reset {
   display: none;
   padding: 8px 12px;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 8px;
   background: #fff;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 12px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.shopnest-product-grid {
+.WearVeird-product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 22px 18px;
 }
 
-.shopnest-product-card {
+.WearVeird-product-card {
   min-width: 0;
   overflow: hidden;
   border: 1px solid #e9ebe3;
-  border-radius: var(--shopnest-radius);
+  border-radius: var(--WearVeird-radius);
   background: #fff;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.shopnest-product-card:hover {
+.WearVeird-product-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shopnest-shadow);
+  box-shadow: var(--WearVeird-shadow);
 }
 
-.shopnest-product-image-wrap {
+.WearVeird-product-image-wrap {
   position: relative;
   overflow: hidden;
   background: #f0f0e9;
   aspect-ratio: 4 / 4.7;
 }
 
-.shopnest-product-image-link {
+.WearVeird-product-image-link {
   display: flex;
   width: 100%;
   height: 100%;
@@ -1016,7 +1016,7 @@ button {
   justify-content: center;
 }
 
-.shopnest-product-image {
+.WearVeird-product-image {
   display: block;
   width: 100%;
   height: 100%;
@@ -1025,23 +1025,23 @@ button {
   transition: transform 250ms ease;
 }
 
-.shopnest-product-card:hover .shopnest-product-image {
+.WearVeird-product-card:hover .WearVeird-product-image {
   transform: scale(1.04);
 }
 
-.shopnest-discount-badge {
+.WearVeird-discount-badge {
   position: absolute;
   top: 11px;
   left: 11px;
   padding: 6px 8px;
   border-radius: 5px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   font-size: 10px;
   font-weight: 750;
 }
 
-.shopnest-wishlist-button {
+.WearVeird-wishlist-button {
   position: absolute;
   top: 9px;
   right: 9px;
@@ -1058,13 +1058,13 @@ button {
   transition: color 160ms ease, background 160ms ease;
 }
 
-.shopnest-wishlist-button:hover,
-.shopnest-wishlist-button.is-wishlisted {
-  background: var(--shopnest-accent);
+.WearVeird-wishlist-button:hover,
+.WearVeird-wishlist-button.is-wishlisted {
+  background: var(--WearVeird-accent);
   color: #fff;
 }
 
-.shopnest-product-info {
+.WearVeird-product-info {
   min-height: 190px;
   display: flex;
   flex-direction: column;
@@ -1072,7 +1072,7 @@ button {
   padding: 15px 13px 13px;
 }
 
-.shopnest-product-rating {
+.WearVeird-product-rating {
   display: inline-flex;
   align-items: center;
   gap: 5px;
@@ -1081,11 +1081,11 @@ button {
   font-size: 11px;
 }
 
-.shopnest-product-rating svg {
+.WearVeird-product-rating svg {
   font-size: 10px;
 }
 
-.shopnest-product-name {
+.WearVeird-product-name {
   display: -webkit-box;
   min-height: 38px;
   overflow: hidden;
@@ -1098,11 +1098,11 @@ button {
   -webkit-line-clamp: 2;
 }
 
-.shopnest-product-name:hover {
-  color: var(--shopnest-accent);
+.WearVeird-product-name:hover {
+  color: var(--WearVeird-accent);
 }
 
-.shopnest-product-pricing {
+.WearVeird-product-pricing {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
@@ -1110,25 +1110,25 @@ button {
   margin-top: 10px;
 }
 
-.shopnest-current-price {
-  color: var(--shopnest-accent);
+.WearVeird-current-price {
+  color: var(--WearVeird-accent);
   font-size: 16px;
   font-weight: 800;
 }
 
-.shopnest-original-price {
+.WearVeird-original-price {
   color: #85897f;
   font-size: 11px;
   text-decoration: line-through;
 }
 
-.shopnest-savings {
+.WearVeird-savings {
   margin: 4px 0 10px;
   color: #657c4d;
   font-size: 10px;
 }
 
-.shopnest-add-cart-button {
+.WearVeird-add-cart-button {
   width: 100%;
   min-height: 38px;
   display: flex;
@@ -1137,9 +1137,9 @@ button {
   gap: 8px;
   margin-top: auto;
   padding: 9px 10px;
-  border: 1px solid var(--shopnest-accent);
+  border: 1px solid var(--WearVeird-accent);
   border-radius: 7px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -1147,16 +1147,16 @@ button {
   transition: background 160ms ease, border-color 160ms ease;
 }
 
-.shopnest-add-cart-button:hover {
-  border-color: var(--shopnest-accent-hover);
-  background: var(--shopnest-accent-hover);
+.WearVeird-add-cart-button:hover {
+  border-color: var(--WearVeird-accent-hover);
+  background: var(--WearVeird-accent-hover);
 }
 
-.shopnest-add-cart-button svg {
+.WearVeird-add-cart-button svg {
   font-size: 12px;
 }
 
-.shopnest-empty-state {
+.WearVeird-empty-state {
   padding: 65px 20px;
   border: 1px dashed #d8ddcf;
   border-radius: 14px;
@@ -1164,35 +1164,35 @@ button {
   text-align: center;
 }
 
-.shopnest-empty-icon {
+.WearVeird-empty-icon {
   width: 54px;
   height: 54px;
   display: grid;
   place-items: center;
   margin: 0 auto 17px;
   border-radius: 50%;
-  background: var(--shopnest-soft);
-  color: var(--shopnest-accent);
+  background: var(--WearVeird-soft);
+  color: var(--WearVeird-accent);
   font-size: 20px;
 }
 
-.shopnest-empty-state h2 {
+.WearVeird-empty-state h2 {
   font-size: 21px;
   font-weight: 750;
 }
 
-.shopnest-empty-state p {
+.WearVeird-empty-state p {
   max-width: 380px;
   margin: 10px auto 20px;
-  color: var(--shopnest-muted);
+  color: var(--WearVeird-muted);
   font-size: 13px;
 }
 
-.shopnest-empty-state button {
+.WearVeird-empty-state button {
   padding: 10px 17px;
   border: 0;
   border-radius: 7px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
   font-size: 12px;
   font-weight: 700;
@@ -1201,22 +1201,22 @@ button {
 
 /* Loading skeletons */
 
-.shopnest-product-skeleton {
+.WearVeird-product-skeleton {
   overflow: hidden;
   padding: 10px;
-  border: 1px solid var(--shopnest-border);
-  border-radius: var(--shopnest-radius);
+  border: 1px solid var(--WearVeird-border);
+  border-radius: var(--WearVeird-radius);
   background: #fff;
 }
 
-.shopnest-skeleton-image {
+.WearVeird-skeleton-image {
   aspect-ratio: 4 / 4.7;
   border-radius: 7px;
   background: #eceee5;
-  animation: shopnest-pulse 1.3s ease-in-out infinite alternate;
+  animation: WearVeird-pulse 1.3s ease-in-out infinite alternate;
 }
 
-.shopnest-skeleton-line {
+.WearVeird-skeleton-line {
   width: 85%;
   height: 11px;
   margin-top: 15px;
@@ -1224,19 +1224,19 @@ button {
   background: #eceee5;
 }
 
-.shopnest-skeleton-line.short {
+.WearVeird-skeleton-line.short {
   width: 50%;
   margin-top: 9px;
 }
 
-.shopnest-skeleton-button {
+.WearVeird-skeleton-button {
   height: 36px;
   margin-top: 18px;
   border-radius: 7px;
   background: #e4e8dc;
 }
 
-@keyframes shopnest-pulse {
+@keyframes WearVeird-pulse {
   from {
     opacity: 0.55;
   }
@@ -1247,72 +1247,72 @@ button {
 
 /* Product details page */
 
-.shopnest-product-details {
+.WearVeird-product-details {
   min-height: 100vh;
   padding: 38px clamp(16px, 5vw, 72px) 64px;
-  background: var(--shopnest-bg);
+  background: var(--WearVeird-bg);
 }
 
-.shopnest-product-details .card {
-  border-color: var(--shopnest-border);
-  border-radius: var(--shopnest-radius);
+.WearVeird-product-details .card {
+  border-color: var(--WearVeird-border);
+  border-radius: var(--WearVeird-radius);
 }
 
-.shopnest-product-details img {
+.WearVeird-product-details img {
   max-width: 100%;
   object-fit: contain;
 }
 
-.shopnest-product-details h1,
-.shopnest-product-details h2,
-.shopnest-product-details h3 {
-  color: var(--shopnest-ink);
+.WearVeird-product-details h1,
+.WearVeird-product-details h2,
+.WearVeird-product-details h3 {
+  color: var(--WearVeird-ink);
 }
 
-.shopnest-product-details .text-muted {
-  color: var(--shopnest-muted) !important;
+.WearVeird-product-details .text-muted {
+  color: var(--WearVeird-muted) !important;
 }
 
-.shopnest-size-button {
+.WearVeird-size-button {
   min-width: 48px;
   padding: 10px 14px;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 7px;
   background: #fff;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
   cursor: pointer;
 }
 
-.shopnest-size-button:hover,
-.shopnest-size-button.active {
-  border-color: var(--shopnest-accent);
-  background: var(--shopnest-accent);
+.WearVeird-size-button:hover,
+.WearVeird-size-button.active {
+  border-color: var(--WearVeird-accent);
+  background: var(--WearVeird-accent);
   color: #fff;
 }
 
-.shopnest-quantity-control {
+.WearVeird-quantity-control {
   display: inline-flex;
   align-items: center;
   overflow: hidden;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 8px;
   background: #fff;
 }
 
-.shopnest-quantity-control button {
+.WearVeird-quantity-control button {
   width: 40px;
   height: 40px;
   border: 0;
   background: transparent;
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   cursor: pointer;
 }
 
-.shopnest-quantity-control button:hover {
-  background: var(--shopnest-soft);
+.WearVeird-quantity-control button:hover {
+  background: var(--WearVeird-soft);
 }
 
-.shopnest-quantity-control span {
+.WearVeird-quantity-control span {
   min-width: 38px;
   text-align: center;
   font-weight: 700;
@@ -1321,67 +1321,67 @@ button {
 /* Responsive layouts */
 
 @media (min-width: 1500px) {
-  .shopnest-hero h1 {
+  .WearVeird-hero h1 {
     font-size: 6.2rem;
   }
 }
 
 @media (max-width: 1200px) {
-  .shopnest-product-grid {
+  .WearVeird-product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .shopnest-marketplace-layout {
+  .WearVeird-marketplace-layout {
     grid-template-columns: 215px minmax(0, 1fr);
     gap: 22px;
   }
 
-  .shopnest-nav-main {
+  .WearVeird-nav-main {
     gap: 18px;
   }
 
-  .shopnest-nav-actions {
+  .WearVeird-nav-actions {
     gap: 12px;
   }
 }
 
 @media (max-width: 1000px) {
-  .shopnest-nav-main {
+  .WearVeird-nav-main {
     flex-wrap: wrap;
     gap: 17px;
   }
 
-  .shopnest-nav-links {
+  .WearVeird-nav-links {
     order: 3;
     width: 100%;
     padding-top: 10px;
-    border-top: 1px solid var(--shopnest-border);
+    border-top: 1px solid var(--WearVeird-border);
   }
 
-  .shopnest-hero {
+  .WearVeird-hero {
     min-height: auto;
     padding-top: 45px;
     padding-bottom: 60px;
   }
 
-  .shopnest-hero h1 {
+  .WearVeird-hero h1 {
     font-size: clamp(3.2rem, 7vw, 5rem);
   }
 
-  .shopnest-hero-visual {
+  .WearVeird-hero-visual {
     min-height: 400px;
   }
 
-  .shopnest-category-grid {
+  .WearVeird-category-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .shopnest-marketplace-layout {
+  .WearVeird-marketplace-layout {
     grid-template-columns: 205px minmax(0, 1fr);
     gap: 18px;
   }
 
-  .shopnest-product-grid {
+  .WearVeird-product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
@@ -1392,179 +1392,179 @@ button {
     --bs-gutter-x: 1.25rem;
   }
 
-  .shopnest-announcement {
+  .WearVeird-announcement {
     gap: 7px;
     font-size: 8px;
     letter-spacing: 0.07em;
   }
 
-  .shopnest-nav-main {
+  .WearVeird-nav-main {
     padding: 16px 5%;
     gap: 15px;
   }
 
-  .shopnest-brand {
+  .WearVeird-brand {
     font-size: 23px;
   }
 
-  .shopnest-nav-actions {
+  .WearVeird-nav-actions {
     gap: 12px;
   }
 
-  .shopnest-search {
+  .WearVeird-search {
     order: 5;
     width: 100%;
     flex-basis: 100%;
   }
 
-  .shopnest-nav-links {
+  .WearVeird-nav-links {
     gap: 24px;
     order: 4;
     overflow-x: auto;
   }
 
-  .shopnest-hero {
+  .WearVeird-hero {
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 38px 5% 45px;
   }
 
-  .shopnest-hero h1 {
+  .WearVeird-hero h1 {
     margin: 19px 0;
     font-size: clamp(3rem, 13vw, 5rem);
   }
 
-  .shopnest-hero-description {
+  .WearVeird-hero-description {
     font-size: 13px;
   }
 
-  .shopnest-hero-footnote {
+  .WearVeird-hero-footnote {
     margin-top: 32px;
   }
 
-  .shopnest-hero-visual {
+  .WearVeird-hero-visual {
     min-height: 350px;
     max-height: 450px;
   }
 
-  .shopnest-hero-index {
+  .WearVeird-hero-index {
     display: none;
   }
 
-  .shopnest-category-section,
-  .shopnest-collections {
+  .WearVeird-category-section,
+  .WearVeird-collections {
     padding: 42px 5%;
   }
 
-  .shopnest-section-top {
+  .WearVeird-section-top {
     align-items: flex-start;
     flex-direction: column;
     gap: 14px;
   }
 
-  .shopnest-category-grid {
+  .WearVeird-category-grid {
     gap: 14px;
   }
 
-  .shopnest-category-image-wrap {
+  .WearVeird-category-image-wrap {
     height: 220px;
   }
 
-  .shopnest-category-info h3 {
+  .WearVeird-category-info h3 {
     font-size: 15px;
   }
 
-  .shopnest-statement {
+  .WearVeird-statement {
     padding: 65px 20px;
   }
 
-  .shopnest-collection-grid {
+  .WearVeird-collection-grid {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-collection-card {
+  .WearVeird-collection-card {
     min-height: 360px;
   }
 
-  .shopnest-home-footer {
+  .WearVeird-home-footer {
     align-items: flex-start;
     flex-direction: column;
     gap: 12px;
   }
 
-  .shopnest-marketplace {
+  .WearVeird-marketplace {
     padding: 25px 14px 40px;
   }
 
-  .shopnest-marketplace-heading {
+  .WearVeird-marketplace-heading {
     align-items: flex-start;
     margin-bottom: 22px;
   }
 
-  .shopnest-marketplace-heading h1 {
+  .WearVeird-marketplace-heading h1 {
     font-size: 28px;
   }
 
-  .shopnest-results-count {
+  .WearVeird-results-count {
     padding-top: 23px;
     font-size: 11px;
   }
 
-  .shopnest-marketplace-layout {
+  .WearVeird-marketplace-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: 22px;
   }
 
-  .shopnest-filter-panel {
+  .WearVeird-filter-panel {
     position: static;
     padding: 16px;
   }
 
-  .shopnest-filter-section {
+  .WearVeird-filter-section {
     margin-top: 16px;
     padding-top: 15px;
   }
 
-  .shopnest-mobile-reset {
+  .WearVeird-mobile-reset {
     display: inline-block;
   }
 
-  .shopnest-product-grid {
+  .WearVeird-product-grid {
     gap: 13px;
   }
 
-  .shopnest-product-info {
+  .WearVeird-product-info {
     min-height: 180px;
     padding: 12px 10px 10px;
   }
 
-  .shopnest-product-name {
+  .WearVeird-product-name {
     font-size: 12px;
   }
 
-  .shopnest-current-price {
+  .WearVeird-current-price {
     font-size: 14px;
   }
 
-  .shopnest-product-image-wrap {
+  .WearVeird-product-image-wrap {
     aspect-ratio: 4 / 4.8;
   }
 
-  .shopnest-discount-badge {
+  .WearVeird-discount-badge {
     top: 7px;
     left: 7px;
     padding: 5px;
     font-size: 9px;
   }
 
-  .shopnest-wishlist-button {
+  .WearVeird-wishlist-button {
     top: 7px;
     right: 7px;
     width: 30px;
     height: 30px;
   }
 
-  .shopnest-product-details {
+  .WearVeird-product-details {
     padding: 25px 14px 40px;
   }
 }
@@ -1574,27 +1574,27 @@ button {
     display: none;
   }
 
-  .shopnest-category-image-wrap {
+  .WearVeird-category-image-wrap {
     height: 185px;
   }
 
-  .shopnest-hero-visual {
+  .WearVeird-hero-visual {
     min-height: 320px;
   }
 
-  .shopnest-product-grid {
+  .WearVeird-product-grid {
     gap: 10px;
   }
 
-  .shopnest-product-info {
+  .WearVeird-product-info {
     padding: 10px 8px;
   }
 
-  .shopnest-product-name {
+  .WearVeird-product-name {
     font-size: 11px;
   }
 
-  .shopnest-current-price {
+  .WearVeird-current-price {
     font-size: 13px;
   }
 }
@@ -1611,55 +1611,55 @@ button {
 }
 
 
-.shopnest-details-page {
+.WearVeird-details-page {
   min-height: 75vh;
   padding: 28px 0 72px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-ink, #252b24);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-details-container {
+.WearVeird-details-container {
   width: min(1240px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.shopnest-details-breadcrumb {
+.WearVeird-details-breadcrumb {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   margin-bottom: 30px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
 }
 
-.shopnest-details-breadcrumb a,
-.shopnest-details-continue {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-details-breadcrumb a,
+.WearVeird-details-continue {
+  color: var(--WearVeird-accent, #334b35);
   text-decoration: none;
 }
 
-.shopnest-details-breadcrumb a:hover,
-.shopnest-details-continue:hover {
-  color: var(--shopnest-accent-hover, #263b29);
+.WearVeird-details-breadcrumb a:hover,
+.WearVeird-details-continue:hover {
+  color: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-details-current {
+.WearVeird-details-current {
   overflow-wrap: anywhere;
 }
 
-.shopnest-details-layout {
+.WearVeird-details-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
   align-items: start;
   gap: clamp(32px, 5vw, 72px);
 }
 
-.shopnest-details-gallery {
+.WearVeird-details-gallery {
   min-width: 0;
 }
 
-.shopnest-details-image-wrap {
+.WearVeird-details-image-wrap {
   position: relative;
   display: flex;
   align-items: center;
@@ -1667,12 +1667,12 @@ button {
   min-height: 480px;
   overflow: hidden;
   padding: 32px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 18px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-details-image {
+.WearVeird-details-image {
   display: block;
   width: 100%;
   max-height: 540px;
@@ -1680,25 +1680,25 @@ button {
   transition: transform 250ms ease;
 }
 
-.shopnest-details-image-wrap:hover .shopnest-details-image {
+.WearVeird-details-image-wrap:hover .WearVeird-details-image {
   transform: scale(1.025);
 }
 
-.shopnest-details-discount {
+.WearVeird-details-discount {
   position: absolute;
   z-index: 1;
   top: 18px;
   left: 18px;
   padding: 8px 12px;
   border-radius: 6px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.5px;
 }
 
-.shopnest-details-wishlist {
+.WearVeird-details-wishlist {
   position: absolute;
   z-index: 2;
   top: 16px;
@@ -1707,56 +1707,56 @@ button {
   width: 42px;
   height: 42px;
   place-items: center;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 50%;
   background: white;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   cursor: pointer;
   transition: background 180ms ease, color 180ms ease;
 }
 
-.shopnest-details-wishlist:hover,
-.shopnest-details-wishlist.is-active {
+.WearVeird-details-wishlist:hover,
+.WearVeird-details-wishlist.is-active {
   color: #a83e45;
 }
 
-.shopnest-details-image-caption {
+.WearVeird-details-image-caption {
   display: flex;
   align-items: center;
   gap: 9px;
   margin-top: 15px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-details-image-caption svg {
+.WearVeird-details-image-caption svg {
   flex-shrink: 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-details-info {
+.WearVeird-details-info {
   min-width: 0;
   padding-top: 6px;
 }
 
-.shopnest-details-eyebrow {
+.WearVeird-details-eyebrow {
   margin-bottom: 12px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 1.8px;
 }
 
-.shopnest-details-title {
+.WearVeird-details-title {
   margin: 0 0 16px;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: clamp(27px, 3vw, 39px);
   font-weight: 650;
   line-height: 1.2;
   overflow-wrap: anywhere;
 }
 
-.shopnest-details-rating {
+.WearVeird-details-rating {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1764,86 +1764,86 @@ button {
   margin-bottom: 22px;
 }
 
-.shopnest-details-rating-value {
+.WearVeird-details-rating-value {
   display: inline-flex;
   align-items: center;
   gap: 5px;
   padding: 6px 9px;
   border-radius: 5px;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 700;
 }
 
-.shopnest-details-rating-value svg {
+.WearVeird-details-rating-value svg {
   color: #b58a32;
 }
 
-.shopnest-details-rating-copy,
-.shopnest-details-tax-note {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-details-rating-copy,
+.WearVeird-details-tax-note {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-details-price-block {
+.WearVeird-details-price-block {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
   gap: 11px;
 }
 
-.shopnest-details-price {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-details-price {
+  color: var(--WearVeird-ink, #252b24);
   font-size: 31px;
   font-weight: 750;
   letter-spacing: -0.8px;
 }
 
-.shopnest-details-original-price {
+.WearVeird-details-original-price {
   color: #85897f;
   font-size: 16px;
   text-decoration: line-through;
 }
 
-.shopnest-details-savings {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-details-savings {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 700;
 }
 
-.shopnest-details-tax-note {
+.WearVeird-details-tax-note {
   margin-top: 4px;
 }
 
-.shopnest-details-divider {
+.WearVeird-details-divider {
   height: 1px;
   margin: 23px 0;
-  background: var(--shopnest-border, #e4e6dc);
+  background: var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-details-description h2,
-.shopnest-details-section-heading h2,
-.shopnest-details-quantity-section h2 {
+.WearVeird-details-description h2,
+.WearVeird-details-section-heading h2,
+.WearVeird-details-quantity-section h2 {
   margin: 0;
   font-size: 14px;
   font-weight: 750;
 }
 
-.shopnest-details-description p {
+.WearVeird-details-description p {
   margin: 10px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 14px;
   line-height: 1.8;
   white-space: pre-line;
   overflow-wrap: anywhere;
 }
 
-.shopnest-details-size-section {
+.WearVeird-details-size-section {
   margin-top: 26px;
 }
 
-.shopnest-details-section-heading {
+.WearVeird-details-section-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1851,97 +1851,97 @@ button {
   gap: 10px;
 }
 
-.shopnest-details-section-heading span {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-details-section-heading span {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-details-sizes {
+.WearVeird-details-sizes {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 14px;
 }
 
-.shopnest-size-button {
+.WearVeird-size-button {
   min-width: 48px;
   min-height: 43px;
   padding: 9px 13px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 7px;
   background: white;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 12px;
   font-weight: 650;
   cursor: pointer;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
-.shopnest-size-button:hover,
-.shopnest-size-button.is-selected {
-  border-color: var(--shopnest-accent, #334b35);
-  background: var(--shopnest-accent, #334b35);
+.WearVeird-size-button:hover,
+.WearVeird-size-button.is-selected {
+  border-color: var(--WearVeird-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-details-quantity-section {
+.WearVeird-details-quantity-section {
   display: flex;
   align-items: center;
   gap: 20px;
   margin-top: 25px;
 }
 
-.shopnest-quantity-control {
+.WearVeird-quantity-control {
   display: inline-flex;
   align-items: center;
   min-height: 40px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 7px;
   background: white;
 }
 
-.shopnest-quantity-control button {
+.WearVeird-quantity-control button {
   display: grid;
   width: 38px;
   height: 38px;
   place-items: center;
   border: 0;
   background: transparent;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   cursor: pointer;
 }
 
-.shopnest-quantity-control button:disabled {
+.WearVeird-quantity-control button:disabled {
   color: #b8bcb2;
   cursor: not-allowed;
 }
 
-.shopnest-quantity-control button svg {
+.WearVeird-quantity-control button svg {
   font-size: 10px;
 }
 
-.shopnest-quantity-control span {
+.WearVeird-quantity-control span {
   min-width: 28px;
   text-align: center;
   font-size: 13px;
   font-weight: 700;
 }
 
-.shopnest-details-actions {
+.WearVeird-details-actions {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 48px;
   gap: 12px;
   margin-top: 28px;
 }
 
-.shopnest-details-add-cart,
-.shopnest-details-wishlist-action {
+.WearVeird-details-add-cart,
+.WearVeird-details-wishlist-action {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 11px;
   min-height: 52px;
-  border: 1px solid var(--shopnest-accent, #334b35);
+  border: 1px solid var(--WearVeird-accent, #334b35);
   border-radius: 8px;
   font-size: 13px;
   font-weight: 750;
@@ -1949,70 +1949,70 @@ button {
   transition: background 180ms ease, color 180ms ease, transform 180ms ease;
 }
 
-.shopnest-details-add-cart {
-  background: var(--shopnest-accent, #334b35);
+.WearVeird-details-add-cart {
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-details-add-cart:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-details-add-cart:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
   transform: translateY(-1px);
 }
 
-.shopnest-details-wishlist-action {
+.WearVeird-details-wishlist-action {
   background: white;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-details-wishlist-action:hover,
-.shopnest-details-wishlist-action.is-active {
-  background: var(--shopnest-soft, #e3e8d6);
+.WearVeird-details-wishlist-action:hover,
+.WearVeird-details-wishlist-action.is-active {
+  background: var(--WearVeird-soft, #e3e8d6);
   color: #a83e45;
 }
 
-.shopnest-details-benefits {
+.WearVeird-details-benefits {
   display: grid;
   gap: 0;
   margin-top: 28px;
   padding: 6px 16px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 10px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-details-benefits > div {
+.WearVeird-details-benefits > div {
   display: flex;
   align-items: center;
   gap: 14px;
   padding: 15px 0;
 }
 
-.shopnest-details-benefits > div + div {
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
+.WearVeird-details-benefits > div + div {
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-details-benefits > div > svg {
+.WearVeird-details-benefits > div > svg {
   flex-shrink: 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 18px;
 }
 
-.shopnest-details-benefits span {
+.WearVeird-details-benefits span {
   display: grid;
   gap: 4px;
 }
 
-.shopnest-details-benefits strong {
+.WearVeird-details-benefits strong {
   font-size: 12px;
   font-weight: 750;
 }
 
-.shopnest-details-benefits small {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-details-benefits small {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
 }
 
-.shopnest-details-continue {
+.WearVeird-details-continue {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -2021,36 +2021,36 @@ button {
   font-weight: 700;
 }
 
-.shopnest-details-message {
+.WearVeird-details-message {
   width: min(500px, calc(100% - 40px));
   margin: 70px auto;
   padding: 36px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 14px;
   background: white;
   text-align: center;
 }
 
-.shopnest-details-message > span {
+.WearVeird-details-message > span {
   font-size: 23px;
   font-weight: 750;
 }
 
-.shopnest-details-message p {
+.WearVeird-details-message p {
   margin: 12px 0 22px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
 }
 
-.shopnest-details-back {
+.WearVeird-details-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-weight: 700;
   text-decoration: none;
 }
 
-.shopnest-details-loading {
+.WearVeird-details-loading {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
@@ -2058,126 +2058,126 @@ button {
   margin: 30px auto;
 }
 
-.shopnest-details-loading-image,
-.shopnest-details-loading-copy > div {
+.WearVeird-details-loading-image,
+.WearVeird-details-loading-copy > div {
   border-radius: 10px;
   background: linear-gradient(90deg, #e9eadf 25%, #f5f5ea 50%, #e9eadf 75%);
   background-size: 200% 100%;
-  animation: shopnest-loading 1.4s infinite;
+  animation: WearVeird-loading 1.4s infinite;
 }
 
-.shopnest-details-loading-image {
+.WearVeird-details-loading-image {
   min-height: 450px;
 }
 
-.shopnest-details-loading-copy {
+.WearVeird-details-loading-copy {
   display: flex;
   flex-direction: column;
   gap: 18px;
   padding-top: 20px;
 }
 
-.shopnest-details-loading-copy > div {
+.WearVeird-details-loading-copy > div {
   height: 22px;
 }
 
-.shopnest-details-loading-copy > div:first-child {
+.WearVeird-details-loading-copy > div:first-child {
   width: 75%;
   height: 42px;
 }
 
-.shopnest-details-loading-copy > div:nth-child(2) {
+.WearVeird-details-loading-copy > div:nth-child(2) {
   width: 45%;
 }
 
-.shopnest-details-loading-copy > div:nth-child(3) {
+.WearVeird-details-loading-copy > div:nth-child(3) {
   width: 60%;
   height: 80px;
 }
 
-.shopnest-details-loading-copy > div:nth-child(4) {
+.WearVeird-details-loading-copy > div:nth-child(4) {
   width: 100%;
   height: 52px;
 }
 
-@keyframes shopnest-loading {
+@keyframes WearVeird-loading {
   to {
     background-position: -200% 0;
   }
 }
 
 @media (max-width: 800px) {
-  .shopnest-details-layout {
+  .WearVeird-details-layout {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .shopnest-details-image-wrap {
+  .WearVeird-details-image-wrap {
     min-height: 360px;
   }
 
-  .shopnest-details-image {
+  .WearVeird-details-image {
     max-height: 420px;
   }
 
-  .shopnest-details-info {
+  .WearVeird-details-info {
     padding-top: 0;
   }
 
-  .shopnest-details-title {
+  .WearVeird-details-title {
     font-size: 30px;
   }
 }
 
 @media (max-width: 520px) {
-  .shopnest-details-page {
+  .WearVeird-details-page {
     padding-top: 18px;
   }
 
-  .shopnest-details-container {
+  .WearVeird-details-container {
     width: calc(100% - 28px);
   }
 
-  .shopnest-details-breadcrumb {
+  .WearVeird-details-breadcrumb {
     margin-bottom: 20px;
   }
 
-  .shopnest-details-image-wrap {
+  .WearVeird-details-image-wrap {
     min-height: 300px;
     padding: 20px;
   }
 
-  .shopnest-details-image {
+  .WearVeird-details-image {
     max-height: 340px;
   }
 
-  .shopnest-details-price {
+  .WearVeird-details-price {
     font-size: 27px;
   }
 
-  .shopnest-details-loading {
+  .WearVeird-details-loading {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-details-loading-image {
+  .WearVeird-details-loading-image {
     min-height: 300px;
   }
 }
 
 
-.shopnest-cart-page {
+.WearVeird-cart-page {
   min-height: 75vh;
   padding: 38px 0 76px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-ink, #252b24);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-cart-container {
+.WearVeird-cart-container {
   width: min(1240px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.shopnest-cart-heading {
+.WearVeird-cart-heading {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -2185,61 +2185,61 @@ button {
   margin-bottom: 32px;
 }
 
-.shopnest-cart-eyebrow {
+.WearVeird-cart-eyebrow {
   margin-bottom: 9px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 1.8px;
 }
 
-.shopnest-cart-heading h1 {
+.WearVeird-cart-heading h1 {
   margin: 0;
   font-size: clamp(29px, 4vw, 39px);
   font-weight: 750;
   letter-spacing: -1px;
 }
 
-.shopnest-cart-heading h1 span {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-cart-heading h1 span {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 20px;
   font-weight: 500;
 }
 
-.shopnest-cart-subtitle {
+.WearVeird-cart-subtitle {
   margin: 10px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
 }
 
-.shopnest-cart-continue-link {
+.WearVeird-cart-continue-link {
   display: inline-flex;
   align-items: center;
   gap: 9px;
   padding-bottom: 5px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.shopnest-cart-continue-link:hover {
-  color: var(--shopnest-accent-hover, #263b29);
+.WearVeird-cart-continue-link:hover {
+  color: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-cart-layout {
+.WearVeird-cart-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
   align-items: start;
   gap: 28px;
 }
 
-.shopnest-cart-items-section,
-.shopnest-cart-summary {
+.WearVeird-cart-items-section,
+.WearVeird-cart-summary {
   min-width: 0;
 }
 
-.shopnest-cart-section-heading {
+.WearVeird-cart-section-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2247,34 +2247,34 @@ button {
   margin-bottom: 15px;
 }
 
-.shopnest-cart-section-heading h2,
-.shopnest-cart-summary h2 {
+.WearVeird-cart-section-heading h2,
+.WearVeird-cart-summary h2 {
   margin: 0;
   font-size: 17px;
   font-weight: 750;
 }
 
-.shopnest-cart-section-heading span {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-cart-section-heading span {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-cart-items {
+.WearVeird-cart-items {
   display: grid;
   gap: 15px;
 }
 
-.shopnest-cart-item {
+.WearVeird-cart-item {
   display: grid;
   grid-template-columns: 160px minmax(0, 1fr);
   gap: 22px;
   padding: 20px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-cart-image-link {
+.WearVeird-cart-image-link {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2283,34 +2283,34 @@ button {
   overflow: hidden;
   padding: 12px;
   border-radius: 9px;
-  background: var(--shopnest-bg, #f5f5ea);
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-cart-image {
+.WearVeird-cart-image {
   width: 100%;
   height: 175px;
   object-fit: contain;
   transition: transform 180ms ease;
 }
 
-.shopnest-cart-image-link:hover .shopnest-cart-image {
+.WearVeird-cart-image-link:hover .WearVeird-cart-image {
   transform: scale(1.04);
 }
 
-.shopnest-cart-item-info {
+.WearVeird-cart-item-info {
   display: flex;
   min-width: 0;
   flex-direction: column;
 }
 
-.shopnest-cart-item-top {
+.WearVeird-cart-item-top {
   display: flex;
   justify-content: space-between;
   gap: 12px;
 }
 
-.shopnest-cart-product-name {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-cart-product-name {
+  color: var(--WearVeird-ink, #252b24);
   font-size: 15px;
   font-weight: 750;
   line-height: 1.5;
@@ -2318,75 +2318,75 @@ button {
   overflow-wrap: anywhere;
 }
 
-.shopnest-cart-product-name:hover {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-cart-product-name:hover {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-size {
+.WearVeird-cart-size {
   margin: 8px 0 12px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-cart-size strong {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-cart-size strong {
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-cart-remove-icon {
+.WearVeird-cart-remove-icon {
   display: grid;
   flex-shrink: 0;
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 7px;
   background: white;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   cursor: pointer;
   transition: color 180ms ease, background 180ms ease;
 }
 
-.shopnest-cart-remove-icon svg {
+.WearVeird-cart-remove-icon svg {
   font-size: 12px;
 }
 
-.shopnest-cart-remove-icon:hover {
+.WearVeird-cart-remove-icon:hover {
   background: #fbebeb;
   color: #a83e45;
 }
 
-.shopnest-cart-prices {
+.WearVeird-cart-prices {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 10px;
 }
 
-.shopnest-cart-prices > strong {
+.WearVeird-cart-prices > strong {
   font-size: 18px;
   font-weight: 800;
 }
 
-.shopnest-cart-original-price {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-cart-original-price {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
   text-decoration: line-through;
 }
 
-.shopnest-cart-discount {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-cart-discount {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
 }
 
-.shopnest-cart-item-savings {
+.WearVeird-cart-item-savings {
   margin: 5px 0 12px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 650;
 }
 
-.shopnest-cart-item-bottom {
+.WearVeird-cart-item-bottom {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -2396,161 +2396,161 @@ button {
   padding-top: 14px;
 }
 
-.shopnest-cart-quantity {
+.WearVeird-cart-quantity {
   display: inline-flex;
   align-items: center;
   min-height: 35px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 6px;
   background: white;
 }
 
-.shopnest-cart-quantity button {
+.WearVeird-cart-quantity button {
   display: grid;
   width: 34px;
   height: 33px;
   place-items: center;
   border: 0;
   background: transparent;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   cursor: pointer;
 }
 
-.shopnest-cart-quantity button:disabled {
+.WearVeird-cart-quantity button:disabled {
   color: #b8bcb2;
   cursor: not-allowed;
 }
 
-.shopnest-cart-quantity button svg {
+.WearVeird-cart-quantity button svg {
   font-size: 9px;
 }
 
-.shopnest-cart-quantity span {
+.WearVeird-cart-quantity span {
   min-width: 24px;
   text-align: center;
   font-size: 12px;
   font-weight: 750;
 }
 
-.shopnest-cart-wishlist-action {
+.WearVeird-cart-wishlist-action {
   display: inline-flex;
   align-items: center;
   gap: 7px;
   padding: 7px 0;
   border: 0;
   background: transparent;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
   cursor: pointer;
 }
 
-.shopnest-cart-wishlist-action:hover {
+.WearVeird-cart-wishlist-action:hover {
   color: #a83e45;
 }
 
-.shopnest-cart-wishlist-action svg {
+.WearVeird-cart-wishlist-action svg {
   font-size: 11px;
 }
 
-.shopnest-cart-trust-note {
+.WearVeird-cart-trust-note {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 18px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
 }
 
-.shopnest-cart-trust-note svg {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-cart-trust-note svg {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-summary {
+.WearVeird-cart-summary {
   position: sticky;
   top: 22px;
   padding: 24px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
   box-shadow: 0 8px 28px rgba(37, 43, 36, 0.045);
 }
 
-.shopnest-cart-summary-subtitle {
+.WearVeird-cart-summary-subtitle {
   margin: 7px 0 23px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-cart-summary-line {
+.WearVeird-cart-summary-line {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 17px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-cart-summary-line span:last-child {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-cart-summary-line span:last-child {
+  color: var(--WearVeird-ink, #252b24);
   font-weight: 650;
   text-align: right;
 }
 
-.shopnest-cart-summary-line.shopnest-cart-savings-line span:last-child {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-cart-summary-line.WearVeird-cart-savings-line span:last-child {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-delivery-note {
+.WearVeird-cart-delivery-note {
   display: flex;
   align-items: flex-start;
   gap: 9px;
   margin: 20px 0;
   padding: 12px;
   border-radius: 7px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-muted, #73786d);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
   line-height: 1.6;
 }
 
-.shopnest-cart-delivery-note svg {
+.WearVeird-cart-delivery-note svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-summary-total {
+.WearVeird-cart-summary-total {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-cart-summary-total span {
+.WearVeird-cart-summary-total span {
   font-size: 13px;
   font-weight: 750;
 }
 
-.shopnest-cart-summary-total strong {
+.WearVeird-cart-summary-total strong {
   font-size: 23px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
-.shopnest-cart-total-savings {
+.WearVeird-cart-total-savings {
   margin: 12px 0 20px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   line-height: 1.6;
 }
 
-.shopnest-cart-checkout-button,
-.shopnest-cart-address-button,
-.shopnest-cart-shop-button {
+.WearVeird-cart-checkout-button,
+.WearVeird-cart-address-button,
+.WearVeird-cart-shop-button {
   display: flex;
   width: 100%;
   min-height: 47px;
@@ -2565,127 +2565,127 @@ button {
   transition: background 180ms ease, color 180ms ease;
 }
 
-.shopnest-cart-checkout-button {
-  border: 1px solid var(--shopnest-accent, #334b35);
-  background: var(--shopnest-accent, #334b35);
+.WearVeird-cart-checkout-button {
+  border: 1px solid var(--WearVeird-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-cart-checkout-button:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-cart-checkout-button:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-cart-address-button {
+.WearVeird-cart-address-button {
   margin-top: 10px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   background: white;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-address-button:hover {
-  background: var(--shopnest-bg, #f5f5ea);
+.WearVeird-cart-address-button:hover {
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-cart-secure-note {
+.WearVeird-cart-secure-note {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   margin-top: 20px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
   line-height: 1.6;
 }
 
-.shopnest-cart-secure-note svg {
+.WearVeird-cart-secure-note svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-cart-empty {
+.WearVeird-cart-empty {
   display: flex;
   min-height: 360px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 45px 24px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 14px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
   text-align: center;
 }
 
-.shopnest-cart-empty-icon {
+.WearVeird-cart-empty-icon {
   display: grid;
   width: 74px;
   height: 74px;
   place-items: center;
   border-radius: 50%;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 26px;
 }
 
-.shopnest-cart-empty h2 {
+.WearVeird-cart-empty h2 {
   margin: 23px 0 10px;
   font-size: 22px;
   font-weight: 750;
 }
 
-.shopnest-cart-empty p {
+.WearVeird-cart-empty p {
   max-width: 420px;
   margin: 0 0 24px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
   line-height: 1.8;
 }
 
-.shopnest-cart-shop-button {
+.WearVeird-cart-shop-button {
   width: auto;
   padding: 0 22px;
-  border: 1px solid var(--shopnest-accent, #334b35);
-  background: var(--shopnest-accent, #334b35);
+  border: 1px solid var(--WearVeird-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-cart-shop-button:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-cart-shop-button:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
   color: white;
 }
 
 @media (max-width: 1000px) {
-  .shopnest-cart-layout {
+  .WearVeird-cart-layout {
     grid-template-columns: minmax(0, 1fr) 310px;
     gap: 18px;
   }
 
-  .shopnest-cart-item {
+  .WearVeird-cart-item {
     grid-template-columns: 125px minmax(0, 1fr);
     gap: 16px;
     padding: 15px;
   }
 
-  .shopnest-cart-image-link,
-  .shopnest-cart-image {
+  .WearVeird-cart-image-link,
+  .WearVeird-cart-image {
     min-height: 145px;
     height: 145px;
   }
 
-  .shopnest-cart-summary {
+  .WearVeird-cart-summary {
     padding: 19px;
   }
 }
 
 @media (max-width: 760px) {
-  .shopnest-cart-layout {
+  .WearVeird-cart-layout {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-cart-summary {
+  .WearVeird-cart-summary {
     position: static;
   }
 
-  .shopnest-cart-heading {
+  .WearVeird-cart-heading {
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
@@ -2693,189 +2693,189 @@ button {
 }
 
 @media (max-width: 480px) {
-  .shopnest-cart-page {
+  .WearVeird-cart-page {
     padding: 25px 0 48px;
   }
 
-  .shopnest-cart-container {
+  .WearVeird-cart-container {
     width: calc(100% - 24px);
   }
 
-  .shopnest-cart-item {
+  .WearVeird-cart-item {
     grid-template-columns: 94px minmax(0, 1fr);
     gap: 12px;
     padding: 12px;
   }
 
-  .shopnest-cart-image-link,
-  .shopnest-cart-image {
+  .WearVeird-cart-image-link,
+  .WearVeird-cart-image {
     min-height: 120px;
     height: 120px;
   }
 
-  .shopnest-cart-item-top {
+  .WearVeird-cart-item-top {
     gap: 6px;
   }
 
-  .shopnest-cart-product-name {
+  .WearVeird-cart-product-name {
     font-size: 13px;
   }
 
-  .shopnest-cart-prices {
+  .WearVeird-cart-prices {
     gap: 6px;
   }
 
-  .shopnest-cart-prices > strong {
+  .WearVeird-cart-prices > strong {
     font-size: 15px;
   }
 
-  .shopnest-cart-item-bottom {
+  .WearVeird-cart-item-bottom {
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
   }
 
-  .shopnest-cart-wishlist-action {
+  .WearVeird-cart-wishlist-action {
     font-size: 10px;
   }
 
-  .shopnest-cart-summary {
+  .WearVeird-cart-summary {
     padding: 18px;
   }
 }
 
 
-.shopnest-checkout-page {
+.WearVeird-checkout-page {
   min-height: 75vh;
   padding: 32px 0 72px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-ink, #252b24);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-checkout-container {
+.WearVeird-checkout-container {
   width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.shopnest-checkout-back {
+.WearVeird-checkout-back {
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 700;
   text-decoration: none;
 }
 
-.shopnest-checkout-back:hover {
-  color: var(--shopnest-accent-hover, #263b29);
+.WearVeird-checkout-back:hover {
+  color: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-checkout-heading {
+.WearVeird-checkout-heading {
   margin: 26px 0 32px;
 }
 
-.shopnest-checkout-eyebrow {
+.WearVeird-checkout-eyebrow {
   margin-bottom: 9px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
   letter-spacing: 1.8px;
 }
 
-.shopnest-checkout-heading h1 {
+.WearVeird-checkout-heading h1 {
   margin: 0;
   font-size: clamp(30px, 4vw, 40px);
   font-weight: 750;
   letter-spacing: -1px;
 }
 
-.shopnest-checkout-heading > p:last-child {
+.WearVeird-checkout-heading > p:last-child {
   margin: 10px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
 }
 
-.shopnest-checkout-layout {
+.WearVeird-checkout-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
   align-items: start;
   gap: 25px;
 }
 
-.shopnest-checkout-main {
+.WearVeird-checkout-main {
   display: grid;
   gap: 20px;
   min-width: 0;
 }
 
-.shopnest-checkout-card,
-.shopnest-checkout-summary {
+.WearVeird-checkout-card,
+.WearVeird-checkout-summary {
   min-width: 0;
   padding: 24px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-checkout-section-heading {
+.WearVeird-checkout-section-heading {
   display: flex;
   align-items: flex-start;
   gap: 14px;
   margin-bottom: 24px;
 }
 
-.shopnest-checkout-step {
+.WearVeird-checkout-step {
   display: grid;
   flex-shrink: 0;
   width: 36px;
   height: 36px;
   place-items: center;
   border-radius: 8px;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 800;
 }
 
-.shopnest-checkout-section-heading h2,
-.shopnest-checkout-summary h2 {
+.WearVeird-checkout-section-heading h2,
+.WearVeird-checkout-summary h2 {
   margin: 0;
   font-size: 17px;
   font-weight: 750;
 }
 
-.shopnest-checkout-section-heading p {
+.WearVeird-checkout-section-heading p {
   margin: 6px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-checkout-label {
+.WearVeird-checkout-label {
   display: block;
   margin-bottom: 9px;
   font-size: 12px;
   font-weight: 700;
 }
 
-.shopnest-checkout-select {
+.WearVeird-checkout-select {
   width: 100%;
   min-height: 47px;
   padding: 10px 13px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 7px;
   outline: none;
   background: white;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 13px;
 }
 
-.shopnest-checkout-select:focus {
-  border-color: var(--shopnest-accent, #334b35);
+.WearVeird-checkout-select:focus {
+  border-color: var(--WearVeird-accent, #334b35);
   box-shadow: 0 0 0 3px rgba(51, 75, 53, 0.09);
 }
 
-.shopnest-checkout-selected-address {
+.WearVeird-checkout-selected-address {
   display: flex;
   gap: 13px;
   margin-top: 16px;
@@ -2885,22 +2885,22 @@ button {
   background: #f7f8f1;
 }
 
-.shopnest-checkout-address-icon {
+.WearVeird-checkout-address-icon {
   display: grid;
   flex-shrink: 0;
   width: 35px;
   height: 35px;
   place-items: center;
   border-radius: 50%;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-checkout-address-info {
+.WearVeird-checkout-address-info {
   min-width: 0;
 }
 
-.shopnest-checkout-address-name {
+.WearVeird-checkout-address-name {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -2909,105 +2909,105 @@ button {
   font-size: 13px;
 }
 
-.shopnest-checkout-address-name svg {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-checkout-address-name svg {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 13px;
 }
 
-.shopnest-checkout-address-info p {
+.WearVeird-checkout-address-info p {
   margin: 0 0 5px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
-.shopnest-checkout-add-address {
+.WearVeird-checkout-add-address {
   display: inline-block;
   margin-top: 17px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 750;
   text-decoration: none;
 }
 
-.shopnest-checkout-add-address:hover {
+.WearVeird-checkout-add-address:hover {
   text-decoration: underline;
 }
 
-.shopnest-checkout-no-address {
+.WearVeird-checkout-no-address {
   display: grid;
   grid-template-columns: 38px minmax(0, 1fr);
   align-items: start;
   gap: 12px;
   padding: 17px;
-  border: 1px dashed var(--shopnest-border, #e4e6dc);
+  border: 1px dashed var(--WearVeird-border, #e4e6dc);
   border-radius: 9px;
-  background: var(--shopnest-bg, #f5f5ea);
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-checkout-no-address > svg {
+.WearVeird-checkout-no-address > svg {
   margin: 3px auto 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 20px;
 }
 
-.shopnest-checkout-no-address strong {
+.WearVeird-checkout-no-address strong {
   font-size: 13px;
 }
 
-.shopnest-checkout-no-address p {
+.WearVeird-checkout-no-address p {
   margin: 6px 0 12px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-checkout-no-address a {
+.WearVeird-checkout-no-address a {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 750;
   text-decoration: none;
 }
 
-.shopnest-checkout-status {
+.WearVeird-checkout-status {
   padding: 15px;
   border-radius: 8px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-muted, #73786d);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
 }
 
-.shopnest-checkout-status a {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-checkout-status a {
+  color: var(--WearVeird-accent, #334b35);
   font-weight: 700;
 }
 
-.shopnest-checkout-items {
+.WearVeird-checkout-items {
   display: grid;
 }
 
-.shopnest-checkout-item {
+.WearVeird-checkout-item {
   display: grid;
   grid-template-columns: 90px minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px;
   padding: 15px 0;
-  border-bottom: 1px solid var(--shopnest-border, #e4e6dc);
+  border-bottom: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-checkout-item:first-child {
+.WearVeird-checkout-item:first-child {
   padding-top: 0;
 }
 
-.shopnest-checkout-item:last-child {
+.WearVeird-checkout-item:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-.shopnest-checkout-item-image-wrap {
+.WearVeird-checkout-item-image-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -3015,21 +3015,21 @@ button {
   overflow: hidden;
   padding: 8px;
   border-radius: 8px;
-  background: var(--shopnest-bg, #f5f5ea);
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-checkout-item-image {
+.WearVeird-checkout-item-image {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.shopnest-checkout-item-info {
+.WearVeird-checkout-item-info {
   min-width: 0;
 }
 
-.shopnest-checkout-item-name {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-checkout-item-name {
+  color: var(--WearVeird-ink, #252b24);
   font-size: 13px;
   font-weight: 750;
   line-height: 1.5;
@@ -3037,25 +3037,25 @@ button {
   overflow-wrap: anywhere;
 }
 
-.shopnest-checkout-item-name:hover {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-checkout-item-name:hover {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-checkout-item-info p {
+.WearVeird-checkout-item-info p {
   margin: 5px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
 }
 
-.shopnest-checkout-item-discount {
+.WearVeird-checkout-item-discount {
   display: inline-block;
   margin-top: 7px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 10px;
   font-weight: 750;
 }
 
-.shopnest-checkout-item-price {
+.WearVeird-checkout-item-price {
   align-self: start;
   padding-top: 4px;
   font-size: 13px;
@@ -3063,65 +3063,65 @@ button {
   white-space: nowrap;
 }
 
-.shopnest-checkout-summary {
+.WearVeird-checkout-summary {
   position: sticky;
   top: 22px;
 }
 
-.shopnest-checkout-summary-subtitle {
+.WearVeird-checkout-summary-subtitle {
   margin: 8px 0 25px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-checkout-summary-line {
+.WearVeird-checkout-summary-line {
   display: flex;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 17px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-checkout-summary-line span:last-child {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-checkout-summary-line span:last-child {
+  color: var(--WearVeird-ink, #252b24);
   font-weight: 650;
   text-align: right;
 }
 
-.shopnest-checkout-summary-line.shopnest-checkout-savings span:last-child {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-checkout-summary-line.WearVeird-checkout-savings span:last-child {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-checkout-total {
+.WearVeird-checkout-total {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   margin-top: 22px;
   padding-top: 21px;
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-checkout-total span {
+.WearVeird-checkout-total span {
   font-size: 13px;
   font-weight: 750;
 }
 
-.shopnest-checkout-total strong {
+.WearVeird-checkout-total strong {
   font-size: 23px;
   font-weight: 800;
   letter-spacing: -0.5px;
 }
 
-.shopnest-checkout-saving-note {
+.WearVeird-checkout-saving-note {
   margin-top: 13px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   line-height: 1.6;
 }
 
-.shopnest-checkout-place-order {
+.WearVeird-checkout-place-order {
   display: flex;
   width: 100%;
   min-height: 49px;
@@ -3130,9 +3130,9 @@ button {
   gap: 10px;
   margin-top: 23px;
   padding: 12px;
-  border: 1px solid var(--shopnest-accent, #334b35);
+  border: 1px solid var(--WearVeird-accent, #334b35);
   border-radius: 7px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-size: 12px;
   font-weight: 750;
@@ -3140,109 +3140,109 @@ button {
   transition: background 180ms ease;
 }
 
-.shopnest-checkout-place-order:hover:not(:disabled) {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-checkout-place-order:hover:not(:disabled) {
+  background: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-checkout-place-order:disabled {
+.WearVeird-checkout-place-order:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
 
-.shopnest-checkout-secure,
-.shopnest-checkout-delivery {
+.WearVeird-checkout-secure,
+.WearVeird-checkout-delivery {
   display: flex;
   align-items: flex-start;
   gap: 9px;
   margin-top: 18px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
   line-height: 1.6;
 }
 
-.shopnest-checkout-secure svg,
-.shopnest-checkout-delivery svg {
+.WearVeird-checkout-secure svg,
+.WearVeird-checkout-delivery svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-checkout-edit-cart {
+.WearVeird-checkout-edit-cart {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   margin-top: 21px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 11px;
   font-weight: 750;
   text-decoration: none;
 }
 
-.shopnest-checkout-edit-cart:hover {
+.WearVeird-checkout-edit-cart:hover {
   text-decoration: underline;
 }
 
 @media (max-width: 850px) {
-  .shopnest-checkout-layout {
+  .WearVeird-checkout-layout {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-checkout-summary {
+  .WearVeird-checkout-summary {
     position: static;
   }
 }
 
 @media (max-width: 520px) {
-  .shopnest-checkout-page {
+  .WearVeird-checkout-page {
     padding: 24px 0 48px;
   }
 
-  .shopnest-checkout-container {
+  .WearVeird-checkout-container {
     width: calc(100% - 24px);
   }
 
-  .shopnest-checkout-card,
-  .shopnest-checkout-summary {
+  .WearVeird-checkout-card,
+  .WearVeird-checkout-summary {
     padding: 17px;
   }
 
-  .shopnest-checkout-item {
+  .WearVeird-checkout-item {
     grid-template-columns: 70px minmax(0, 1fr);
     gap: 12px;
   }
 
-  .shopnest-checkout-item-image-wrap {
+  .WearVeird-checkout-item-image-wrap {
     height: 82px;
   }
 
-  .shopnest-checkout-item-price {
+  .WearVeird-checkout-item-price {
     grid-column: 2;
     padding-top: 0;
   }
 
-  .shopnest-checkout-item-info {
+  .WearVeird-checkout-item-info {
     align-self: end;
   }
 
-  .shopnest-checkout-heading {
+  .WearVeird-checkout-heading {
     margin: 22px 0 24px;
   }
 }
 
 
-.shopnest-order-page {
+.WearVeird-order-page {
   min-height: 75vh;
   padding: 40px 0 76px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-ink, #252b24);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-order-container {
+.WearVeird-order-container {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
 }
 
-.shopnest-order-success {
+.WearVeird-order-success {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -3250,7 +3250,7 @@ button {
   text-align: center;
 }
 
-.shopnest-order-success-icon {
+.WearVeird-order-success-icon {
   display: grid;
   width: 72px;
   height: 72px;
@@ -3258,39 +3258,39 @@ button {
   border: 1px solid #cbd9c2;
   border-radius: 50%;
   background: #e3eadb;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 27px;
 }
 
-.shopnest-order-eyebrow,
-.shopnest-order-card-eyebrow {
+.WearVeird-order-eyebrow,
+.WearVeird-order-card-eyebrow {
   margin: 0 0 9px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 10px;
   font-weight: 800;
   letter-spacing: 1.7px;
 }
 
-.shopnest-order-eyebrow {
+.WearVeird-order-eyebrow {
   margin-top: 23px;
 }
 
-.shopnest-order-success h1 {
+.WearVeird-order-success h1 {
   margin: 0;
   font-size: clamp(29px, 4vw, 41px);
   font-weight: 800;
   letter-spacing: -1px;
 }
 
-.shopnest-order-success-copy {
+.WearVeird-order-success-copy {
   max-width: 500px;
   margin: 13px 0 20px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 13px;
   line-height: 1.8;
 }
 
-.shopnest-order-status {
+.WearVeird-order-status {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -3298,195 +3298,195 @@ button {
   border: 1px solid #d6e0ce;
   border-radius: 30px;
   background: #edf2e8;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
 }
 
-.shopnest-order-status svg {
+.WearVeird-order-status svg {
   font-size: 14px;
 }
 
-.shopnest-order-progress {
+.WearVeird-order-progress {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 16px;
   margin: 0 0 30px;
   padding: 24px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-order-progress-step {
+.WearVeird-order-progress-step {
   display: flex;
   align-items: center;
   gap: 11px;
   min-width: 0;
 }
 
-.shopnest-order-progress-step > span {
+.WearVeird-order-progress-step > span {
   display: grid;
   flex-shrink: 0;
   width: 36px;
   height: 36px;
   place-items: center;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 50%;
   background: #fff;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-.shopnest-order-progress-step.is-complete > span {
-  border-color: var(--shopnest-accent, #334b35);
-  background: var(--shopnest-accent, #334b35);
+.WearVeird-order-progress-step.is-complete > span {
+  border-color: var(--WearVeird-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-order-progress-step > div {
+.WearVeird-order-progress-step > div {
   display: grid;
   gap: 4px;
 }
 
-.shopnest-order-progress-step strong {
+.WearVeird-order-progress-step strong {
   font-size: 11px;
   font-weight: 750;
 }
 
-.shopnest-order-progress-step small {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-order-progress-step small {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
 }
 
-.shopnest-order-progress-line {
+.WearVeird-order-progress-line {
   width: clamp(18px, 5vw, 70px);
   height: 1px;
   flex-shrink: 1;
-  background: var(--shopnest-border, #e4e6dc);
+  background: var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-order-layout {
+.WearVeird-order-layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   align-items: start;
   gap: 22px;
 }
 
-.shopnest-order-layout > *,
-.shopnest-order-sidebar {
+.WearVeird-order-layout > *,
+.WearVeird-order-sidebar {
   min-width: 0;
 }
 
-.shopnest-order-sidebar {
+.WearVeird-order-sidebar {
   display: grid;
   gap: 18px;
 }
 
-.shopnest-order-card {
+.WearVeird-order-card {
   padding: 23px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-order-card-heading {
+.WearVeird-order-card-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 14px;
 }
 
-.shopnest-order-card-heading h2,
-.shopnest-order-payment-card h2 {
+.WearVeird-order-card-heading h2,
+.WearVeird-order-payment-card h2 {
   margin: 0;
   font-size: 17px;
   font-weight: 800;
 }
 
-.shopnest-order-item-count {
+.WearVeird-order-item-count {
   padding: 6px 10px;
   border-radius: 20px;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 10px;
   font-weight: 750;
   white-space: nowrap;
 }
 
-.shopnest-order-date {
+.WearVeird-order-date {
   margin: 13px 0 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
 }
 
-.shopnest-order-items {
+.WearVeird-order-items {
   display: grid;
   margin-top: 18px;
 }
 
-.shopnest-order-item {
+.WearVeird-order-item {
   display: grid;
   grid-template-columns: 86px minmax(0, 1fr) auto;
   align-items: center;
   gap: 15px;
   padding: 17px 0;
-  border-bottom: 1px solid var(--shopnest-border, #e4e6dc);
+  border-bottom: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-order-item:first-child {
+.WearVeird-order-item:first-child {
   padding-top: 0;
 }
 
-.shopnest-order-item:last-child {
+.WearVeird-order-item:last-child {
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-.shopnest-order-item-image-wrap {
+.WearVeird-order-item-image-wrap {
   display: grid;
   width: 86px;
   height: 94px;
   place-items: center;
   overflow: hidden;
   border-radius: 8px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-order-item-image {
+.WearVeird-order-item-image {
   width: 100%;
   height: 100%;
   padding: 7px;
   object-fit: contain;
 }
 
-.shopnest-order-item-info {
+.WearVeird-order-item-info {
   display: grid;
   min-width: 0;
   gap: 5px;
 }
 
-.shopnest-order-item-info > strong {
+.WearVeird-order-item-info > strong {
   font-size: 12px;
   font-weight: 750;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
 
-.shopnest-order-item-info p {
+.WearVeird-order-item-info p {
   margin: 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
 }
 
-.shopnest-order-item-info small {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-order-item-info small {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 10px;
   font-weight: 700;
 }
 
-.shopnest-order-item-total {
+.WearVeird-order-item-total {
   align-self: start;
   padding-top: 3px;
   font-size: 12px;
@@ -3494,137 +3494,137 @@ button {
   white-space: nowrap;
 }
 
-.shopnest-order-card-footer {
+.WearVeird-order-card-footer {
   display: flex;
   align-items: center;
   gap: 9px;
   margin-top: 22px;
   padding-top: 17px;
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
-  color: var(--shopnest-muted, #73786d);
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
 }
 
-.shopnest-order-card-footer svg {
+.WearVeird-order-card-footer svg {
   flex-shrink: 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-order-heading-icon {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-order-heading-icon {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 19px;
 }
 
-.shopnest-order-address {
+.WearVeird-order-address {
   margin-top: 20px;
 }
 
-.shopnest-order-address > strong {
+.WearVeird-order-address > strong {
   display: block;
   margin-bottom: 10px;
   font-size: 13px;
   font-weight: 800;
 }
 
-.shopnest-order-address p {
+.WearVeird-order-address p {
   margin: 0 0 8px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
   line-height: 1.7;
   overflow-wrap: anywhere;
 }
 
-.shopnest-order-address-note {
+.WearVeird-order-address-note {
   display: flex;
   align-items: flex-start;
   gap: 9px;
   margin-top: 17px;
   padding: 12px;
   border-radius: 8px;
-  background: var(--shopnest-bg, #f5f5ea);
-  color: var(--shopnest-muted, #73786d);
+  background: var(--WearVeird-bg, #f5f5ea);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
   line-height: 1.6;
 }
 
-.shopnest-order-address-note svg {
+.WearVeird-order-address-note svg {
   flex-shrink: 0;
   margin-top: 2px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-order-payment-card h2 {
+.WearVeird-order-payment-card h2 {
   margin-bottom: 20px;
 }
 
-.shopnest-order-payment-line {
+.WearVeird-order-payment-line {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
   padding: 17px 0;
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
-  border-bottom: 1px solid var(--shopnest-border, #e4e6dc);
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
+  border-bottom: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-order-payment-line span {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-order-payment-line span {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
 }
 
-.shopnest-order-payment-line strong {
+.WearVeird-order-payment-line strong {
   font-size: 22px;
   font-weight: 800;
   white-space: nowrap;
 }
 
-.shopnest-order-payment-note {
+.WearVeird-order-payment-note {
   margin-top: 13px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 10px;
   line-height: 1.7;
 }
 
-.shopnest-order-next-actions {
+.WearVeird-order-next-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 22px;
   margin-top: 24px;
   padding: 24px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 13px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
 }
 
-.shopnest-order-next-actions h2 {
+.WearVeird-order-next-actions h2 {
   margin: 0 0 7px;
   font-size: 15px;
   font-weight: 800;
 }
 
-.shopnest-order-next-actions p {
+.WearVeird-order-next-actions p {
   margin: 0;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 11px;
   line-height: 1.7;
 }
 
-.shopnest-order-action-buttons {
+.WearVeird-order-action-buttons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
 
-.shopnest-order-primary-button,
-.shopnest-order-secondary-button {
+.WearVeird-order-primary-button,
+.WearVeird-order-secondary-button {
   display: inline-flex;
   min-height: 43px;
   align-items: center;
   justify-content: center;
   gap: 9px;
   padding: 11px 15px;
-  border: 1px solid var(--shopnest-accent, #334b35);
+  border: 1px solid var(--WearVeird-accent, #334b35);
   border-radius: 7px;
   font-size: 11px;
   font-weight: 750;
@@ -3633,26 +3633,26 @@ button {
   transition: background 180ms ease, color 180ms ease;
 }
 
-.shopnest-order-primary-button {
-  background: var(--shopnest-accent, #334b35);
+.WearVeird-order-primary-button {
+  background: var(--WearVeird-accent, #334b35);
   color: white;
 }
 
-.shopnest-order-primary-button:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-order-primary-button:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
   color: white;
 }
 
-.shopnest-order-secondary-button {
+.WearVeird-order-secondary-button {
   background: white;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-order-secondary-button:hover {
-  background: var(--shopnest-soft, #e3e8d6);
+.WearVeird-order-secondary-button:hover {
+  background: var(--WearVeird-soft, #e3e8d6);
 }
 
-.shopnest-order-empty {
+.WearVeird-order-empty {
   display: flex;
   width: min(520px, calc(100% - 32px));
   min-height: 320px;
@@ -3661,37 +3661,37 @@ button {
   justify-content: center;
   margin: 45px auto;
   padding: 35px 25px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 14px;
-  background: var(--shopnest-surface, #fff);
+  background: var(--WearVeird-surface, #fff);
   text-align: center;
 }
 
-.shopnest-order-empty-icon {
+.WearVeird-order-empty-icon {
   display: grid;
   width: 65px;
   height: 65px;
   place-items: center;
   border-radius: 50%;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 24px;
 }
 
-.shopnest-order-empty h1 {
+.WearVeird-order-empty h1 {
   margin: 21px 0 9px;
   font-size: 22px;
   font-weight: 800;
 }
 
-.shopnest-order-empty p {
+.WearVeird-order-empty p {
   margin: 0 0 21px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
   line-height: 1.8;
 }
 
-.shopnest-order-loading {
+.WearVeird-order-loading {
   display: flex;
   width: min(450px, calc(100% - 32px));
   flex-direction: column;
@@ -3700,144 +3700,144 @@ button {
   margin: 80px auto;
 }
 
-.shopnest-order-loading-icon,
-.shopnest-order-loading-line {
+.WearVeird-order-loading-icon,
+.WearVeird-order-loading-line {
   border-radius: 8px;
   background: linear-gradient(90deg, #e9eadf 25%, #f5f5ea 50%, #e9eadf 75%);
   background-size: 200% 100%;
-  animation: shopnest-order-shimmer 1.4s infinite;
+  animation: WearVeird-order-shimmer 1.4s infinite;
 }
 
-.shopnest-order-loading-icon {
+.WearVeird-order-loading-icon {
   width: 65px;
   height: 65px;
   border-radius: 50%;
 }
 
-.shopnest-order-loading-line {
+.WearVeird-order-loading-line {
   width: 85%;
   height: 20px;
 }
 
-.shopnest-order-loading-line.short {
+.WearVeird-order-loading-line.short {
   width: 55%;
 }
 
-.shopnest-order-loading p {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-order-loading p {
+  color: var(--WearVeird-muted, #73786d);
   font-size: 12px;
 }
 
-@keyframes shopnest-order-shimmer {
+@keyframes WearVeird-order-shimmer {
   to {
     background-position: -200% 0;
   }
 }
 
 @media (max-width: 850px) {
-  .shopnest-order-layout {
+  .WearVeird-order-layout {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-order-sidebar {
+  .WearVeird-order-sidebar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .shopnest-order-next-actions {
+  .WearVeird-order-next-actions {
     align-items: flex-start;
     flex-direction: column;
   }
 }
 
 @media (max-width: 560px) {
-  .shopnest-order-page {
+  .WearVeird-order-page {
     padding: 24px 0 48px;
   }
 
-  .shopnest-order-container {
+  .WearVeird-order-container {
     width: calc(100% - 24px);
   }
 
-  .shopnest-order-success {
+  .WearVeird-order-success {
     padding: 15px 8px 25px;
   }
 
-  .shopnest-order-progress {
+  .WearVeird-order-progress {
     justify-content: space-between;
     gap: 7px;
     padding: 15px 10px;
   }
 
-  .shopnest-order-progress-step {
+  .WearVeird-order-progress-step {
     flex-direction: column;
     align-items: center;
     gap: 7px;
     text-align: center;
   }
 
-  .shopnest-order-progress-step > div {
+  .WearVeird-order-progress-step > div {
     gap: 3px;
   }
 
-  .shopnest-order-progress-step strong {
+  .WearVeird-order-progress-step strong {
     font-size: 9px;
   }
 
-  .shopnest-order-progress-step small {
+  .WearVeird-order-progress-step small {
     font-size: 9px;
   }
 
-  .shopnest-order-progress-line {
+  .WearVeird-order-progress-line {
     width: 10px;
   }
 
-  .shopnest-order-card {
+  .WearVeird-order-card {
     padding: 17px;
   }
 
-  .shopnest-order-sidebar {
+  .WearVeird-order-sidebar {
     grid-template-columns: 1fr;
   }
 
-  .shopnest-order-item {
+  .WearVeird-order-item {
     grid-template-columns: 65px minmax(0, 1fr);
     gap: 11px;
   }
 
-  .shopnest-order-item-image-wrap {
+  .WearVeird-order-item-image-wrap {
     width: 65px;
     height: 76px;
   }
 
-  .shopnest-order-item-total {
+  .WearVeird-order-item-total {
     grid-column: 2;
     padding-top: 0;
   }
 
-  .shopnest-order-next-actions {
+  .WearVeird-order-next-actions {
     padding: 18px;
   }
 
-  .shopnest-order-action-buttons {
+  .WearVeird-order-action-buttons {
     width: 100%;
   }
 
-  .shopnest-order-action-buttons > * {
+  .WearVeird-order-action-buttons > * {
     flex: 1;
   }
 }
 
 
-.shopnest-auth-page {
+.WearVeird-auth-page {
   min-height: 75vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 48px 20px;
-  background: var(--shopnest-bg, #f5f5ea);
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-auth-card {
+.WearVeird-auth-card {
   width: 100%;
   max-width: 440px;
   padding: 36px;
@@ -3845,91 +3845,91 @@ button {
   flex-direction: column;
   gap: 12px;
   background: #fff;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 16px;
   box-shadow: 0 12px 35px rgba(37, 43, 36, 0.07);
 }
 
-.shopnest-auth-card h1 {
+.WearVeird-auth-card h1 {
   margin: 0;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 28px;
   font-weight: 700;
 }
 
-.shopnest-auth-eyebrow {
+.WearVeird-auth-eyebrow {
   margin: 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
 }
 
-.shopnest-auth-description {
+.WearVeird-auth-description {
   margin: 0 0 12px;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
 }
 
-.shopnest-auth-card label {
+.WearVeird-auth-card label {
   margin-top: 5px;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 14px;
   font-weight: 600;
 }
 
-.shopnest-auth-card input {
+.WearVeird-auth-card input {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 8px;
   outline: none;
 }
 
-.shopnest-auth-card input:focus {
-  border-color: var(--shopnest-accent, #334b35);
+.WearVeird-auth-card input:focus {
+  border-color: var(--WearVeird-accent, #334b35);
   box-shadow: 0 0 0 3px rgba(51, 75, 53, 0.1);
 }
 
-.shopnest-auth-card button {
+.WearVeird-auth-card button {
   margin-top: 12px;
   padding: 13px;
   border: 0;
   border-radius: 8px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-weight: 600;
   cursor: pointer;
 }
 
-.shopnest-auth-card button:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-auth-card button:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-auth-card button:disabled {
+.WearVeird-auth-card button:disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
 
-.shopnest-auth-footer {
+.WearVeird-auth-footer {
   margin: 12px 0 0;
   text-align: center;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
 }
 
-.shopnest-auth-footer a {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-auth-footer a {
+  color: var(--WearVeird-accent, #334b35);
   font-weight: 600;
   text-decoration: none;
 }
 
-.shopnest-navbar {
+.WearVeird-navbar {
   position: relative;
   z-index: 100;
   background: #fff;
-  border-bottom: 1px solid var(--shopnest-border, #e4e6dc);
+  border-bottom: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-navbar-main {
+.WearVeird-navbar-main {
   min-height: 78px;
   display: flex;
   align-items: center;
@@ -3938,100 +3938,100 @@ button {
   padding: 14px 5%;
 }
 
-.shopnest-brand {
+.WearVeird-brand {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 25px;
   font-weight: 800;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.shopnest-brand:hover {
-  color: var(--shopnest-accent-hover, #263b29);
+.WearVeird-brand:hover {
+  color: var(--WearVeird-accent-hover, #263b29);
 }
 
-.shopnest-brand-icon {
+.WearVeird-brand-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 40px;
   height: 40px;
   border-radius: 12px;
-  background: var(--shopnest-soft, #e3e8d6);
+  background: var(--WearVeird-soft, #e3e8d6);
 }
 
-.shopnest-search {
+.WearVeird-search {
   flex: 1;
   max-width: 520px;
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 5px 6px 5px 14px;
-  border: 1px solid var(--shopnest-border, #e4e6dc);
+  border: 1px solid var(--WearVeird-border, #e4e6dc);
   border-radius: 10px;
-  background: var(--shopnest-bg, #f5f5ea);
+  background: var(--WearVeird-bg, #f5f5ea);
 }
 
-.shopnest-search-icon {
-  color: var(--shopnest-muted, #73786d);
+.WearVeird-search-icon {
+  color: var(--WearVeird-muted, #73786d);
   flex-shrink: 0;
 }
 
-.shopnest-search input {
+.WearVeird-search input {
   width: 100%;
   min-width: 0;
   padding: 8px 0;
   border: none;
   outline: none;
   background: transparent;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
 }
 
-.shopnest-search-clear {
+.WearVeird-search-clear {
   border: none;
   background: transparent;
-  color: var(--shopnest-muted, #73786d);
+  color: var(--WearVeird-muted, #73786d);
 }
 
-.shopnest-search-submit {
+.WearVeird-search-submit {
   padding: 9px 15px;
   border: none;
   border-radius: 7px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-weight: 600;
 }
 
-.shopnest-navbar-actions {
+.WearVeird-navbar-actions {
   display: flex;
   align-items: center;
   gap: 18px;
 }
 
-.shopnest-nav-action {
+.WearVeird-nav-action {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 12px;
   text-decoration: none;
 }
 
-.shopnest-nav-action:hover,
-.shopnest-category-nav a:hover {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-nav-action:hover,
+.WearVeird-category-nav a:hover {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-nav-icon {
+.WearVeird-nav-icon {
   position: relative;
   font-size: 20px;
 }
 
-.shopnest-nav-badge {
+.WearVeird-nav-badge {
   position: absolute;
   top: -9px;
   right: -11px;
@@ -4042,28 +4042,28 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-size: 10px;
 }
 
-.shopnest-account {
+.WearVeird-account {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.shopnest-user-greeting {
+.WearVeird-user-greeting {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--shopnest-ink, #252b24);
+  color: var(--WearVeird-ink, #252b24);
   font-size: 13px;
   font-weight: 600;
   text-decoration: none;
 }
 
-.shopnest-user-avatar {
+.WearVeird-user-avatar {
   width: 34px;
   height: 34px;
   display: inline-flex;
@@ -4071,21 +4071,21 @@ button {
   justify-content: center;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--shopnest-soft, #e3e8d6);
-  color: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-soft, #e3e8d6);
+  color: var(--WearVeird-accent, #334b35);
   font-weight: 700;
 }
 
-.shopnest-logout-btn,
-.shopnest-register-btn {
+.WearVeird-logout-btn,
+.WearVeird-register-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 7px;
   padding: 9px 12px;
-  border: 1px solid var(--shopnest-accent, #334b35);
+  border: 1px solid var(--WearVeird-accent, #334b35);
   border-radius: 8px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: white;
   font-size: 13px;
   font-weight: 600;
@@ -4093,54 +4093,54 @@ button {
   cursor: pointer;
 }
 
-.shopnest-logout-btn:hover,
-.shopnest-register-btn:hover,
-.shopnest-search-submit:hover {
-  background: var(--shopnest-accent-hover, #263b29);
+.WearVeird-logout-btn:hover,
+.WearVeird-register-btn:hover,
+.WearVeird-search-submit:hover {
+  background: var(--WearVeird-accent-hover, #263b29);
   color: white;
 }
 
-.shopnest-login-link {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-login-link {
+  color: var(--WearVeird-accent, #334b35);
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
 
-.shopnest-category-nav {
+.WearVeird-category-nav {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 28px;
   padding: 13px 5%;
-  border-top: 1px solid var(--shopnest-border, #e4e6dc);
+  border-top: 1px solid var(--WearVeird-border, #e4e6dc);
 }
 
-.shopnest-category-nav > a {
-  color: var(--shopnest-ink, #252b24);
+.WearVeird-category-nav > a {
+  color: var(--WearVeird-ink, #252b24);
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
 }
 
-.shopnest-mobile-toggle,
-.shopnest-mobile-account {
+.WearVeird-mobile-toggle,
+.WearVeird-mobile-account {
   display: none;
 }
 
 @media (max-width: 1100px) {
-  .shopnest-navbar-main {
+  .WearVeird-navbar-main {
     gap: 14px;
     padding-right: 3%;
     padding-left: 3%;
   }
 
-  .shopnest-navbar-actions {
+  .WearVeird-navbar-actions {
     gap: 12px;
   }
 
-  .shopnest-user-name {
+  .WearVeird-user-name {
     max-width: 90px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -4149,44 +4149,44 @@ button {
 }
 
 @media (max-width: 760px) {
-  .shopnest-navbar-main {
+  .WearVeird-navbar-main {
     flex-wrap: wrap;
     gap: 12px;
   }
 
-  .shopnest-brand {
+  .WearVeird-brand {
     font-size: 22px;
   }
 
-  .shopnest-search {
+  .WearVeird-search {
     order: 3;
     flex: 1 0 100%;
     max-width: none;
   }
 
-  .shopnest-navbar-actions {
+  .WearVeird-navbar-actions {
     margin-left: auto;
     gap: 14px;
   }
 
-  .shopnest-account {
+  .WearVeird-account {
     display: none;
   }
 
-  .shopnest-mobile-toggle {
+  .WearVeird-mobile-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 38px;
     height: 38px;
-    border: 1px solid var(--shopnest-border, #e4e6dc);
+    border: 1px solid var(--WearVeird-border, #e4e6dc);
     border-radius: 8px;
     background: white;
-    color: var(--shopnest-accent, #334b35);
+    color: var(--WearVeird-accent, #334b35);
     font-size: 18px;
   }
 
-  .shopnest-category-nav {
+  .WearVeird-category-nav {
     display: none;
     align-items: stretch;
     flex-direction: column;
@@ -4194,29 +4194,29 @@ button {
     padding: 8px 5%;
   }
 
-  .shopnest-category-nav.shopnest-category-nav-open {
+  .WearVeird-category-nav.WearVeird-category-nav-open {
     display: flex;
   }
 
-  .shopnest-category-nav > a {
+  .WearVeird-category-nav > a {
     padding: 12px 0;
-    border-bottom: 1px solid var(--shopnest-border, #e4e6dc);
+    border-bottom: 1px solid var(--WearVeird-border, #e4e6dc);
   }
 
-  .shopnest-mobile-account {
+  .WearVeird-mobile-account {
     display: flex;
     flex-direction: column;
     gap: 12px;
     padding: 14px 0;
   }
 
-  .shopnest-mobile-account a {
-    color: var(--shopnest-accent, #334b35);
+  .WearVeird-mobile-account a {
+    color: var(--WearVeird-accent, #334b35);
     font-weight: 600;
     text-decoration: none;
   }
 
-  .shopnest-mobile-account button {
+  .WearVeird-mobile-account button {
     align-self: flex-start;
     display: inline-flex;
     align-items: center;
@@ -4224,20 +4224,20 @@ button {
     padding: 9px 12px;
     border: none;
     border-radius: 8px;
-    background: var(--shopnest-accent, #334b35);
+    background: var(--WearVeird-accent, #334b35);
     color: white;
   }
 }
 
 
-.shopnest-navbar {
+.WearVeird-navbar {
   position: relative;
   z-index: 1000;
   background: #fff;
   border-bottom: 1px solid #e5e7df;
 }
 
-.shopnest-navbar-main {
+.WearVeird-navbar-main {
   min-height: 82px;
   display: flex;
   align-items: center;
@@ -4245,28 +4245,28 @@ button {
   padding: 14px 5%;
 }
 
-.shopnest-brand {
+.WearVeird-brand {
   display: inline-flex;
   align-items: center;
   gap: 11px;
   flex-shrink: 0;
-  color: var(--shopnest-accent, #334b35);
+  color: var(--WearVeird-accent, #334b35);
   font-size: 26px;
   font-weight: 800;
   text-decoration: none;
 }
 
-.shopnest-brand-icon {
+.WearVeird-brand-icon {
   width: 43px;
   height: 43px;
   display: grid;
   place-items: center;
   border-radius: 13px;
-  background: var(--shopnest-soft, #e3e8d6);
+  background: var(--WearVeird-soft, #e3e8d6);
   font-size: 21px;
 }
 
-.shopnest-search {
+.WearVeird-search {
   flex: 1;
   max-width: 650px;
   min-width: 120px;
@@ -4280,17 +4280,17 @@ button {
   background: #f7f7ef;
 }
 
-.shopnest-search:focus-within {
-  border-color: var(--shopnest-accent, #334b35);
+.WearVeird-search:focus-within {
+  border-color: var(--WearVeird-accent, #334b35);
   box-shadow: 0 0 0 3px rgba(51, 75, 53, 0.08);
 }
 
-.shopnest-search-icon {
+.WearVeird-search-icon {
   flex-shrink: 0;
   color: #73786d;
 }
 
-.shopnest-search input {
+.WearVeird-search input {
   width: 100%;
   min-width: 0;
   padding: 10px 0;
@@ -4300,32 +4300,32 @@ button {
   color: #252b24;
 }
 
-.shopnest-search-submit {
+.WearVeird-search-submit {
   flex-shrink: 0;
   padding: 12px 19px;
   border: 0;
   border-radius: 9px;
-  background: var(--shopnest-accent, #334b35);
+  background: var(--WearVeird-accent, #334b35);
   color: #fff;
   font-weight: 700;
   cursor: pointer;
 }
 
-.shopnest-search-clear {
+.WearVeird-search-clear {
   border: 0;
   background: transparent;
   color: #73786d;
   cursor: pointer;
 }
 
-.shopnest-navbar-actions {
+.WearVeird-navbar-actions {
   display: flex;
   align-items: center;
   gap: 22px;
   flex-shrink: 0;
 }
 
-.shopnest-header-action {
+.WearVeird-header-action {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -4335,19 +4335,19 @@ button {
   text-decoration: none;
 }
 
-.shopnest-header-action:hover {
-  color: var(--shopnest-accent, #334b35);
+.WearVeird-header-action:hover {
+  color: var(--WearVeird-accent, #334b35);
 }
 
-.shopnest-header-action-icon {
+.WearVeird-header-action-icon {
   font-size: 21px;
 }
 
-.shopnest-account-wrapper {
+.WearVeird-account-wrapper {
   position: relative;
 }
 
-.shopnest-account-trigger {
+.WearVeird-account-trigger {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -4361,13 +4361,13 @@ button {
   transition: background 0.2s, border-color 0.2s;
 }
 
-.shopnest-account-trigger:hover,
-.shopnest-account-trigger.is-open {
+.WearVeird-account-trigger:hover,
+.WearVeird-account-trigger.is-open {
   border-color: #e3e7dc;
   background: #f7f8f2;
 }
 
-.shopnest-user-avatar {
+.WearVeird-user-avatar {
   width: 40px;
   height: 40px;
   display: grid;
@@ -4380,34 +4380,34 @@ button {
   font-weight: 800;
 }
 
-.shopnest-account-trigger-text {
+.WearVeird-account-trigger-text {
   display: flex;
   flex-direction: column;
   gap: 3px;
 }
 
-.shopnest-account-trigger-text strong {
+.WearVeird-account-trigger-text strong {
   font-size: 13px;
   font-weight: 700;
 }
 
-.shopnest-account-trigger-text small {
+.WearVeird-account-trigger-text small {
   color: #73786d;
   font-size: 11px;
 }
 
-.shopnest-account-chevron {
+.WearVeird-account-chevron {
   margin-left: 3px;
   color: #777d71;
   font-size: 11px;
   transition: transform 0.2s;
 }
 
-.shopnest-account-trigger.is-open .shopnest-account-chevron {
+.WearVeird-account-trigger.is-open .WearVeird-account-chevron {
   transform: rotate(180deg);
 }
 
-.shopnest-account-dropdown {
+.WearVeird-account-dropdown {
   position: absolute;
   top: calc(100% + 13px);
   right: 0;
@@ -4419,10 +4419,10 @@ button {
   border-radius: 16px;
   background: #fff;
   box-shadow: 0 18px 55px rgba(25, 38, 26, 0.16);
-  animation: shopnest-dropdown-in 0.16s ease-out;
+  animation: WearVeird-dropdown-in 0.16s ease-out;
 }
 
-.shopnest-account-dropdown::before {
+.WearVeird-account-dropdown::before {
   content: "";
   position: absolute;
   top: -6px;
@@ -4435,7 +4435,7 @@ button {
   background: #fff;
 }
 
-.shopnest-dropdown-header {
+.WearVeird-dropdown-header {
   position: relative;
   display: flex;
   align-items: center;
@@ -4444,7 +4444,7 @@ button {
   border-bottom: 1px solid #edf0e8;
 }
 
-.shopnest-dropdown-avatar {
+.WearVeird-dropdown-avatar {
   width: 47px;
   height: 47px;
   display: grid;
@@ -4457,26 +4457,26 @@ button {
   font-weight: 800;
 }
 
-.shopnest-dropdown-identity {
+.WearVeird-dropdown-identity {
   display: flex;
   flex-direction: column;
   gap: 5px;
   min-width: 0;
 }
 
-.shopnest-dropdown-identity strong {
+.WearVeird-dropdown-identity strong {
   overflow-wrap: anywhere;
   color: #252b24;
   font-size: 14px;
 }
 
-.shopnest-dropdown-identity span {
+.WearVeird-dropdown-identity span {
   overflow-wrap: anywhere;
   color: #777d71;
   font-size: 11px;
 }
 
-.shopnest-dropdown-section-label {
+.WearVeird-dropdown-section-label {
   padding: 15px 12px 6px;
   color: #858b7d;
   font-size: 10px;
@@ -4484,7 +4484,7 @@ button {
   letter-spacing: 1.2px;
 }
 
-.shopnest-dropdown-item {
+.WearVeird-dropdown-item {
   width: 100%;
   min-height: 43px;
   display: flex;
@@ -4503,45 +4503,45 @@ button {
   transition: background 0.15s, color 0.15s;
 }
 
-.shopnest-dropdown-item > svg {
+.WearVeird-dropdown-item > svg {
   width: 16px;
   flex-shrink: 0;
   color: #737e68;
 }
 
-.shopnest-dropdown-item:hover {
+.WearVeird-dropdown-item:hover {
   background: #f2f5ec;
   color: #334b35;
 }
 
-.shopnest-dropdown-divider {
+.WearVeird-dropdown-divider {
   height: 1px;
   margin: 8px 4px;
   background: #edf0e8;
 }
 
-.shopnest-dropdown-logout {
+.WearVeird-dropdown-logout {
   color: #a33d36;
 }
 
-.shopnest-dropdown-logout > svg {
+.WearVeird-dropdown-logout > svg {
   color: #a33d36;
 }
 
-.shopnest-dropdown-logout:hover {
+.WearVeird-dropdown-logout:hover {
   background: #fff1ef;
   color: #a33d36;
 }
 
-.shopnest-dropdown-auth {
+.WearVeird-dropdown-auth {
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 15px 8px;
 }
 
-.shopnest-dropdown-login,
-.shopnest-dropdown-register {
+.WearVeird-dropdown-login,
+.WearVeird-dropdown-register {
   padding: 12px;
   border-radius: 9px;
   text-align: center;
@@ -4550,22 +4550,22 @@ button {
   text-decoration: none;
 }
 
-.shopnest-dropdown-login {
+.WearVeird-dropdown-login {
   border: 1px solid #dce2d4;
   color: #334b35;
 }
 
-.shopnest-dropdown-register {
+.WearVeird-dropdown-register {
   background: #334b35;
   color: #fff;
 }
 
-.shopnest-dropdown-register:hover {
+.WearVeird-dropdown-register:hover {
   background: #263b29;
   color: #fff;
 }
 
-.shopnest-dropdown-footer {
+.WearVeird-dropdown-footer {
   margin-top: 7px;
   padding: 13px 8px 7px;
   border-top: 1px solid #edf0e8;
@@ -4574,7 +4574,7 @@ button {
   text-align: center;
 }
 
-.shopnest-category-nav {
+.WearVeird-category-nav {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -4585,22 +4585,22 @@ button {
   border-top: 1px solid #edf0e8;
 }
 
-.shopnest-category-nav a {
+.WearVeird-category-nav a {
   color: #343a32;
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
 }
 
-.shopnest-category-nav a:hover {
+.WearVeird-category-nav a:hover {
   color: #334b35;
 }
 
-.shopnest-mobile-toggle {
+.WearVeird-mobile-toggle {
   display: none;
 }
 
-@keyframes shopnest-dropdown-in {
+@keyframes WearVeird-dropdown-in {
   from {
     opacity: 0;
     transform: translateY(-5px);
@@ -4613,76 +4613,76 @@ button {
 }
 
 @media (max-width: 1100px) {
-  .shopnest-navbar-main {
+  .WearVeird-navbar-main {
     gap: 15px;
     padding-right: 3%;
     padding-left: 3%;
   }
 
-  .shopnest-navbar-actions {
+  .WearVeird-navbar-actions {
     gap: 13px;
   }
 
-  .shopnest-account-trigger-text small {
+  .WearVeird-account-trigger-text small {
     display: none;
   }
 }
 
 @media (max-width: 760px) {
-  .shopnest-navbar-main {
+  .WearVeird-navbar-main {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     padding: 12px 4%;
   }
 
-  .shopnest-brand {
+  .WearVeird-brand {
     font-size: 22px;
   }
 
-  .shopnest-brand-icon {
+  .WearVeird-brand-icon {
     width: 38px;
     height: 38px;
   }
 
-  .shopnest-navbar-actions {
+  .WearVeird-navbar-actions {
     gap: 14px;
     margin-left: auto;
   }
 
-  .shopnest-header-action {
+  .WearVeird-header-action {
     font-size: 10px;
   }
 
-  .shopnest-header-action-icon {
+  .WearVeird-header-action-icon {
     font-size: 19px;
   }
 
-  .shopnest-account-trigger {
+  .WearVeird-account-trigger {
     padding: 3px;
   }
 
-  .shopnest-account-trigger-text,
-  .shopnest-account-chevron {
+  .WearVeird-account-trigger-text,
+  .WearVeird-account-chevron {
     display: none;
   }
 
-  .shopnest-user-avatar {
+  .WearVeird-user-avatar {
     width: 36px;
     height: 36px;
   }
 
-  .shopnest-search {
+  .WearVeird-search {
     order: 3;
     flex: 1 0 100%;
     max-width: none;
   }
 
-  .shopnest-search-submit {
+  .WearVeird-search-submit {
     padding: 10px 12px;
   }
 
-  .shopnest-account-dropdown {
+  .WearVeird-account-dropdown {
     position: fixed;
     top: 74px;
     right: 12px;
@@ -4690,11 +4690,11 @@ button {
     max-height: calc(100vh - 90px);
   }
 
-  .shopnest-account-dropdown::before {
+  .WearVeird-account-dropdown::before {
     right: 22px;
   }
 
-  .shopnest-mobile-toggle {
+  .WearVeird-mobile-toggle {
     width: 36px;
     height: 36px;
     display: grid;
@@ -4706,7 +4706,7 @@ button {
     font-size: 17px;
   }
 
-  .shopnest-category-nav {
+  .WearVeird-category-nav {
     display: none;
     align-items: stretch;
     flex-direction: column;
@@ -4714,18 +4714,18 @@ button {
     padding: 8px 5%;
   }
 
-  .shopnest-category-nav.shopnest-category-nav-open {
+  .WearVeird-category-nav.WearVeird-category-nav-open {
     display: flex;
   }
 
-  .shopnest-category-nav a {
+  .WearVeird-category-nav a {
     padding: 12px 0;
     border-bottom: 1px solid #edf0e8;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .shopnest-account-dropdown {
+  .WearVeird-account-dropdown {
     animation: none;
   }
 }

@@ -19,7 +19,7 @@ export default function Login() {
 
     try {
       await login(email, password);
-      toast.success("Welcome back to ShopNest!");
+      toast.success("Welcome back to WearVeird!");
 
       const destination = location.state?.from;
       const safePath =
@@ -37,11 +37,11 @@ export default function Login() {
   }
 
   return (
-    <main className="shopnest-auth-page">
-      <form className="shopnest-auth-card" onSubmit={handleSubmit}>
-        <p className="shopnest-auth-eyebrow">WELCOME BACK</p>
-        <h1>Login to ShopNest</h1>
-        <p className="shopnest-auth-description">
+    <main className="WearVeird-auth-page">
+      <form className="WearVeird-auth-card" onSubmit={handleSubmit}>
+        <p className="WearVeird-auth-eyebrow">WELCOME BACK</p>
+        <h1>Login to WearVeird</h1>
+        <p className="WearVeird-auth-description">
           Sign in to continue shopping.
         </p>
 
@@ -69,7 +69,7 @@ export default function Login() {
           {submitting ? "Signing in..." : "Login"}
         </button>
 
-        <p className="shopnest-auth-footer">
+        <p className="WearVeird-auth-footer">
           Don't have an account? <Link to="/register">Register</Link>
         </p>
       </form>

@@ -10,14 +10,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --shopnest-bg: #faf6ef;
-  --shopnest-surface: #fffdf8;
-  --shopnest-ink: #29231f;
-  --shopnest-muted: #786d62;
-  --shopnest-accent: #a94f32;
-  --shopnest-accent-hover: #883c26;
-  --shopnest-border: #e8ddd0;
-  --shopnest-soft: #f0e4d5;
+  --WearVeird-bg: #faf6ef;
+  --WearVeird-surface: #fffdf8;
+  --WearVeird-ink: #29231f;
+  --WearVeird-muted: #786d62;
+  --WearVeird-accent: #a94f32;
+  --WearVeird-accent-hover: #883c26;
+  --WearVeird-border: #e8ddd0;
+  --WearVeird-soft: #f0e4d5;
 }
 
 * {
@@ -33,8 +33,8 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: var(--shopnest-bg);
-  color: var(--shopnest-ink);
+  background: var(--WearVeird-bg);
+  color: var(--WearVeird-ink);
   font-family: 'DM Sans', sans-serif;
 }
 
@@ -90,7 +90,7 @@ button {
 }
 
 .eyebrow {
-  color: var(--shopnest-accent);
+  color: var(--WearVeird-accent);
   font-size: 0.76rem;
   font-weight: 800;
   letter-spacing: 0.16em;
@@ -104,49 +104,49 @@ button {
   letter-spacing: -0.055em;
 }
 
-.shopnest-button {
+.WearVeird-button {
   display: inline-flex;
   min-height: 48px;
   align-items: center;
   justify-content: center;
   gap: 10px;
   padding: 12px 22px;
-  border: 1px solid var(--shopnest-accent);
+  border: 1px solid var(--WearVeird-accent);
   border-radius: 4px;
-  background: var(--shopnest-accent);
+  background: var(--WearVeird-accent);
   color: #fffdf8;
   font-weight: 700;
   cursor: pointer;
 }
 
-.shopnest-button:hover {
-  border-color: var(--shopnest-accent-hover);
-  background: var(--shopnest-accent-hover);
+.WearVeird-button:hover {
+  border-color: var(--WearVeird-accent-hover);
+  background: var(--WearVeird-accent-hover);
   color: #fffdf8;
   transform: translateY(-1px);
 }
 
-.shopnest-button-outline {
-  border-color: var(--shopnest-ink);
+.WearVeird-button-outline {
+  border-color: var(--WearVeird-ink);
   background: transparent;
-  color: var(--shopnest-ink);
+  color: var(--WearVeird-ink);
 }
 
-.shopnest-button-outline:hover {
-  border-color: var(--shopnest-ink);
-  background: var(--shopnest-ink);
+.WearVeird-button-outline:hover {
+  border-color: var(--WearVeird-ink);
+  background: var(--WearVeird-ink);
   color: #fffdf8;
 }
 
-.shopnest-card {
+.WearVeird-card {
   overflow: hidden;
-  border: 1px solid var(--shopnest-border);
+  border: 1px solid var(--WearVeird-border);
   border-radius: 5px;
-  background: var(--shopnest-surface);
+  background: var(--WearVeird-surface);
 }
 
-.shopnest-muted {
-  color: var(--shopnest-muted);
+.WearVeird-muted {
+  color: var(--WearVeird-muted);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -31,7 +31,7 @@ export default function ProfilePage() {
   const { user, logout } = useAuth();
 
   const fetchProfileData = useCallback(async () => {
-    const token = localStorage.getItem("shopnestToken");
+    const token = localStorage.getItem("WearVeirdToken");
 
     if (!token) {
       setError("Your session has expired. Please log in again.");
