@@ -363,3 +363,966 @@
     font-size: 18px;
   }
 }
+
+/* WearVeird header */
+
+.WearVeird-navbar {
+  position: relative;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+}
+
+.WearVeird-navbar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  max-width: 1400px;
+  min-height: 78px;
+  margin: auto;
+  padding: 12px 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.WearVeird-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #172554;
+  font-size: 29px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.WearVeird-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  color: #172554;
+  background: #eef2e7;
+}
+
+.WearVeird-search {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 520px;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.WearVeird-search-icon {
+  flex-shrink: 0;
+  margin-left: 15px;
+  color: #64748b;
+}
+
+.WearVeird-search input {
+  width: 100%;
+  min-width: 0;
+  padding: 13px 15px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+}
+
+.WearVeird-search-submit {
+  flex-shrink: 0;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 8px;
+  color: white;
+  background: #172554;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.WearVeird-search-clear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 0;
+  color: #64748b;
+  background: transparent;
+  cursor: pointer;
+}
+
+.WearVeird-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.WearVeird-header-action {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  color: #334155;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.WearVeird-header-action-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+}
+
+.WearVeird-account-wrapper {
+  position: relative;
+}
+
+.WearVeird-account-trigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.WearVeird-account-trigger:hover,
+.WearVeird-account-trigger.is-open {
+  background: #f1f5f9;
+}
+
+.WearVeird-user-avatar,
+.WearVeird-dropdown-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #172554;
+  background: #eef2e7;
+}
+
+.WearVeird-account-trigger-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.WearVeird-account-trigger-text strong {
+  max-width: 130px;
+  overflow: hidden;
+  color: #172554;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.WearVeird-account-trigger-text small {
+  color: #64748b;
+}
+
+.WearVeird-account-chevron {
+  flex-shrink: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+.WearVeird-account-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 1200;
+  width: 290px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.16);
+}
+
+.WearVeird-dropdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px;
+  background: #f8fafc;
+}
+
+.WearVeird-dropdown-identity {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 4px;
+}
+
+.WearVeird-dropdown-identity strong,
+.WearVeird-dropdown-identity span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.WearVeird-dropdown-identity strong {
+  color: #172554;
+}
+
+.WearVeird-dropdown-identity span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.WearVeird-dropdown-section-label {
+  margin: 12px 18px 6px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.WearVeird-dropdown-item {
+  display: flex;
+  align-items: center;
+  width: calc(100% - 20px);
+  gap: 12px;
+  margin: 0 10px;
+  padding: 11px 10px;
+  border: 0;
+  border-radius: 7px;
+  color: #334155;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.WearVeird-dropdown-item svg {
+  width: 17px;
+  flex-shrink: 0;
+  color: #64748b;
+}
+
+.WearVeird-dropdown-item:hover {
+  color: #172554;
+  background: #f1f5f9;
+}
+
+.WearVeird-dropdown-divider {
+  height: 1px;
+  margin: 8px 0;
+  background: #e2e8f0;
+}
+
+.WearVeird-dropdown-logout,
+.WearVeird-dropdown-logout svg {
+  color: #dc2626;
+}
+
+.WearVeird-dropdown-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px;
+}
+
+.WearVeird-dropdown-login,
+.WearVeird-dropdown-register {
+  display: block;
+  padding: 11px;
+  border-radius: 7px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.WearVeird-dropdown-login {
+  color: white;
+  background: #172554;
+}
+
+.WearVeird-dropdown-register {
+  border: 1px solid #e2e8f0;
+  color: #172554;
+}
+
+.WearVeird-dropdown-footer {
+  padding: 12px;
+  border-top: 1px solid #eee;
+  color: #64748b;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Category navigation */
+
+.WearVeird-category-nav {
+  position: relative;
+  z-index: 1000;
+  display: block;
+  background: #172554;
+}
+
+.WearVeird-category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.WearVeird-category-group {
+  position: relative;
+}
+
+.WearVeird-category-heading {
+  display: flex;
+  align-items: center;
+}
+
+.WearVeird-category-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border: 0;
+  color: white;
+  background: transparent;
+  font-family: inherit;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.WearVeird-category-link:hover {
+  color: #fed7aa;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.WearVeird-category-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+}
+
+.WearVeird-category-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.WearVeird-category-toggle svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.WearVeird-category-group-open
+  .WearVeird-category-toggle svg {
+  transform: rotate(180deg);
+}
+
+.WearVeird-subcategory-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1100;
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+}
+
+.WearVeird-subcategory-dropdown[hidden] {
+  display: none !important;
+}
+
+.WearVeird-subcategory-dropdown a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 5px;
+  color: #172554;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.WearVeird-subcategory-dropdown a:hover {
+  color: #ea580c;
+  background: #f8fafc;
+}
+
+.WearVeird-mobile-toggle {
+  display: none;
+  padding: 9px;
+  border: 0;
+  color: #172554;
+  background: transparent;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .WearVeird-navbar-main {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .WearVeird-brand {
+    font-size: 25px;
+  }
+
+  .WearVeird-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .WearVeird-navbar-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+
+  .WearVeird-account-trigger-text,
+  .WearVeird-account-chevron {
+    display: none;
+  }
+
+  .WearVeird-mobile-toggle {
+    display: block;
+  }
+
+  .WearVeird-category-nav {
+    display: none;
+  }
+
+  .WearVeird-category-nav.WearVeird-category-nav-open {
+    display: block;
+  }
+
+  .WearVeird-category-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px;
+  }
+
+  .WearVeird-category-group {
+    width: 100%;
+  }
+
+  .WearVeird-category-heading {
+    width: 100%;
+  }
+
+  .WearVeird-category-heading > .WearVeird-category-link {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .WearVeird-category-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .WearVeird-subcategory-dropdown {
+    position: static;
+    min-width: 0;
+    padding: 4px 0 4px 16px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .WearVeird-subcategory-dropdown a {
+    white-space: normal;
+  }
+
+  .WearVeird-account-dropdown {
+    right: -45px;
+    width: min(290px, calc(100vw - 24px));
+  }
+}
+
+@media (max-width: 480px) {
+  .WearVeird-navbar-main {
+    padding: 10px 12px;
+  }
+
+  .WearVeird-navbar-actions {
+    gap: 10px;
+  }
+
+  .WearVeird-header-action {
+    font-size: 10px;
+  }
+
+  .WearVeird-header-action-icon {
+    font-size: 18px;
+  }
+
+  .WearVeird-brand {
+    font-size: 23px;
+  }
+
+  .WearVeird-brand-icon {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* WearVeird — restore the ivory and olive-green category design */
+
+.WearVeird-category-nav {
+  background: #f5f5ea;
+  border-top: 1px solid #e4e6dc;
+  border-bottom: 1px solid #e4e6dc;
+}
+
+.WearVeird-category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.WearVeird-category-group {
+  position: relative;
+}
+
+.WearVeird-category-heading {
+  display: flex;
+  align-items: center;
+}
+
+.WearVeird-category-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #252b24;
+  background: transparent;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.WearVeird-category-link:hover {
+  color: #334b35;
+  background: #e3e8d6;
+}
+
+.WearVeird-category-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: #334b35;
+  background: transparent;
+  cursor: pointer;
+}
+
+.WearVeird-category-toggle:hover {
+  background: #e3e8d6;
+}
+
+.WearVeird-category-toggle svg {
+  width: 12px;
+  height: 12px;
+  transition: transform 0.2s ease;
+}
+
+.WearVeird-category-group-open
+  .WearVeird-category-toggle svg {
+  transform: rotate(180deg);
+}
+
+.WearVeird-subcategory-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1100;
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid #e4e6dc;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(37, 43, 36, 0.1);
+}
+
+.WearVeird-subcategory-dropdown[hidden] {
+  display: none !important;
+}
+
+.WearVeird-subcategory-dropdown a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 5px;
+  color: #252b24;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.WearVeird-subcategory-dropdown a:hover {
+  color: #334b35;
+  background: #e3e8d6;
+}
+
+@media (max-width: 900px) {
+  .WearVeird-category-nav {
+    display: none;
+  }
+
+  .WearVeird-category-nav.WearVeird-category-nav-open {
+    display: block;
+  }
+
+  .WearVeird-category-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 16px;
+  }
+
+  .WearVeird-category-group {
+    width: 100%;
+  }
+
+  .WearVeird-category-heading {
+    width: 100%;
+  }
+
+  .WearVeird-category-heading > .WearVeird-category-link {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .WearVeird-category-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .WearVeird-subcategory-dropdown {
+    position: static;
+    min-width: 0;
+    padding: 4px 0 4px 16px;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .WearVeird-subcategory-dropdown a {
+    white-space: normal;
+  }
+}
+
+/* WearVeird final color correction */
+
+/* Search box */
+.WearVeird-search {
+  background: #f5f5ea;
+  border: 1px solid #dfe3d6;
+  box-shadow: none;
+}
+
+.WearVeird-search input {
+  color: #252b24;
+  background: transparent;
+}
+
+.WearVeird-search input::placeholder {
+  color: #777d70;
+}
+
+.WearVeird-search-icon {
+  color: #334b35;
+}
+
+.WearVeird-search-submit {
+  color: #fff;
+  background: #334b35;
+  border-color: #334b35;
+}
+
+.WearVeird-search-submit:hover {
+  background: #293d2b;
+}
+
+/* Forest-green category boxes */
+.WearVeird-category-nav {
+  background: #f5f5ea;
+  border-top: 1px solid #e4e6dc;
+  border-bottom: 1px solid #e4e6dc;
+}
+
+.WearVeird-category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 20px;
+}
+
+.WearVeird-category-link {
+  color: #fff;
+  background: #334b35;
+  border: 1px solid #334b35;
+  border-radius: 6px;
+  padding: 10px 16px;
+}
+
+.WearVeird-category-link:hover {
+  color: #fff;
+  background: #293d2b;
+  border-color: #293d2b;
+}
+
+.WearVeird-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.WearVeird-category-toggle {
+  color: #fff;
+  background: #334b35;
+  border: 1px solid #334b35;
+  border-radius: 6px;
+}
+
+.WearVeird-category-toggle:hover {
+  color: #fff;
+  background: #293d2b;
+}
+
+.WearVeird-subcategory-dropdown {
+  background: #fff;
+  border: 1px solid #e4e6dc;
+  border-radius: 8px;
+}
+
+.WearVeird-subcategory-dropdown a {
+  color: #252b24;
+}
+
+.WearVeird-subcategory-dropdown a:hover {
+  color: #334b35;
+  background: #e3e8d6;
+}
+
+/* Mobile category navigation */
+@media (max-width: 900px) {
+  .WearVeird-category-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .WearVeird-category-heading {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .WearVeird-category-heading > .WearVeird-category-link {
+    flex: 1;
+    justify-content: flex-start;
+  }
+
+  .WearVeird-category-toggle {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+  }
+
+  .WearVeird-subcategory-dropdown {
+    position: static;
+    min-width: 0;
+    margin-top: 4px;
+    box-shadow: none;
+  }
+}
+
+
+/* WearVeird category navigation - final fix */
+
+.WearVeird-category-nav {
+  background: #f5f5ea;
+  border-top: 1px solid #e4e6dc;
+  border-bottom: 1px solid #e4e6dc;
+}
+
+.WearVeird-category-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 20px;
+}
+
+.WearVeird-category-group {
+  position: relative;
+}
+
+.WearVeird-category-heading {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #334b35;
+}
+
+.WearVeird-category-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 0;
+  color: #fff !important;
+  background: #334b35 !important;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.WearVeird-category-link:hover {
+  color: #fff !important;
+  background: #293d2b !important;
+}
+
+.WearVeird-category-heading > .WearVeird-category-link {
+  flex: 1;
+}
+
+.WearVeird-category-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 40px;
+  flex-shrink: 0;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+  color: #fff !important;
+  background: #334b35 !important;
+  cursor: pointer;
+}
+
+.WearVeird-category-toggle:hover {
+  background: #293d2b !important;
+}
+
+.WearVeird-category-toggle svg {
+  width: 12px;
+  height: 12px;
+}
+
+.WearVeird-subcategory-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1100;
+  min-width: 190px;
+  padding: 8px;
+  border: 1px solid #e4e6dc;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(37, 43, 36, 0.1);
+}
+
+.WearVeird-subcategory-dropdown[hidden] {
+  display: none !important;
+}
+
+.WearVeird-subcategory-dropdown a {
+  display: block;
+  padding: 11px 12px;
+  border-radius: 5px;
+  color: #252b24;
+  text-decoration: none;
+}
+
+.WearVeird-subcategory-dropdown a:hover {
+  color: #334b35;
+  background: #e3e8d6;
+}
+
+@media (max-width: 900px) {
+  .WearVeird-category-inner {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+  }
+
+  .WearVeird-category-heading {
+    width: 100%;
+  }
+
+  .WearVeird-category-heading > .WearVeird-category-link {
+    justify-content: flex-start;
+  }
+
+  .WearVeird-subcategory-dropdown {
+    position: static;
+    min-width: 0;
+    border-radius: 6px;
+    box-shadow: none;
+  }
+}
+
+/* Make All Products match the other category buttons */
+.WearVeird-category-inner > .WearVeird-category-link {
+  border-radius: 7px !important;
+  overflow: hidden;
+}
